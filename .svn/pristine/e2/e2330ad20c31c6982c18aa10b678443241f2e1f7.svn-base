@@ -1,0 +1,27 @@
+<ion-view view-title="学习记录">
+    <ion-content>
+        <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="努力加载..." pulling-text="查看最新内容..." on-refresh="doRefresh()" ></ion-refresher>
+        <ion-list>
+        	<div class="item job_process_list"  ng-repeat="process in processlist">
+        		<div ng-if="process.first==1" class="job_process_term">{{process.term}}</div>
+        		<a class="item job_process_list" href="#/record/view/planid/{{process.planid}}/courseid/{{process.courseid}}">
+                    <div class="row job_process_name">
+                        <div class="col col-80 process_left">{{process.name}}</div>
+                        <div class="col process_right"></div>
+                    </div>
+                    <div class="row job_process_text">
+                        <div class="col">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：{{process.ctype}}</div>
+                        <div class="col">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：{{process.credit}}</div>
+                    </div>
+                    <div class="row job_process_text">
+                        <div class="col">学习总长：{{process.learn_time}}</div>
+                        <div class="col">次&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数：{{process.count}}</div>
+                    </div>
+                    <div class="row job_process_text">
+                        <div class="col">进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：{{process.progress}}</div>
+                    </div>
+                </a>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

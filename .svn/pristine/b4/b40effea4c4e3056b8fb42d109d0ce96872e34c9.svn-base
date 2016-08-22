@@ -1,0 +1,98 @@
+
+<ion-view  hide-nav-bar="hide">
+  <ion-content class="user_bg">
+    <!--ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>
+    </ion-list-->
+    <div class="job_user_info">
+        <!--div class="job_body_top">
+            <div class="job_user_setting" ng-click="setting(userdetail.id)">
+                <a class="job_user_practice" href="#/tab/userinfo">
+                    <span class="icon-cog user_setting"  id="mypractice2"></span>
+                </a>
+            </div>
+        </div-->
+        <div class="job_body_center" ng-if="!login">
+            <div class="job_user_nologin">
+                <a href="#/tab/userinfo" class="direct_info">
+                    <i class="icon-uniE616" ></i>   
+                </a>
+            </div>
+        </div>
+        <div class="job_body_bottom" ng-if="!login"><font href="#/tab/usercenter">登录</font>&nbsp;/&nbsp;<a href="#/tab/register" ng-click="toregister()">注册</a></div>
+        <div class="job_body_center" ng-if="login">
+            <div class="job_user_img"><img ng-src="{{headimg}}"></div>
+        </div>
+        <div class="job_body_bottom" ng-if="login">{{name}}</div>
+    </div>
+    <!--div class="job_user_body">
+        <a class="job_user_book" href="#/tab/createaddress">
+            <div><span class="icon-book-mark user_book"></span></div>
+            <div><span class="user_text">我的课程</span></div>
+        </a>
+        <a class="job_user_practice" nav-direction="forward" href="#/tab/practice">
+            <div><span class="icon-book user_practice"></span></div>
+            <div><span class="user_text">我的练习</span></div>
+        </a>
+    </div-->
+    <div class="job_user_body">
+        <a class="job_user_load" ng-href="#/download">
+            <div class="user_load"><span class="icon-uniE607">
+                <span class="badge badge-calm" style="position: absolute;" ng-if="downingnum > 0">{{downingnum}}</span>
+            </span>
+
+            </div>
+            <div><span class="user_text">离线缓存</span></div>
+        </a>
+        <a class="job_user_fa" ng-href="{{login?'#/tab/mycollection':''}}">
+            <div class="user_fa"><span class="icon-uniE60C "></span></div>
+            <div><span class="user_text">我的收藏</span></div>
+        </a>
+        <a class="job_user_his" ng-href="{{login?'#/tab/myhistory':''}}">
+            <div><span class="icon-uniE603 user_his"></span></div>
+            <div><span class="user_text">历史记录</span></div>
+        </a>
+    </div>
+    <div class="h10"></div>
+    <div class="job_user_list">
+        <a class="user_list user_list_border " ng-href="{{login?'#/tab/errorlist':''}}">
+            <div class="user_list_left"><span class="icon-uniE618 user_list_red"></span></div>
+            <div class="user_list_text">我的错题</div>
+            <div class="user_list_right"><span class="icon-uniE606"></span></div>
+        </a>
+        <a class="user_list user_list_border" ng-href="{{login?'#/tab/note':''}}">
+            <div class="user_list_left"><span class="icon-uniE61B user_list_red"></span></div>
+            <div class="user_list_text">我的笔记</div>
+            <div class="user_list_right"><span class="icon-uniE606"></span></div>
+        </a>
+        <a class="user_list " ng-href="{{login?'#/tab/answerlist':''}}">
+            <div class="user_list_left "><span class="icon-uniE620 user_list_red"></span></div>
+            <div class="user_list_text">我的答疑</div>
+            <div class="user_list_right"><span class="icon-uniE606"></span></div>
+        </a>
+    </div>
+    <div class="h10"></div>
+    <div class="job_user_list">
+        <a class="user_list user_list_border " ng-href="{{login?'#/tab/order':''}}">
+            <div class="user_list_left"><span class="icon-uniE60A user_list_green"></span></div>
+            <div class="user_list_text">我的订单</div>
+            <div class="user_list_right"><span class="icon-uniE606"></span></div>
+        </a>
+        <a class="user_list " ng-href="{{login?'#/tab/code':''}}">
+            <div class="user_list_left"><span class="icon-uniE60D user_list_green"></span></div>
+            <div class="user_list_text">课程绑定码</div>
+            <div class="user_list_right"><span class="icon-uniE606"></span></div>
+        </a>
+    </div>
+    <div class="h10"></div>
+    <div class="job_user_list">
+        <a class="user_list" ng-href="{{login?'#/tab/userinfo':''}}">
+            <div class="user_list_left"><span class="icon-uniE602 user_list_yellow"></span></div>
+            <div class="user_list_text">设置</div>
+            <div class="user_list_right"><span class="icon-uniE606"></span></div>
+        </a>
+    </div>
+  </ion-content>
+</ion-view>

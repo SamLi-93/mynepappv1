@@ -1,0 +1,37 @@
+<ion-view view-title="账号设置" hide-tabs="true">
+  <ion-content>
+  	  <div class="list-block" ng-repeat="infoitem in userdata">
+        <tpl ng-if="infoitem.title=='头像'">
+          <a class="item list-item" href="#/tab/infosetting/infotype/{{infoitem.field}}/text/avatar">
+            <div class="uinfos">
+              <span class="userkey">{{infoitem.title}}</span>
+              <tpl ng-if="infoitem.title=='头像'">
+              <span class="userheadval">
+                <img  ng-src="{{headimg}}" class="head-img">
+                <span class="ion-chevron-right center_link_arrow1"></span>
+              </span>
+            </tpl>
+              <span style="display:none">name</span>
+            </div>
+          </a>
+        </tpl>
+        <tpl ng-if="infoitem.title!='头像'">
+          <a class="item list-item" href="#/tab/infosetting/infotype/{{infoitem.field}}/text/{{infoitem.content}}">
+            <div class="uinfos">
+              <span class="userkey">{{infoitem.title}}</span>
+              <span class="userval">
+                <span  class="usercon">{{infoitem.content}}</span>
+                <span class="ion-chevron-right center_link_arrow1"></span>
+              </span>
+            </div>
+          </a>
+        </tpl>
+
+  	  </div>
+    <div class="content padding">
+      <div class="button-bar bar-calm" ng-click="logout()">
+          <a class="button">退出登录</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

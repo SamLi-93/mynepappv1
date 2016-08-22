@@ -1,0 +1,24 @@
+<ion-view view-title="电子书" hide-tabs='true'>
+  <ion-content >
+      <div class="list job_book_list">
+        <a class="" href="#/tab/bookread/chall_id/1">
+          <span>EXCEL在财务工资管理中的应用</span>
+        </a>
+        <a class="" href="#/tab/bookread">
+          <span>企业工商税务注册变更那些事</span>
+        </a>
+        <a class="" href="#/tab/bookread">
+          <span>职工工资及个税核算</span>
+        </a>
+        <a class="" href="#/tab/bookread">
+          <span>总经理必备的财务知识和标准</span>
+        </a>
+        <a class="" href="#/tab/bookread">
+          <span>EXCEL在财务工资管理中的应用</span>
+        </a>
+        <a class="" href="#/tab/bookread">
+          <span>企业工商税务注册变更那些事</span>
+        </a>
+      </div>
+  </ion-content>
+</ion-view>

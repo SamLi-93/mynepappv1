@@ -1,0 +1,33 @@
+<ion-view view-title="新建收货地址" hide-tabs='true'>
+  <ion-content class="set_bg_color">
+    <div class="address_form" >
+        <label class="item item-input"> <span class="create_address">收 货 人:</span>
+            <input type="text" class="address_input"  ng-model="data.username">
+        </label>
+        <label class="item item-input"><span class="create_address">联系方式:</span>
+            <input type="text" class="address_input" ng-model="data.phonenum">
+        </label>
+        <div class="item item-input div-select"><span class="create_address">所在地区:</span>
+          <select class="select_province address_select" ng-model="address.province"
+                  ng-options="key as key for (key,value) in provincelist">
+            <option value="">省份</option>
+          </select>
+
+          <select class="select_city address_select" ng-if="1==1" ng-model="address.city" ng-options="key as key for (key,value)  in provincelist[address.province]">
+            <option value="">城市</option>
+          </select> 
+
+          <select class="address_select select_town" ng-model="address.district" ng-options="value as value for value in provincelist[address.province][address.city]">  
+                        <option value="">县/区</option>  
+          </select>  
+
+            <span class="choose_area"> <i class="icon-uniE606" ></i> </span>
+        </div>
+        <label class="item item-input"><span class="create_address">详细地址:</span>
+            <input type="text" class="address_input" ng-model="data.addresstext">
+        </label>
+    </div>
+  </ion-content>
+  <div class="new_address"> <i class="icon-uniE622"></i> 保存使用 </div>
+
+</ion-view>

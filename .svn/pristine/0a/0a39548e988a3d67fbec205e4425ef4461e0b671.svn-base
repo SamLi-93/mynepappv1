@@ -1,0 +1,74 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:46
+ */
+
+namespace backend\controllers;
+
+
+use yii\web\Controller;
+use yii\filters\auth\QueryParamAuth;
+use yii\filters\AccessControl;
+use Yii;
+use backend\models\Coursecomment;
+
+class MobilecourseController extends Controller
+{
+
+    public function behaviors()
+    {
+        return [
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'only' => ['GetCoursecomments'],
+//                'rules' => [
+//                    [
+//                        'actions' => [''],
+//                        'allow' => true,
+//                        'roles' => ['?'],
+//                    ],
+//                    [
+//                        'actions' => ['GetCoursecomments'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['GetCoursecomments',],
+            ],
+        ];
+    }
+
+
+    public function actionGetCoursecomments() {
+
+        echo 'test';exit;
+        $comment = Coursecomment::find();
+        var_dump($comment);exit;
+        
+
+
+
+
+
+
+    }
+
+
+
+    public function actionTest() {
+        echo 'test';exit;
+    }
+
+
+
+
+
+
+
+}

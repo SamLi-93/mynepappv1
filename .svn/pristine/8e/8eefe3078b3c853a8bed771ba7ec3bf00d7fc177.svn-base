@@ -1,0 +1,16 @@
+<ion-view view-title="错题集" hide-tabs='true'>
+  <ion-content class="error_bg">
+   <!--ion-refresher on-refresh="doRefresh()"  pulling-text="下拉刷新"   refreshing-text="正在读取..."></ion-refresher-->  
+    <div class="job_empty_text" ng-if="emptytext!=''">{{emptytext}}</div>
+    <div class="list error_list_bg">
+      <div class="item error_list" ng-repeat="(key,error) in errorlist" >
+        <div class="error_name">{{error.name}}</div>
+        <div class="error_type" ng-repeat="(k,v) in error.detail" ng-class="{'0':'type_border'}[k%2]">
+          <a href="#/tab/errordetail/courseid/9">{{errortype[v.type_id]}}&nbsp;{{v.num}}题</a><span class="icon-uniE606"></span>
+        </div>
+        <div class="error_bottom"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+    

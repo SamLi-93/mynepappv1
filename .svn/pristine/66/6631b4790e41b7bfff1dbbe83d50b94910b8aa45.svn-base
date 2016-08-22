@@ -1,0 +1,27 @@
+<ion-view view-title="我的订单" hide-tabs='true'>
+  <ion-content class="job_order_bg">
+  	<div class="list">
+  		<ion-refresher refreshing-icon="ion-loading-c" refreshing-text="数据获取中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+	  	<div class="item job_order_list" ng-repeat="(key,order) in orderlist">
+	  		<div class="order_list_bg"></div>
+	  		<div class="order_list_top">
+	  			<div ng-if="order.status == '1' " class="order_list_gray">已成功</div>
+	  			<div ng-if="order.status == '0' " class="order_list_status">待付款</div>
+	  			<div ng-if="order.status == '2' " class="order_list_gray">已取消</div>
+	  		</div>
+	  		<div class="order_list_center">
+	  			<div class="order_list_img"><img src="{{order.pic}}"></div>
+	  			<div class="order_list_text">
+	  				<div class="order_litst_description">{{order.name}}</div>
+	  				<div class="order_list_pice"><span class="price_num">￥{{order.price}}</span><span class="price_text">购买后365天有效</span></div>
+	  			</div>
+	  		</div>
+	  		<div class="order_list_bottom">
+	  			<div class="order_list_pay"><span class="pay_text">实付款：</span><span  class="pay_num">￥{{order.pay}}</span></div>
+	  			<a ng-if="order.status == '0' " class="order_list_go" href="#/course/{{order.course_id}}">立即支付</a>
+	  			<div ng-if="order.status == '0'" class="order_list_cancel" ng-click="ordercancel(key,order.id)">取消订单</div>
+	  		</div>
+	  	</div>
+	</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,72 @@
+<!-- <ion-tabs class="tabs-striped tabs-top  tabs-background-stable tabs-color-calm">
+    <ion-tab title="目录" href="#/course/detail/directory/{{courseData.id}}">
+        <ion-nav-view name="course-directory">
+        </ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="大纲" href="#/course/detail/resume/{{courseData.id}}">
+        <ion-nav-view name="course-resume">
+        </ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="讨论" href="#/course/detail/discuss/{{courseData.id}}">
+        <ion-nav-view name="course-discuss">
+        </ion-nav-view>
+    </ion-tab>
+</ion-tabs> -->
+<ion-view  cache-view='false' title='aaaa'>
+    <ion-nav-bar class="bar-postive">
+        <ion-nav-back-button  class="button-clear" ng-click="gotoaccount()">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+<ion-tabs class="tabs-striped tabs-top  tabs-background-stable tabs-color-calm">
+    <ion-tab title="目录" >
+        <ion-content>
+            <div ng-repeat="item in items"  class="item item-icon-left item-icon-right">      
+              <div ng-click="setActive(item.itemid)" ng-class="{active : activeMenu === item.itemid}" >
+                  <i class="icon ion-ios-play-outline"></i><div class="job_item p_title">{{item.title}}</div>
+              </div>      
+              <i class="icon ion-ios-cloud-download-outline" ng-click="downloadVideo(item.itemid);liked=!liked" ng-class="{'active': liked, 'inactive': !liked}"></i>
+            </div>
+
+        </ion-content>
+    </ion-tab>
+    <ion-tab title="大纲">
+        <ion-content>
+            <div ng-bind-html="resume.desc_long" class="cl_hand"></div>
+        </ion-content>
+    </ion-tab>
+    <ion-tab title="讨论" >
+        <ion-content>
+          <div>讨论</div>
+          <ul class="list">
+            <li class="item">
+              aaaaa
+            </li>
+            <li class="item">
+              b
+            </li><li class="item">
+              c
+            </li>
+            <li class="item">
+              aaaaa
+            </li>
+            <li class="item">
+              b
+            </li><li class="item">
+              c
+            </li>
+            <li class="item">
+              aaaaa
+            </li>
+            <li class="item">
+              b
+            </li><li class="item">
+              c
+            </li>
+        </ul>         
+        </ion-content>
+    </ion-tab>
+</ion-tabs>
+</ion-view>

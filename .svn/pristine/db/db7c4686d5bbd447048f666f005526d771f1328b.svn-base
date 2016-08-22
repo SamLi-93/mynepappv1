@@ -1,0 +1,50 @@
+<ion-view view-title="学习进度" hide-tabs="true">
+    <ion-content>
+        <ion-list>
+            <div class="job_empty_text" ng-if="detailerror!=''">
+                <div class="row">
+                    <div class="col">{{detailerror}}</div>
+                </div>
+            </div>
+        	<!--div class="item job_process_detail"  ng-repeat="(key,value) in detail"-->
+                <!--div class="row">
+                    <div class="col">开始时间</div>
+                    <div class="col">结束时间</div>
+                    <div class="col">看课时长</div>
+                    <div class="col">课间练习</div>
+                    <div class="col">课后练习</div>
+                </div>
+                <div class="row" ng-repeat="(key,value) in detail">
+                    <div class="col">{{value.start_time}}</div>
+                    <div class="col">{{process.end_time}}</div>
+                    <div class="col">{{process.total_time}}</div>
+                    <div class="col">{{process.quiz_score_max}}</div>
+                    <div class="col">{{process.test_score_max}}</div>
+                </div-->
+            <!--/div-->
+            <div class="itemname">{{title}}</div>
+            <div class="ttitle">
+                <span style="width:22%;">开始时间</span>
+                <span class="line"></span>
+                <span style="width:22%;">结束时间</span>
+                <span class="line"></span>
+                <span style="width:18%;">看课时长</span>
+                <span class="line"></span>
+                <span style="width:18%;">课间练习</span>
+                <span class="line"></span>
+                <span style="width:18%;">课后练习</span>
+            </div>              
+            <div class=" detaildiv" ng-repeat="process in detail">
+                <span style="width:22%;">{{process.start_time}}</span>
+                <span class="line"></span>
+                <span style="width:22%;">{{process.end_time}}</span>
+                <span class="line"></span>
+                <span style="width:18%;">{{process.total_time}}</span>
+                <span class="line"></span>
+                <span style="width:18%;">{{process.quiz_score_max}}</span>
+                <span class="line"></span>
+                <span style="width:18%;">{{process.test_score_max}}</span>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

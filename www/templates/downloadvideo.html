@@ -1,0 +1,44 @@
+<ion-modal-view style="top:30%;min-height: 70%;" ng-init="" cache-view="false" >
+    <ion-content class="job-download-bottom">
+    <div class="job-download-video"></div>
+    <div class="job-download-title">
+          <div class="title" style="width: 90%">下载列表</div>
+          <!--div class="job_down_close" ng-click="toClose()"><i class="icon ion-android-close"></i></div-->
+          <div class="icon ion-android-close" style="width: 8%;text-align: center;" ng-click="toClose()"></div>
+    </div>
+    <div ng-repeat="(key, course) in courses" class="list job-item-list">
+        <div class="item item-divider job-item-divider">
+            {{course.coursename}}
+          </div>
+          <a class="item item-icon-left job-item" 
+          ng-repeat="(key1, item) in course.items" 
+          ng-click="selected=!selected;setDownload(item.itemid,course.id,selected,item.vpath);">
+            <!-- <i class="icon" ng-class="{ $index>0 ? 'ion-ios-circle-outline' : 'icon-uniE605' }"></i> -->
+            
+            <!-- <i class="icon job-icon-color " 
+            ng-class="{'ion-android-checkmark-circle':selected , 'job-icon-color-selected':selected, 'ion-ios-circle-outline': !selected}" 
+            ></i> -->
+            <i class="icon job-icon-color " 
+            ng-class="{
+            'ion-android-checkmark-circle':downloadVideoarr.indexOf(item.itemid)>-1 || downloadedarr.indexOf(item.itemid)>-1, 
+            'job-icon-color-selected':downloadVideoarr.indexOf(item.itemid)>-1 && downloadedarr.indexOf(item.itemid)<0, 
+            'ion-ios-circle-outline': downloadVideoarr.indexOf(item.itemid)<0 && downloadedarr.indexOf(item.itemid)<0}" 
+            >
+            </i>
+            <div class="job-item-title">{{item.title}}</div>
+            <div class="job-item-size" >{{item.size}}M</div>
+          </a>
+          <!-- {{course.items.length}}
+          <input type="text" value=""> -->
+    </div>
+
+    </ion-content>
+    <ion-footer-bar class="job-footer">
+    <div class="job-download-font"><div ng-click="selectedallv=!selectedallv;selectAll(selectedallv);">
+    {{selectedallv==true?'取消全选':'全选'}}</div>
+
+    <div ng-class="{ 'job-has-num':len>0 }" ng-click="downloadMultiVideo()">下载 {{len>0?'('+len+')':''}}</div>
+
+    </div>
+    </ion-footer-bar>
+</ion-modal-view>

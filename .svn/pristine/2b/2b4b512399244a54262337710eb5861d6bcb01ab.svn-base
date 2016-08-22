@@ -1,0 +1,26 @@
+<ion-view view-title="历史记录" hide-tabs='true'>
+  <!--ion-nav-buttons side="right">
+    <button class="button button-icon  ion-ios-search-strong button-clear" ng-click="tosearch()">
+    </button>
+  </ion-nav-buttons-->
+  <ion-content class="history_bg">
+      <div class="list " >
+        <div class="job_empty_text" ng-if="emptytext!=''">{{emptytext}}</div>
+        <div class="history_list item"  ng-repeat="course in applycourse">
+          <a href="#/coursedetail/{{course.id}}">
+            <div class="history_body">
+              <div class="history_img">
+                  <img src="{{course.pic}}">
+              </div>
+              <div class="history_detail">
+                  <div class="history_title">{{course.name}}</div>
+                  <div class="history_chapter">{{course.content}}</div>
+                  <div class="history_time">观看至  <font>{{course.time}}</font></div>
+              </div>
+              <div class="job_clear"></div>
+            </div>
+          </a>
+        </div>
+      </div>            
+    </ion-content>
+</ion-view>

@@ -1,0 +1,63 @@
+<ion-view view-title="学习记录">
+
+	<div ng-class="long" class="learn_tab">
+		<ion-tabs class="tabs-striped tabs-top  tabs-background-stable tabs-color-calm">
+		    <ion-tab title="教学计划" >
+		        <ion-content>
+		        	<tpl if="plan_empty!=''"><div class="job_empty_text">{{plan_empty}}</div></tpl>
+		            <div class="item job_plan_list"  ng-repeat="plan in planlist">
+		                <div class="job_plan_name row">
+		                    <div class="col">{{plan.name}}</div>
+		                </div>
+		                <div class="job_plan_text row">
+		                    <div class="col">课程代码：{{plan.code}}</div>
+		                    <div class="col">课程类型：{{plan.ctype}}</div>
+		                </div>
+		                <div class="job_plan_text row">
+		                    <div class="col">考试形式：{{plan.exam_type}}</div>
+		                    <div class="col">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：{{plan.credit}}</div>
+		                </div>
+		            </div>
+		        </ion-content>
+		    </ion-tab>
+		    <ion-tab title="成绩查询">
+		        <ion-content>
+		        	<tpl if="search_empty!=''"><div class="job_empty_text">{{search_empty}}</div></tpl>
+		            <div class="item job_plan_list"  ng-repeat="search in searchlist">
+		                <div class="row job_plan_name"><div class="col">{{search.name}}</div></div>
+		                <div class="row process_view_text">
+		                    <div class="col col-50">课程代码：{{search.code}}</div>
+		                    <div class="col record-red">成绩：{{search.score}}</div>
+		                    <div class="col record-red">学分：{{search.credit}}</div>
+		                </div>
+		            </div>
+		        </ion-content>
+		    </ion-tab>
+		    <ion-tab title="学习进度" >
+		        <ion-content>
+		        	<tpl if="search_empty!=''"><div class="job_empty_text">{{process_empty}}</div></tpl>
+			        <div class="item job_process_list"  ng-repeat="process in processlist">
+		        		<div ng-if="process.first==1" class="job_process_term">{{process.term}}</div>
+		        		<a class="item job_process_list" href="#/view/planid/{{process.planid}}/courseid/{{process.courseid}}">
+		                    <div class="row job_process_name">
+		                        <div class="col col-80 process_left">{{process.name}}</div>
+		                        <div class="col process_right"></div>
+		                    </div>
+		                    <div class="row job_process_text">
+		                        <div class="col">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：{{process.ctype}}</div>
+		                        <div class="col">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：{{process.credit}}</div>
+		                    </div>
+		                    <div class="row job_process_text">
+		                        <div class="col">学习总长：{{process.learn_time}}</div>
+		                        <div class="col">次&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数：{{process.count}}</div>
+		                    </div>
+		                    <div class="row job_process_text">
+		                        <div class="col">进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：{{process.progress}}</div>
+		                    </div>
+		                </a>
+		            </div>     
+		        </ion-content>
+		    </ion-tab>
+		</ion-tabs>
+	</div>
+</ion-view>

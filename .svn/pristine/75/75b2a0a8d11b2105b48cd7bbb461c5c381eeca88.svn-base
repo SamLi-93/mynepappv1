@@ -1,0 +1,3282 @@
+2016-06-13 16:35:34 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 16:35:34 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aefc1e6033bb8d8dd4258f2fad8165fa6219da77ad7bbc8f7576d60841d72a92a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"bUcQW29p-ZnVlS0Js3uwDWfV6YcTtP6N\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1856'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobileadmin'
+    'PATH_INFO' => '/mobileadmin'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '1881'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aefc1e6033bb8d8dd4258f2fad8165fa6219da77ad7bbc8f7576d60841d72a92a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22bUcQW29p-ZnVlS0Js3uwDWfV6YcTtP6N%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin'
+    'REQUEST_TIME_FLOAT' => 1465806934.3905
+    'REQUEST_TIME' => 1465806934
+]
+2016-06-13 16:36:11 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\Yii' not found' in D:\phpStudy\WWW\api\backend\controllers\MobileadminController.php:53
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-13 16:36:11 [127.0.0.1][-][-][info][application] $_GET = [
+    'username' => 'test'
+    'password' => '111111'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1856'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobileadmin\\login'
+    'PATH_INFO' => '/mobileadmin/login'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?username=test&password=111111'
+    'QUERY_STRING' => 'username=test&password=111111'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '1892'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => 'b3c4e8e4-146d-a28c-ce9f-43e27ed7ff3c'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1465806971.1081
+    'REQUEST_TIME' => 1465806971
+]
+2016-06-13 17:13:16 [127.0.0.1][-][hj8v15qi80pok7qsgn6fa30ir6][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobilecourse/getCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobilecourse/ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:13:16 [127.0.0.1][-][hj8v15qi80pok7qsgn6fa30ir6][info][application] $_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobilecourse\\getCoursecomments'
+    'PATH_INFO' => '/Mobilecourse/getCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobilecourse/getCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3213'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => 'dd6e9abf-498f-b52e-85cb-919c2065b2a3'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobilecourse/getCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809196.2504
+    'REQUEST_TIME' => 1465809196
+]
+2016-06-13 17:13:45 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobilecourse/getCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobilecourse/ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:13:45 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobilecourse\\getCoursecomments'
+    'PATH_INFO' => '/Mobilecourse/getCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobilecourse/getCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3232'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobilecourse/getCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809225.9271
+    'REQUEST_TIME' => 1465809225
+]
+2016-06-13 17:13:54 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request ",obilecourse/getCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction(',obilecourse/ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:13:54 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\,obilecourse\\getCoursecomments'
+    'PATH_INFO' => '/,obilecourse/getCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/,obilecourse/getCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3234'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/,obilecourse/getCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809234.8321
+    'REQUEST_TIME' => 1465809234
+]
+2016-06-13 17:13:59 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getCoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getCoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:13:59 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getCoursecomments'
+    'PATH_INFO' => '/mobilecourse/getCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3234'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809239.1099
+    'REQUEST_TIME' => 1465809239
+]
+2016-06-13 17:14:20 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getCoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getCoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:14:19 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getCoursecomments'
+    'PATH_INFO' => '/mobilecourse/getCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3256'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809259.9712
+    'REQUEST_TIME' => 1465809259
+]
+2016-06-13 17:14:25 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:14:25 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobileadmin'
+    'PATH_INFO' => '/mobileadmin'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3260'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin'
+    'REQUEST_TIME_FLOAT' => 1465809265.011
+    'REQUEST_TIME' => 1465809265
+]
+2016-06-13 17:15:38 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/GetCoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('GetCoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/Ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:15:38 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3304'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809338.6101
+    'REQUEST_TIME' => 1465809338
+]
+2016-06-13 17:15:43 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:15:43 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\'
+    'PATH_INFO' => '/mobilecourse/'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3304'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/'
+    'REQUEST_TIME_FLOAT' => 1465809343.1824
+    'REQUEST_TIME' => 1465809343
+]
+2016-06-13 17:15:48 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:15:47 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobileadmin'
+    'PATH_INFO' => '/mobileadmin'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3304'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin'
+    'REQUEST_TIME_FLOAT' => 1465809347.9484
+    'REQUEST_TIME' => 1465809347
+]
+2016-06-13 17:15:53 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/lo' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('lo', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin/lo', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:15:53 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobileadmin\\lo'
+    'PATH_INFO' => '/mobileadmin/lo'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/lo'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3304'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/lo'
+    'REQUEST_TIME_FLOAT' => 1465809353.1315
+    'REQUEST_TIME' => 1465809353
+]
+2016-06-13 17:16:01 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:16:01 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobileadmin'
+    'PATH_INFO' => '/mobileadmin'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3314'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin'
+    'REQUEST_TIME_FLOAT' => 1465809361.6649
+    'REQUEST_TIME' => 1465809361
+]
+2016-06-13 17:16:02 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:16:02 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobileadmin'
+    'PATH_INFO' => '/mobileadmin'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3315'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin'
+    'REQUEST_TIME_FLOAT' => 1465809362.7513
+    'REQUEST_TIME' => 1465809362
+]
+2016-06-13 17:16:54 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/GetCoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('GetCoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/Ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:16:54 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3343'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809414.0566
+    'REQUEST_TIME' => 1465809414
+]
+2016-06-13 17:16:57 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/GetCoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('GetCoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/Ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:16:57 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3343'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809417.1474
+    'REQUEST_TIME' => 1465809417
+]
+2016-06-13 17:17:04 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobilecourse/GetCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobilecourse/Ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:17:04 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/Mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3348'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809424.5504
+    'REQUEST_TIME' => 1465809424
+]
+2016-06-13 17:17:26 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobilecourse/GetCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobilecourse/Ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:17:26 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/Mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3353'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809446.5801
+    'REQUEST_TIME' => 1465809446
+]
+2016-06-13 17:17:27 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobilecourse/GetCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobilecourse/Ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:17:27 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/Mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3353'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809447.8445
+    'REQUEST_TIME' => 1465809447
+]
+2016-06-13 17:19:23 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobilecourse/GetCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobilecourse/Ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:19:23 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/Mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3410'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809563.2065
+    'REQUEST_TIME' => 1465809563
+]
+2016-06-13 17:19:27 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobilecourse/GetCoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobilecourse/Ge...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:19:27 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobilecourse\\GetCoursecomments'
+    'PATH_INFO' => '/Mobilecourse/GetCoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3412'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobilecourse/GetCoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809567.5496
+    'REQUEST_TIME' => 1465809567
+]
+2016-06-13 17:19:39 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobileadmin/test".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobileadmin/tes...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:19:39 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobileadmin\\test'
+    'PATH_INFO' => '/Mobileadmin/test'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobileadmin/test'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3414'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobileadmin/test'
+    'REQUEST_TIME_FLOAT' => 1465809579.2515
+    'REQUEST_TIME' => 1465809579
+]
+2016-06-13 17:19:48 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobileadmin/login".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobileadmin/log...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:19:48 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobileadmin\\login'
+    'PATH_INFO' => '/Mobileadmin/login'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobileadmin/login'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3426'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1465809588.6224
+    'REQUEST_TIME' => 1465809588
+]
+2016-06-13 17:19:52 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobileadmin/login".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobileadmin/log...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:19:52 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobileadmin\\login'
+    'PATH_INFO' => '/Mobileadmin/login'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobileadmin/login'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3426'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1465809592.6572
+    'REQUEST_TIME' => 1465809592
+]
+2016-06-13 17:20:09 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobileadmin/login".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobileadmin/log...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:20:09 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobileadmin\\login'
+    'PATH_INFO' => '/Mobileadmin/login'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobileadmin/login'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3441'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1465809609.275
+    'REQUEST_TIME' => 1465809609
+]
+2016-06-13 17:20:47 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getcoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getcoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:20:47 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1864'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3467'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809647.6202
+    'REQUEST_TIME' => 1465809647
+]
+2016-06-13 17:21:37 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getcoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getcoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:21:37 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3494'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809697.6656
+    'REQUEST_TIME' => 1465809697
+]
+2016-06-13 17:22:41 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getcoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getcoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:22:41 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3519'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809761.3884
+    'REQUEST_TIME' => 1465809761
+]
+2016-06-13 17:23:00 [127.0.0.1][-][hj8v15qi80pok7qsgn6fa30ir6][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Mobileadmin/login".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Mobileadmin/log...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:23:00 [127.0.0.1][-][hj8v15qi80pok7qsgn6fa30ir6][info][application] $_GET = [
+    'username' => 'test'
+    'password' => '111111'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'hj8v15qi80pok7qsgn6fa30ir6'
+    '_csrf' => 'e35be2c385d9dc55ee313b703ef6504fdc17ef365603abdae48c6dc52cbed3b8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"zpEWBYgXfA4Ipi9pBRxBcVkuykzj9Z6X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\Mobileadmin\\login'
+    'PATH_INFO' => '/Mobileadmin/login'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/Mobileadmin/login?username=test&password=111111'
+    'QUERY_STRING' => 'username=test&password=111111'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3528'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'PHPSESSID=hj8v15qi80pok7qsgn6fa30ir6; _csrf=e35be2c385d9dc55ee313b703ef6504fdc17ef365603abdae48c6dc52cbed3b8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22zpEWBYgXfA4Ipi9pBRxBcVkuykzj9Z6X%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '3577b5c2-727b-20ba-01e8-a11368c9350e'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/Mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1465809780.8322
+    'REQUEST_TIME' => 1465809780
+]
+2016-06-13 17:23:10 [127.0.0.1][-][hj8v15qi80pok7qsgn6fa30ir6][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getcoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getcoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:23:10 [127.0.0.1][-][hj8v15qi80pok7qsgn6fa30ir6][info][application] $_COOKIE = [
+    'PHPSESSID' => 'hj8v15qi80pok7qsgn6fa30ir6'
+    '_csrf' => 'e35be2c385d9dc55ee313b703ef6504fdc17ef365603abdae48c6dc52cbed3b8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"zpEWBYgXfA4Ipi9pBRxBcVkuykzj9Z6X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3528'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'PHPSESSID=hj8v15qi80pok7qsgn6fa30ir6; _csrf=e35be2c385d9dc55ee313b703ef6504fdc17ef365603abdae48c6dc52cbed3b8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22zpEWBYgXfA4Ipi9pBRxBcVkuykzj9Z6X%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_POSTMAN_TOKEN' => '255657a7-beb5-0f02-6162-4c8d700d9cf9'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809790.8021
+    'REQUEST_TIME' => 1465809790
+]
+2016-06-13 17:24:22 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getcoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getcoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:24:22 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3566'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809862.8147
+    'REQUEST_TIME' => 1465809862
+]
+2016-06-13 17:24:31 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "r=mobilecourse/getcoursecomments".' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('r=mobilecourse/...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:24:31 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\r=mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/r=mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/r=mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3568'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/r=mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809871.5224
+    'REQUEST_TIME' => 1465809871
+]
+2016-06-13 17:24:36 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getcoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getcoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:24:36 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3568'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809876.6178
+    'REQUEST_TIME' => 1465809876
+]
+2016-06-13 17:26:19 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobilecourse/getcoursecomments' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('getcoursecommen...', Array)
+#1 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobilecourse/ge...', Array)
+#2 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpStudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpStudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpStudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-13 17:26:19 [127.0.0.1][-][jbk3bf7biaij1qoqeg0uhadqu0][info][application] $_COOKIE = [
+    'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb' => '1461206898,1463363753'
+    '_ga' => 'GA1.1.1366826801.1462339946'
+    'PHPSESSID' => 'jbk3bf7biaij1qoqeg0uhadqu0'
+    '_csrf' => 'aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '8'
+    '__captcha/site/captcha' => 'zisuqao'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;D:\\phpStudy\\php54n;D:\\svn\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\admin\\AppData\\Roaming\\npm;C:\\Users\\admin\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '496'
+    'PATH_TRANSLATED' => 'D:\\phpStudy\\WWW\\mobilecourse\\getcoursecomments'
+    'PATH_INFO' => '/mobilecourse/getcoursecomments'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '3622'
+    'SCRIPT_FILENAME' => 'D:/phpStudy/WWW/api/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/phpStudy/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=jbk3bf7biaij1qoqeg0uhadqu0; _csrf=aeab8e241b6d24878911cfd716c0759306ef359f1ea3f41028766d49f896aa14a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22WgWPhjPJ5ATcGXWUomBFRQaZeUJQFUHO%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/api/backend/web/index.php/mobilecourse/getcoursecomments'
+    'REQUEST_TIME_FLOAT' => 1465809979.1754
+    'REQUEST_TIME' => 1465809979
+]
+2016-06-30 13:55:18 [127.0.0.1][-][ud696ce25koe01lbltkm8bbmg0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin', Array)
+#2 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-30 13:55:18 [127.0.0.1][-][ud696ce25koe01lbltkm8bbmg0][info][application] $_COOKIE = [
+    'PHPSESSID' => 'ud696ce25koe01lbltkm8bbmg0'
+    '_csrf' => 'da94c04795085fe5410deadc52156da3d53c0c451ec5cc9af032faf04dc6394da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"qbE9TD0B0aFuTW5mXKb1VK0M1fsfOV0P\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=ud696ce25koe01lbltkm8bbmg0; _csrf=da94c04795085fe5410deadc52156da3d53c0c451ec5cc9af032faf04dc6394da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22qbE9TD0B0aFuTW5mXKb1VK0M1fsfOV0P%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '60168'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin'
+    'REQUEST_TIME_FLOAT' => 1467266118.338
+    'REQUEST_TIME' => 1467266118
+]
+2016-06-30 14:15:03 [10.82.97.106][-][i8nk2ine13hjvmnu5g7m00efn5][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin', Array)
+#2 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-30 14:15:03 [10.82.97.106][-][i8nk2ine13hjvmnu5g7m00efn5][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.82.97.106
+    in D:\phpstudy\WWW\api\backend\views\layouts\main.php:76
+2016-06-30 14:15:03 [10.82.97.106][-][i8nk2ine13hjvmnu5g7m00efn5][info][application] $_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6c431e10b08b0e189c1d6ea464b51a02485ae479ecb2975ee21346a44d1bb6d5a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VsrFnBAAKaynEgEM4zTrOUXA-aaN6C29\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6c431e10b08b0e189c1d6ea464b51a02485ae479ecb2975ee21346a44d1bb6d5a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VsrFnBAAKaynEgEM4zTrOUXA-aaN6C29%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '60776'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin'
+    'REQUEST_TIME_FLOAT' => 1467267303.786
+    'REQUEST_TIME' => 1467267303
+]
+2016-06-30 15:03:50 [127.0.0.1][qq123][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\User::school' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\db\BaseActiveRecord.php(252): yii\base\Component->__get('school')
+#1 D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php(93): yii\db\BaseActiveRecord->__get('school')
+#2 [internal function]: backend\controllers\MobileadminController->actionLogin()
+#3 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#6 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin/log...', Array)
+#7 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2016-06-30 15:03:49 [127.0.0.1][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ud696ce25koe01lbltkm8bbmg0'
+    '_csrf' => '47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=ud696ce25koe01lbltkm8bbmg0; _csrf=47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62295'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467270229.544
+    'REQUEST_TIME' => 1467270229
+]
+2016-06-30 15:05:15 [127.0.0.1][qq123][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Request::callback' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php(107): yii\base\Component->__get('callback')
+#1 [internal function]: backend\controllers\MobileadminController->actionLogin()
+#2 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#5 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin/log...', Array)
+#6 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-30 15:05:13 [127.0.0.1][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ud696ce25koe01lbltkm8bbmg0'
+    '_csrf' => '47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=ud696ce25koe01lbltkm8bbmg0; _csrf=47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62300'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467270313.955
+    'REQUEST_TIME' => 1467270313
+]
+2016-06-30 15:05:34 [127.0.0.1][qq123][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Request::callback' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php(107): yii\base\Component->__get('callback')
+#1 [internal function]: backend\controllers\MobileadminController->actionLogin()
+#2 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#5 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin/log...', Array)
+#6 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-30 15:05:32 [127.0.0.1][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'JSON_CALLBACK'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ud696ce25koe01lbltkm8bbmg0'
+    '_csrf' => '47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=ud696ce25koe01lbltkm8bbmg0; _csrf=47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62304'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=JSON_CALLBACK'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=JSON_CALLBACK'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467270332.986
+    'REQUEST_TIME' => 1467270332
+]
+2016-06-30 15:13:48 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected ':', expecting ')'' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:99
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:13:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'JSON_CALLBACK'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ud696ce25koe01lbltkm8bbmg0'
+    '_csrf' => '47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=ud696ce25koe01lbltkm8bbmg0; _csrf=47750cb10a8d2f47d1742f8f0ef61d38c444cf417dc564b84df72f89084668b9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22MKQ31mJo1qNf4FqEu1YIP_KaSFpM87rJ%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62507'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=JSON_CALLBACK'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=JSON_CALLBACK'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467270828.444
+    'REQUEST_TIME' => 1467270828
+]
+2016-06-30 15:27:25 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:27:24 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62745'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271644.393
+    'REQUEST_TIME' => 1467271644
+]
+2016-06-30 15:27:38 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:27:37 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62754'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271657.503
+    'REQUEST_TIME' => 1467271657
+]
+2016-06-30 15:28:05 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:28:04 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62764'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271684.782
+    'REQUEST_TIME' => 1467271684
+]
+2016-06-30 15:28:09 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:28:07 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62777'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271687.936
+    'REQUEST_TIME' => 1467271687
+]
+2016-06-30 15:28:10 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:28:09 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62780'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271689.223
+    'REQUEST_TIME' => 1467271689
+]
+2016-06-30 15:28:43 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:28:42 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62794'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271722.862
+    'REQUEST_TIME' => 1467271722
+]
+2016-06-30 15:28:47 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:28:46 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62795'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271726.475
+    'REQUEST_TIME' => 1467271726
+]
+2016-06-30 15:29:01 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:29:00 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53'
+    'HTTP_REFERER' => 'http://10.82.97.106:8100/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62809'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271740.724
+    'REQUEST_TIME' => 1467271740
+]
+2016-06-30 15:29:11 [10.82.97.106][qq123][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\User' not found' in D:\phpstudy\WWW\api\backend\controllers\MobileadminController.php:82
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-30 15:29:10 [10.82.97.106][qq123][-][info][application] $_GET = [
+    'userid' => 'qq123'
+    'pass' => '111111'
+    'callback' => 'angular.callbacks._1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '62817'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/login?userid=qq123&pass=111111&callback=angular.callbacks._1'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/login'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\login'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/login'
+    'REQUEST_TIME_FLOAT' => 1467271750.124
+    'REQUEST_TIME' => 1467271750
+]
+2016-06-30 16:23:35 [10.82.97.106][-][i8nk2ine13hjvmnu5g7m00efn5][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: mobileadmin/' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#1 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('mobileadmin/', Array)
+#2 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\phpstudy\WWW\api\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\phpstudy\WWW\api\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\phpstudy\WWW\api\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-30 16:23:35 [10.82.97.106][-][i8nk2ine13hjvmnu5g7m00efn5][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.82.97.106
+    in D:\phpstudy\WWW\api\backend\views\layouts\main.php:76
+2016-06-30 16:23:35 [10.82.97.106][-][i8nk2ine13hjvmnu5g7m00efn5][info][application] $_COOKIE = [
+    'PHPSESSID' => 'i8nk2ine13hjvmnu5g7m00efn5'
+    '_csrf' => '6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => '10.82.97.106'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=i8nk2ine13hjvmnu5g7m00efn5; _csrf=6cc624100debc930cf749740c99ff7ef6f857595f1fc88fea4e6dc8c686ce641a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22x7RkQnijeQBNngmCKqKxrLYE6uUkBRMu%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Administrator\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => '10.82.97.106'
+    'SERVER_ADDR' => '10.82.97.106'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '10.82.97.106'
+    'DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/phpstudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/phpstudy/WWW/api/backend/web/index.php'
+    'REMOTE_PORT' => '64619'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/backend/web/index.php/mobileadmin/'
+    'SCRIPT_NAME' => '/api/backend/web/index.php'
+    'PATH_INFO' => '/mobileadmin/'
+    'PATH_TRANSLATED' => 'D:\\phpstudy\\WWW\\mobileadmin\\'
+    'PHP_SELF' => '/api/backend/web/index.php/mobileadmin/'
+    'REQUEST_TIME_FLOAT' => 1467275015.075
+    'REQUEST_TIME' => 1467275015
+]

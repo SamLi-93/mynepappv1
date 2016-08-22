@@ -1,0 +1,141 @@
+a:8:{s:6:"config";a:5:{s:10:"phpVersion";s:6:"5.4.33";s:10:"yiiVersion";s:5:"2.0.8";s:11:"application";a:4:{s:3:"yii";s:5:"2.0.8";s:4:"name";s:14:"My Application";s:3:"env";s:3:"dev";s:5:"debug";b:1;}s:3:"php";a:4:{s:7:"version";s:6:"5.4.33";s:6:"xdebug";b:0;s:3:"apc";b:0;s:8:"memcache";b:0;}s:10:"extensions";a:6:{s:24:"yiisoft/yii2-swiftmailer";a:3:{s:4:"name";s:24:"yiisoft/yii2-swiftmailer";s:7:"version";s:7:"2.0.5.0";s:5:"alias";a:1:{s:16:"@yii/swiftmailer";s:51:"D:\phpStudy\WWW\api\vendor/yiisoft/yii2-swiftmailer";}}s:24:"yiisoft/yii2-codeception";a:3:{s:4:"name";s:24:"yiisoft/yii2-codeception";s:7:"version";s:7:"2.0.5.0";s:5:"alias";a:1:{s:16:"@yii/codeception";s:51:"D:\phpStudy\WWW\api\vendor/yiisoft/yii2-codeception";}}s:22:"yiisoft/yii2-bootstrap";a:3:{s:4:"name";s:22:"yiisoft/yii2-bootstrap";s:7:"version";s:7:"2.0.6.0";s:5:"alias";a:1:{s:14:"@yii/bootstrap";s:49:"D:\phpStudy\WWW\api\vendor/yiisoft/yii2-bootstrap";}}s:18:"yiisoft/yii2-debug";a:3:{s:4:"name";s:18:"yiisoft/yii2-debug";s:7:"version";s:7:"2.0.6.0";s:5:"alias";a:1:{s:10:"@yii/debug";s:45:"D:\phpStudy\WWW\api\vendor/yiisoft/yii2-debug";}}s:16:"yiisoft/yii2-gii";a:3:{s:4:"name";s:16:"yiisoft/yii2-gii";s:7:"version";s:7:"2.0.5.0";s:5:"alias";a:1:{s:8:"@yii/gii";s:43:"D:\phpStudy\WWW\api\vendor/yiisoft/yii2-gii";}}s:18:"yiisoft/yii2-faker";a:3:{s:4:"name";s:18:"yiisoft/yii2-faker";s:7:"version";s:7:"2.0.3.0";s:5:"alias";a:1:{s:10:"@yii/faker";s:45:"D:\phpStudy\WWW\api\vendor/yiisoft/yii2-faker";}}}}s:7:"request";a:14:{s:7:"flashes";a:0:{}s:10:"statusCode";i:200;s:14:"requestHeaders";a:9:{s:6:"cookie";s:306:"Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=a8bc025hk5npj8a79mohsre9e1; _csrf=a1325a555e2bac294ea14a67a2aa92f29b068e6186938f8a1958a604790d80b1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22LJPacqDdaj6ik0Xkpwm8dAhIfA0_lJru%22%3B%7D";s:15:"accept-language";s:14:"zh-CN,zh;q=0.8";s:15:"accept-encoding";s:19:"gzip, deflate, sdch";s:6:"accept";s:74:"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";s:10:"user-agent";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36";s:25:"upgrade-insecure-requests";s:1:"1";s:13:"cache-control";s:9:"max-age=0";s:10:"connection";s:5:"close";s:4:"host";s:9:"127.0.0.1";}s:15:"responseHeaders";a:2:{s:12:"X-Powered-By";s:10:"PHP/5.4.33";s:12:"Content-type";s:9:"text/html";}s:5:"route";s:30:"mobilecourse/getcoursecomments";s:6:"action";s:69:"backend\controllers\MobilecourseController::actionGetcoursecomments()";s:12:"actionParams";a:0:{}s:11:"requestBody";a:0:{}s:6:"SERVER";a:43:{s:4:"PATH";s:385:"C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;D:\phpStudy\php54n;D:\svn\bin;C:\Program Files\nodejs\;C:\ProgramData\ComposerSetup\bin;C:\Users\admin\AppData\Roaming\npm;C:\Users\admin\AppData\Roaming\Composer\vendor\bin";s:10:"SYSTEMROOT";s:10:"C:\Windows";s:7:"COMSPEC";s:27:"C:\Windows\system32\cmd.exe";s:7:"PATHEXT";s:53:".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC";s:6:"WINDIR";s:10:"C:\Windows";s:21:"PHP_FCGI_MAX_REQUESTS";s:4:"1000";s:5:"PHPRC";s:18:"D:/phpStudy/php54n";s:21:"_FCGI_SHUTDOWN_EVENT_";s:4:"1860";s:15:"PATH_TRANSLATED";s:46:"D:\phpStudy\WWW\mobilecourse\getcoursecomments";s:9:"PATH_INFO";s:31:"/mobilecourse/getcoursecomments";s:11:"SCRIPT_NAME";s:26:"/api/backend/web/index.php";s:11:"REQUEST_URI";s:75:"/api/backend/web/index.php/mobilecourse/getcoursecomments?access-token=1234";s:12:"QUERY_STRING";s:17:"access-token=1234";s:14:"REQUEST_METHOD";s:3:"GET";s:15:"SERVER_PROTOCOL";s:8:"HTTP/1.1";s:17:"GATEWAY_INTERFACE";s:7:"CGI/1.1";s:11:"REMOTE_PORT";s:4:"3862";s:15:"SCRIPT_FILENAME";s:41:"D:/phpStudy/WWW/api/backend/web/index.php";s:12:"SERVER_ADMIN";s:18:"admin@phpStudy.net";s:21:"CONTEXT_DOCUMENT_ROOT";s:15:"D:/phpStudy/WWW";s:14:"CONTEXT_PREFIX";s:0:"";s:14:"REQUEST_SCHEME";s:4:"http";s:13:"DOCUMENT_ROOT";s:15:"D:/phpStudy/WWW";s:11:"REMOTE_ADDR";s:9:"127.0.0.1";s:11:"SERVER_PORT";s:2:"80";s:11:"SERVER_ADDR";s:9:"127.0.0.1";s:11:"SERVER_NAME";s:9:"127.0.0.1";s:15:"SERVER_SOFTWARE";s:53:"Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9";s:16:"SERVER_SIGNATURE";s:0:"";s:10:"SystemRoot";s:10:"C:\Windows";s:11:"HTTP_COOKIE";s:306:"Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb=1461206898,1463363753; _ga=GA1.1.1366826801.1462339946; PHPSESSID=a8bc025hk5npj8a79mohsre9e1; _csrf=a1325a555e2bac294ea14a67a2aa92f29b068e6186938f8a1958a604790d80b1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22LJPacqDdaj6ik0Xkpwm8dAhIfA0_lJru%22%3B%7D";s:20:"HTTP_ACCEPT_LANGUAGE";s:14:"zh-CN,zh;q=0.8";s:20:"HTTP_ACCEPT_ENCODING";s:19:"gzip, deflate, sdch";s:11:"HTTP_ACCEPT";s:74:"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";s:15:"HTTP_USER_AGENT";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36";s:30:"HTTP_UPGRADE_INSECURE_REQUESTS";s:1:"1";s:18:"HTTP_CACHE_CONTROL";s:9:"max-age=0";s:15:"HTTP_CONNECTION";s:5:"close";s:9:"HTTP_HOST";s:9:"127.0.0.1";s:9:"FCGI_ROLE";s:9:"RESPONDER";s:8:"PHP_SELF";s:57:"/api/backend/web/index.php/mobilecourse/getcoursecomments";s:18:"REQUEST_TIME_FLOAT";d:1465870017.2507141;s:12:"REQUEST_TIME";i:1465870017;}s:3:"GET";a:1:{s:12:"access-token";s:4:"1234";}s:4:"POST";a:0:{}s:6:"COOKIE";a:4:{s:39:"Hm_lvt_0e5cc1f61c205ff3bbba068127fbecdb";s:21:"1461206898,1463363753";s:3:"_ga";s:27:"GA1.1.1366826801.1462339946";s:9:"PHPSESSID";s:26:"a8bc025hk5npj8a79mohsre9e1";s:5:"_csrf";s:130:"a1325a555e2bac294ea14a67a2aa92f29b068e6186938f8a1958a604790d80b1a:2:{i:0;s:5:"_csrf";i:1;s:32:"LJPacqDdaj6ik0Xkpwm8dAhIfA0_lJru";}";}s:5:"FILES";a:0:{}s:7:"SESSION";a:0:{}}s:3:"log";a:1:{s:8:"messages";a:17:{i:0;a:5:{i:0;s:33:"Bootstrap with yii\log\Dispatcher";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1465870017.267715;i:4;a:0:{}}i:1;a:5:{i:0;s:21:"Loading module: debug";i:1;i:8;i:2;s:26:"yii\base\Module::getModule";i:3;d:1465870017.267715;i:4;a:0:{}}i:2;a:5:{i:0;s:44:"Bootstrap with yii\debug\Module::bootstrap()";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1465870017.2727151;i:4;a:0:{}}i:3;a:5:{i:0;s:19:"Loading module: gii";i:1;i:8;i:2;s:26:"yii\base\Module::getModule";i:3;d:1465870017.276715;i:4;a:0:{}}i:4;a:5:{i:0;s:42:"Bootstrap with yii\gii\Module::bootstrap()";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1465870017.277715;i:4;a:0:{}}i:5;a:5:{i:0;s:55:"No matching URL rules. Using default URL parsing logic.";i:1;i:8;i:2;s:32:"yii\web\UrlManager::parseRequest";i:3;d:1465870017.279716;i:4;a:0:{}}i:6;a:5:{i:0;s:49:"Route requested: 'mobilecourse/getcoursecomments'";i:1;i:8;i:2;s:34:"yii\web\Application::handleRequest";i:3;d:1465870017.2807159;i:4;a:0:{}}i:7;a:5:{i:0;s:44:"Route to run: mobilecourse/getcoursecomments";i:1;i:8;i:2;s:30:"yii\base\Controller::runAction";i:3;d:1465870017.2817161;i:4;a:0:{}}i:8;a:5:{i:0;s:60:"Opening DB connection: mysql:host=localhost;dbname=yii2basic";i:1;i:4;i:2;s:23:"yii\db\Connection::open";i:3;d:1465870017.3007171;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:11;a:5:{i:0;s:48:"SELECT * FROM `user` WHERE `access_token`='1234'";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.304774;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:14;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `user`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3097751;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:17;a:5:{i:0;s:595:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.327776;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:20;a:5:{i:0;s:55:"User '1' logged in from 127.0.0.1. Session not enabled.";i:1;i:4;i:2;s:19:"yii\web\User::login";i:3;d:1465870018.3347759;i:4;a:0:{}}i:21;a:5:{i:0;s:85:"Running action: backend\controllers\MobilecourseController::actionGetcoursecomments()";i:1;i:8;i:2;s:36:"yii\base\InlineAction::runWithParams";i:3;d:1465870018.3347759;i:4;a:0:{}}i:22;a:5:{i:0;s:50:"SELECT * FROM `coursecomment` WHERE `courseid`='3'";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3387761;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:25;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `coursecomment`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.339776;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:28;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'coursecomment' AND kcu.table_name = 'coursecomment'";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.346777;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}}}s:9:"profiling";a:3:{s:6:"memory";i:4022360;s:4:"time";d:1.0990629196166992;s:8:"messages";a:14:{i:9;a:5:{i:0;s:60:"Opening DB connection: mysql:host=localhost;dbname=yii2basic";i:1;i:80;i:2;s:23:"yii\db\Connection::open";i:3;d:1465870017.3007171;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:10;a:5:{i:0;s:60:"Opening DB connection: mysql:host=localhost;dbname=yii2basic";i:1;i:96;i:2;s:23:"yii\db\Connection::open";i:3;d:1465870018.304774;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:12;a:5:{i:0;s:48:"SELECT * FROM `user` WHERE `access_token`='1234'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.305774;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:13;a:5:{i:0;s:48:"SELECT * FROM `user` WHERE `access_token`='1234'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3067739;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:15;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `user`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3097751;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:16;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `user`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3257749;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:18;a:5:{i:0;s:595:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.330776;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:19;a:5:{i:0;s:595:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.333776;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:23;a:5:{i:0;s:50:"SELECT * FROM `coursecomment` WHERE `courseid`='3'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3387761;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:24;a:5:{i:0;s:50:"SELECT * FROM `coursecomment` WHERE `courseid`='3'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3387761;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:26;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `coursecomment`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.339776;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:27;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `coursecomment`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.345777;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:29;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'coursecomment' AND kcu.table_name = 'coursecomment'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.346777;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:30;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'coursecomment' AND kcu.table_name = 'coursecomment'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3477769;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}}}s:2:"db";a:1:{s:8:"messages";a:12:{i:12;a:5:{i:0;s:48:"SELECT * FROM `user` WHERE `access_token`='1234'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.305774;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:13;a:5:{i:0;s:48:"SELECT * FROM `user` WHERE `access_token`='1234'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3067739;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:15;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `user`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3097751;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:16;a:5:{i:0;s:29:"SHOW FULL COLUMNS FROM `user`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3257749;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:18;a:5:{i:0;s:595:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.330776;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:19;a:5:{i:0;s:595:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.333776;i:4;a:1:{i:0;a:5:{s:4:"file";s:42:"D:\phpStudy\WWW\api\common\models\User.php";s:4:"line";i:62;s:8:"function";s:3:"one";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:23;a:5:{i:0;s:50:"SELECT * FROM `coursecomment` WHERE `courseid`='3'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3387761;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:24;a:5:{i:0;s:50:"SELECT * FROM `coursecomment` WHERE `courseid`='3'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3387761;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:26;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `coursecomment`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.339776;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:27;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `coursecomment`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.345777;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:29;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'coursecomment' AND kcu.table_name = 'coursecomment'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.346777;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}i:30;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'coursecomment' AND kcu.table_name = 'coursecomment'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1465870018.3477769;i:4;a:1:{i:0;a:5:{s:4:"file";s:66:"D:\phpStudy\WWW\api\backend\controllers\MobilecourseController.php";s:4:"line";i:35;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}}}}}s:6:"assets";a:0:{}s:4:"mail";a:0:{}s:7:"summary";a:9:{s:3:"tag";s:13:"575f66c14294b";s:3:"url";s:91:"http://127.0.0.1/api/backend/web/index.php/mobilecourse/getcoursecomments?access-token=1234";s:4:"ajax";i:0;s:6:"method";s:3:"GET";s:2:"ip";s:9:"127.0.0.1";s:4:"time";i:1465870018;s:10:"statusCode";i:200;s:8:"sqlCount";i:6;s:9:"mailCount";i:0;}}

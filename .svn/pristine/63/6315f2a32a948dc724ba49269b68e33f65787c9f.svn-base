@@ -1,0 +1,26 @@
+
+<ion-view view-title="我的收藏" hide-tabs="true">
+  <ion-content class="history_bg">
+      <div class="list " >
+        <div class="history_list item"  ng-repeat="course in applycourse">
+          <a href="#/coursedetail/{{course.id}}">
+            <div class="history_body">
+              <div class="history_img">
+                  <img src="{{course.pic}}">
+              </div>
+              <div class="history_detail">
+                  <div class="history_title">{{course.name}}</div>
+                  <div class="history_chapter">{{course.content}}</div>
+                  <div class="collect_bottom">
+                  <div class="collect_price">￥{{course.price}}</div>
+                  <div class="collect_orginprice">￥{{course.orginprice}}</div>
+                  <div class="job_clear"></div>
+                </div>
+              </div>
+              <div class="job_clear"></div>
+            </div>
+          </a>
+        </div>
+      </div>            
+    </ion-content>
+</ion-view>

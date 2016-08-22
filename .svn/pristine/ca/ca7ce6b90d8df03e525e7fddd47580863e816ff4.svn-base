@@ -1,0 +1,81 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use common\models\LoginForm;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+
+class MobilenoteController extends Controller
+{
+    /*
+     *  我的笔记列表
+     */
+    public function actionGetlist()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $userid = $request->get('userid');
+        $template_pageid = $request->get('t_id');
+        $page_id = $request->get('pageid');
+        $return = array(
+                array(
+                'name'=>'java基础应用',
+                'num'=>'2',
+                'detail'=>array(
+                        array(
+                            'content'=>'又是一年毕业季，你最需要的是什么？[最右]超美摄像，你的御用摄像师？超长待机，聚会刷夜不当机？超大内存，珍贵记忆永留存？OPPO R9在手，通通满足你！[心]转发本微博，小艺将随机送出15个【OPPO原装高品质MH126耳机】[礼物]让我们红尘作伴，毕业旅行说走就走！',
+                            'video_time'=>'00:10',
+                            'note_time'=>'2016-6-15  12:11:00'
+                        ),
+                        array(
+                            'content'=>'又是一年毕业季，你最需要的是什么？[最右]超美摄像，你的御用摄像师？超长待机，聚会刷夜不当机？超大内存，珍贵记忆永留存？OPPO R9在手，通通满足你！[心]转发本微博，小艺将随机送出15个【OPPO原装高品质MH126耳机】[礼物]让我们红尘作伴，毕业旅行说走就走！',
+                            'video_time'=>'20:10',
+                            'note_time'=>'2016-6-15  12:11:00'
+                        )
+                    )
+                ),
+                array(
+                'name'=>'会计实训操作练习',
+                'num'=>'1',
+                'detail'=>array(
+                        array(
+                            'content'=>'又是一年毕业季，你最需要的是什么？[最右]超美摄像，你的御用摄像师？超长待机，聚会刷夜不当机？超大内存，珍贵记忆永留存？OPPO R9在手，通通满足你！[心]转发本微博，小艺将随机送出15个【OPPO原装高品质MH126耳机】[礼物]让我们红尘作伴，毕业旅行说走就走！',
+                            'video_time'=>'00:10',
+                            'note_time'=>'2016-6-15  12:11:00'
+                        )
+                    )
+                )
+            );
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+    /*
+     *  删除笔记
+     */
+    public function actionDelete()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        $flag = 0;
+        $flag = 1;
+        $return = array('flag'=>$flag);
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+}

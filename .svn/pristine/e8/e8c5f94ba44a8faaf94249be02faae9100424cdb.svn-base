@@ -1,0 +1,27 @@
+<ion-view view-title="错题集" hide-tabs='true'>
+  <ion-content class="error_bg">
+   <!--ion-refresher on-refresh="doRefresh()"  pulling-text="下拉刷新"   refreshing-text="正在读取..."></ion-refresher-->  
+    <div class="list error_list_bg">
+      <!--ion-item ng-repeat="(key,error) in errorlist" href="#/tab/errordetail/courseid/9" 
+            class="item item-icon-right item-icon-right">
+        {{error.name}}
+        <span class="badge badge-assertive error-num">
+          {{error.num}}
+        </span>
+         <ion-option-button class="button-assertive"
+                             ng-click="onItemDelete(key,error.course_id)">
+            删除
+          </ion-option-button>
+        <!--i class="icon ion-person-stalker"></i-->
+      <!--/ion-item-->
+      <div class="item error_list" ng-repeat="(key,error) in errorlist" >
+        <div class="error_name">{{error.name}}</div>
+        <div class="error_type" ng-repeat="(k,v) in error.detail" ng-class="{'0':'type_border'}[k%2]">
+          <a>{{errortype[v.type_id]}}&nbsp;{{v.num}}题</a><span class="icon-uniE606"></span>
+        </div>
+        <div class="error_bottom"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+    

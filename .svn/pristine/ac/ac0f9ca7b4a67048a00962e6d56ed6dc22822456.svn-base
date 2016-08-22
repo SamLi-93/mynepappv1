@@ -1,0 +1,28 @@
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+var ENV = {
+ 	webUrl: 'http://10.82.97.232/',
+	postUrl: 'http://10.82.97.232/mynep/lms/',
+	api:'http://10.82.97.232/mynep/lms/',
+	api2:'http://10.82.97.232/mynep/lms/',
+	postUrl2: 'http://10.82.97.232/mynep/lms/mobilecourse/startupxml/',
+	postUrl3: 'http://10.82.97.232/mynep/lms/mobilecourse/startupxml3/',
+	proxyUrl: 'http://10.82.97.232/mynep/lms/mobilecourse/mobileproxy',
+	imgUrl: 'http://10.82.97.232/mynep/sims',
+	sessionTimeout: 1000 * 60 * 60 * 500,
+
+	apiUrl: 'http://10.82.97.232/mynepappv1/api/backend/web/index.php/',
+	//sessionTimeout: 5,
+    userinfo:{
+        'id':0,
+        'userid':0,
+        'name':''
+    },
+    //用于版本控制
+    version: '1.0.6'
+}

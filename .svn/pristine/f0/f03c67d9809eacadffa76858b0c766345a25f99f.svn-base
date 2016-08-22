@@ -1,0 +1,50 @@
+<ion-view view-title="我的答疑" hide-tabs='true'>
+
+	<!--ion-nav-buttons side="right">
+      	<button class="button button-small button-icon  ion-edit button-clear" ng-click="showanswer()">
+      	</button>
+    </ion-nav-buttons-->
+  	<ion-content class="note_bg">
+  	    <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="努力加载..." pulling-text="查看最新内容..." on-refresh="doRefresh()"></ion-refresher>
+  		<div class="list">
+            <tpl ng-if="emptytext">
+                <div class="job_empty_text">{{emptytext}}</div>
+            </tpl>
+  			<div class="item answer_list" ng-repeat="(key,answer) in answerlist">
+                <div class="note_top"></div>
+                <div class="note_center" ng-click="selected=!selected;setscroll();">
+                    <span class="note_name">{{answer.name}}</span>
+                    <span class="note_ion icon-uniE606 " ng-class="{'open':!selected}"></span>
+                    <span class="note_down ion-ios-arrow-down icon" ng-class="{'open':selected}"></span>
+                    <span class="note_num">共有&nbsp;{{answer.num}}&nbsp;个答疑</span>
+                    <span class="job_clear"></span>
+                </div>
+
+                <div class="answer_detail" ng-repeat="(k,v) in answer.detail" ng-class="{'open':selected}">
+                    <div class="answer_left">
+                        <div class="answer_img"><img ng-src="{{v.pic}}"></div>
+                    </div>
+                    <div class="answer_right">
+                        <div class="quiz_name">
+                            <span class="quiz_uname">{{answer.user_name}}&nbsp;&nbsp;</span>
+                            <span class="quiz_time">{{v.quiz_time}}</span>
+                        </div>
+                        <div class="quiz_title"><span>{{v.title}}</span></div>
+                        <tpl ng-if="v.content">
+                            <div class="answer_content">
+                                <div>
+                                    <span>{{v.answer_time}}</span>
+                                    <span class="answer_name">&nbsp;&nbsp;{{v.answer_name}}&nbsp;&nbsp;</span>
+                                    <span>答复：</span>
+                                </div>
+                                <div class="answer_con">{{v.content}}</div>
+                            </div>
+                        </tpl>
+                        
+                    </div>
+                    <div class="job_clear"></div>
+                </div>
+            </div>
+		</div>
+    </ion-content>
+</ion-view>

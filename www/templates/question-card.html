@@ -1,0 +1,27 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-calm">
+    <!--div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div-->
+        <button class="button ion button-ion ion-chevron-left" ng-click="hidecard()" slide="left">
+        </button>
+        <h1 class="title">交卷预览</h1>
+
+    </ion-header-bar>
+    <ion-content class="question_card_bg">
+        <div class="answercards-box">
+            <div ng-repeat="(key,childArr) in cardlist track by $index" class="q_card_bg">
+                <div class="job_card_type">{{key}}</div>
+                <div class="job_card_list" ng-repeat="item in childArr">
+                    <div ng-click="toquestion(item.qnum)" class="job_question_num job_q_{{item.do}}">{{item.qnum}}</div>
+                </div>
+                <div class="job_clear"></div>
+                
+            </div>
+        </div>
+
+    </ion-content>
+    <ion-footer-bar  class="card_footer">
+        <button class="button button-full button-calm card-button" ng-click="doSubmitPhase(params.t_id,params.pageid)" style="margin-top: 0px;">交卷</button>
+    </ion-footer-bar>
+</ion-modal-view>

@@ -1,0 +1,431 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use yii\helpers\ArrayHelper;
+use common\models\LoginForm;
+use common\models\Product;
+use common\models\Course;
+use backend\models\Productdetail;
+use backend\models\Stupage;
+use backend\models\Strategy;
+use backend\models\Questions;
+use backend\models\Stuquestion;
+use backend\models\Questionwrong;
+use backend\models\Templatepage;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+
+class MobilepracticeController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['getquestion','getpracticelist','examsubmit','setanswer'],
+            ],
+        ];
+    }
+    /*
+     *  试卷
+     */
+    public function actionGetquestion()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $course_id = $request->get('course_id');
+        $template_pageid = $request->get('template_pageid');
+        //$userid = $request->get('userid');
+        $userid = Yii::$app->user->identity->idst;
+        $flag = 0;
+        $qnum = 0;
+        $time = time();
+        $stupage = Stupage::find()->where(['examnum'=>$template_pageid,'stu_id'=>$userid])->one();
+        //$stupage = Stupage::find("stu_id=?&&examnum=?",$userid,$template_pageid)->getOne();
+        $examtemplate = Templatepage::find()->where(['id'=>$template_pageid])->one();
+        //$examtemplate = Templatepage::find("id=?",$template_pageid)->getOne();
+        //$strategy = Strategy::find("page_id =?",$template_pageid)->getAll();
+        $strategy = Strategy::find()->where(['page_id'=>$template_pageid])->all();
+        //$dbo = QDB::getConn();
+        $conn = Yii::$app->db;
+        foreach ($strategy as $stra){
+            $fangan = json_decode($stra['program'],true);
+            foreach ($fangan as $key => $val){
+                $examtype = $val['examtype'];
+                $n = $val['num'];
+                $quesnum = Questions::find("isdelete=0 and course_id = '$course_id' and type_id='$examtype' and FIND_IN_SET('{$stra['knowledge_id']}',knowledge_id) and FIND_IN_SET('{$examtemplate['knowledge_id']}',use_type)")->count();
+                if($n>$quesnum)  $qnum++;
+            }
+        }
+        $sql = " insert into exam_stu_page(course_id,flag,stu_id,exam_date,examnum) values('$course_id','{$examtemplate['knowledge_id']}','{$userid}','$time','$template_pageid') ";
+        //$dbo->execute($sql);
+        $p_arr = $conn->createCommand($sql)->execute();
+        $command = $conn->createCommand("SELECT last_insert_id() as page_id");
+        $result = $command->queryAll();
+        $page_id = $result[0]['page_id'];
+        //$page_id = $dbo->getOne('select LAST_INSERT_ID() as page_id');
+
+        //$strategy = Strategy::find("page_id =?",$template_pageid)->getAll();
+        //$strategy2 = Strategy::find()->where(['page_id'=>$template_pageid])->all();
+        //if($strategy == $strategy2) echo 1;
+        //exit;
+        foreach ($strategy as $stra){
+            $fangan = json_decode($stra['program'],true);
+            foreach ($fangan as $key => $val){
+                $examtype = $val['examtype'];
+                $n = $val['num'];
+                $score = $val['score'];
+                $sql = " select * from exam_questions where isdelete=0 and course_id = '$course_id' and type_id='$examtype' and FIND_IN_SET('{$stra['knowledge_id']}',knowledge_id) and FIND_IN_SET('{$examtemplate['knowledge_id']}',use_type) and not FIND_IN_SET( id ,IFNULL((SELECT GROUP_CONCAT(question_id) question_id  FROM `exam_stu_question` WHERE `page_id`='$page_id'),0)) ORDER BY RAND() LIMIT $n ";
+                //$questions = $dbo->getAll($sql);
+                $questions = $conn->createCommand($sql)->queryAll();
+                foreach ($questions as $queskey => $quesval){
+                    $question = new Stuquestion();
+                    $question->page_id = $page_id;
+                    $question->question_id = $quesval['id'];
+                    $question->question = $quesval['question'];
+                    $question->remark = $quesval['remark'];
+                    $question->options = $quesval['options'];
+                    $question->result = $quesval['result'];
+                    $question->type_id = $quesval['type_id'];
+                    $question->score = $score;
+                    if($examtype>3) $question->answerscore = $score;
+                    $question->save();
+                }
+            }
+        }
+        //$page_id = $this->_context->page_id;
+        //$template_pageid = $this->_context->template_pageid;
+        //$product_id = $this->_context->product_id;
+        //$course = Course::find("id = ?",$course_id)->getOne();
+        $course = Course::find()->where(['id'=>$course_id])->one();
+
+        $sql_where = " page_id = '$page_id'";       
+        //得到学生试卷
+        
+        $question = array();
+        $card = array();
+        $sql = "select a.type_id,b.name,sum(a.score) as score,count(a.id) as n from exam_stu_question a left join exam_question_type b on a.type_id=b.id  WHERE a.page_id = '$page_id' GROUP BY a.type_id ORDER BY b.list";
+        //$dbo = QDB::getConn();
+        //$questype = $dbo->getAll($sql);
+        $questype = $conn->createCommand($sql)->queryAll();
+        //$stuquestion = Stuquestion::find($sql_where)->getAll();
+        $stuquestion = Stuquestion::find()->where($sql_where)->all();
+        $num = 1;
+        //得到每个题型的试题
+        foreach ($questype as $typeline){
+            foreach ($stuquestion as $stuq){
+                if($typeline['type_id']==$stuq['type_id']){
+                    //$question[$typeline['type_id']][] = $stuq;
+                    $arr['id'] = $stuq['id'];
+                    $arr['question'] = $stuq['question'];
+                    $arr['options'] = json_decode($stuq['options']);
+                    $arr['type_name'] = $typeline['name'];
+                    $arr['answer'] = $stuq['answer'];
+                    $arr['type_id'] = $stuq['type_id'];
+                    $arr['result'] = json_decode($stuq['result']);
+                    $question[] = $arr;
+
+                    $card[$typeline['name']][$num]['do'] = 'none';
+                    $card[$typeline['name']][$num]['qnum'] = $num;
+                    $num++;
+                }
+            }
+        }
+        $return = [
+            "question"  =>  $question,
+            "card"      =>  $card,
+            "params"    =>  ["t_id"=>$template_pageid,"pageid"=>$page_id],
+            "total"     =>  $num-1,
+            "pagetitle" =>  $examtemplate['name']
+        ];
+
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+
+        /*$return =array(
+            "question"=>array(
+                array(
+                    "key"=>"1k0",
+                    "disabled"=>"",
+                    "id"=>"608",
+                    "page_id"=>48,
+                    "question"=>"固定资产采用历史成本计量并按期计提折旧，是假定企业（ ）。",
+                    "options"=>array(
+                        "是一个会计主体",
+                        "进行货币计量",
+                        "持续经营",
+                        "进行会计分期"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"进行货币计量",
+                    "answer"=>"是一个会计主体"
+                ),
+                array(
+                    "key"=>"1k1",
+                    "disabled"=>"",
+                    "id"=>"609",
+                    "page_id"=>48,
+                    "question"=>"我国企业会计准则规定，企业的会计核算应当以（ ）为基础。",
+                    "options"=>array(
+                        "权责发生制",
+                        "实地盘存制",
+                        "永续盘存制",
+                        "收付实现制"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"权责发生制",
+                    "answer"=>"权责发生制"
+                ),
+                array(
+                    "key"=>"1k2",
+                    "disabled"=>"",
+                    "id"=>"610",
+                    "page_id"=>48,
+                    "question"=>"目前，我国的行政单位会计主要采用（ ）。",
+                    "options"=>array(
+                        "权责发生制",
+                        "实地盘存制",
+                        "永续盘存制",
+                        "收付实现制"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"权责发生制",
+                    "answer"=>"收付实现制"
+                ),
+                array(
+                    "key"=>"1k3",
+                    "disabled"=>"",
+                    "id"=>"612",
+                    "page_id"=>48,
+                    "question"=>"下列选项中对课文理解不当的一项是 （）",
+                    "options"=>array(
+                        "《在山的那边》一文中所说的“用信念凝成的海”，这里的“海”指的是理想的境界。",
+                        "《童趣》一文的主旨是写作者儿时的“物外之趣”。作者通过自己的联想和想象，将眼前的事物放大了千万倍，从而享受到一种独有的乐趣。",
+                        "《紫藤萝瀑布》为了告诉我们花和人一样总是要遭受不幸，你无法改变。",
+                        "《走一步，再走一步》告诉人一个哲理：大困难是由小困难组成的，只要一步步战胜。"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"权责发生制",
+                    "answer"=>"收付实现制"
+                ),
+                array(
+                    "key"=>"1k3",
+                    "disabled"=>"",
+                    "id"=>"614",
+                    "page_id"=>48,
+                    "question"=>"下列选项中对课文理解不当的一项是 （）",
+                    "options"=>array(
+                        "《在山的那边》一文中所说的“用信念凝成的海”，这里的“海”指的是理想的境界。",
+                        "《童趣》一文的主旨是写作者儿时的“物外之趣”。作者通过自己的联想和想象，将眼前的事物放大了千万倍，从而享受到一种独有的乐趣。",
+                        "《紫藤萝瀑布》为了告诉我们花和人一样总是要遭受不幸，你无法改变。",
+                        "《走一步，再走一步》告诉人一个哲理：大困难是由小困难组成的，只要一步步战胜。"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>2,
+                    "result"=>"权责发生制",
+                    "answer"=>"收付实现制"
+                )
+            ),
+            "card"=>array(
+                "单项选择题"=>array(
+                        "1"=>array("do"=>"done","qnum"=>1),
+                        "2"=>array("do"=>"done","qnum"=>2),
+                        "3"=>array("do"=>"done","qnum"=>3),
+                        "4"=>array("do"=>"none","qnum"=>4),
+                        "5"=>array("do"=>"done","qnum"=>5),
+                        "6"=>array("do"=>"none","qnum"=>6),
+                        "7"=>array("do"=>"done","qnum"=>7),
+                        "8"=>array("do"=>"done","qnum"=>8),
+                        "9"=>array("do"=>"none","qnum"=>9),
+                        "10"=>array("do"=>"none","qnum"=>10),
+                ),
+                "多项选择题"=>array(
+                        "11"=>array("do"=>"none","qnum"=>11),
+                        "12"=>array("do"=>"none","qnum"=>12),
+                        "13"=>array("do"=>"none","qnum"=>13),
+                        "14"=>array("do"=>"none","qnum"=>14),
+                        "15"=>array("do"=>"none","qnum"=>15),
+                        "16"=>array("do"=>"none","qnum"=>16),
+                        "17"=>array("do"=>"done","qnum"=>17),
+                        "18"=>array("do"=>"none","qnum"=>18),
+                        "19"=>array("do"=>"none","qnum"=>19),
+                        "20"=>array("do"=>"none","qnum"=>20)
+                ),
+            ),
+            "pagetitle"=>"会计基础3",
+            "total"=>5,
+            "params"=>array("t_id"=>"6","pageid"=>"48")
+        );
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;*/
+    }
+    public function actionDelete(){
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        Stuquestion::deleteAll('page_id not in(1,2,3)');
+        Stupage::deleteAll('id not in(1,2,3,4)');
+        Questionwrong::deleteAll('stu_id=1');
+    }
+    /*
+     *  试卷提交
+     */
+    public function actionExamsubmit()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        //$userid = $request->get('userid');
+        $template_pageid = $request->get('t_id');
+        $page_id = $request->get('pageid');
+        $conn = Yii::$app->db;
+        $userid = Yii::$app->user->identity->idst;
+        $stuquestion = Stuquestion::find()->where(['page_id'=>$page_id])->all();
+        foreach ($stuquestion as $i=>$row) {
+            if($row->answerscore==0){
+                $question_id = $row->question_id;
+                $num = Questionwrong::find()->where(['question_id'=>$question_id,'stu_id'=>$userid])->count();
+                if($num==0){
+                    $sql = " insert into exam_stu_questionwrong(question_id,stu_id) values('$question_id','$userid') ";
+                    $conn->createCommand($sql)->execute();
+                }
+            }
+        }
+
+        $submittime = time();
+        $answerscore = Stuquestion::find()->where(['page_id'=>$page_id])->sum('answerscore');
+        $sql = " insert into exam_stu_pitem(score,submittime,stu_id,template_pageid) values('$answerscore','$submittime','$userid','$template_pageid') ";
+        $conn->createCommand($sql)->execute();
+        $stupage = Stupage::findOne($page_id);
+        if($stupage->score<$answerscore){
+            $stupage->score = $answerscore;
+        }
+        $stupage->status = 1;
+        $stupage->save();
+        $page_sql = 'page_id='.$page_id;
+        Stuquestion::deleteAll($page_sql);
+        $return = array('score'=>$answerscore);
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+    /*
+     *  试卷列表
+     */
+    public function actionGetpracticelist()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $product_id = $request->get('product_id');
+        $conn = Yii::$app->db;
+        $userid = Yii::$app->user->identity->idst;
+        //$product = Product::find()->where(['id'=>$product_id])->all();
+        $sql_where = "";
+        //$course_ids = Productdetail::find('pid=? and type=2', $product_id)->getAll()->values('rid');
+        $course = Productdetail::find()->where(['pid'=>$product_id,'type'=>'2'])->all();
+
+        $course_ids = ArrayHelper::getColumn($course, 'rid');
+        if ($course_ids){
+            $sql_where .= " and exam_template_page.course_id in (".implode(',', $course_ids).")";
+            $sql = "select id,name,type from lc_course where id in (".implode(',', $course_ids).")";
+            //$c_arr = $db->getAll($sql);
+            $c_arr = $conn->createCommand($sql)->queryAll();
+            $cinfo = array(0);
+            $kjlinfo = array(0);
+            foreach ($c_arr as $key => $val) {
+                if($val['type']!=99){
+                    $cinfo[$val['id']] = $val['name'];  
+                }else{
+                    $kjlinfo[] = $val['id'];    
+                }
+            }
+        }else{
+            $sql_where .= " and 1<>1";
+        }
+
+        //获取会计乐课程
+        //$sql = "select * from lc_course where id in (".implode(',',$kjlinfo).")";
+        //$kjl_list = $db->getAll($sql);
+        //$this->_view['kjl_list'] = $kjl_list;
+
+        //$list = Templatepage::find()->where('exam_template_page.isdelete=0'.$sql_where)->joinWith('page')->orderBy('exam_template_page.course_id desc,exam_template_page.knowledge_id asc,exam_stu_page.exam_date desc')->all();
+        $list = Templatepage::find()->where('exam_template_page.isdelete=0'.$sql_where)->orderBy('exam_template_page.course_id desc,exam_template_page.knowledge_id asc')->all();
+        $return = array();
+        foreach ($list as $key => $value) {
+            $arr['status'] = '开始';
+            /*if(count($value['page'])>0){
+                $status = $value['page'][0]['status'];
+                if($status==1){
+                    $arr['status'] = '继续';
+                }
+            }*/
+            $arr['cname'] = $cinfo[$value['course_id']];
+            $arr['pname'] = $value['name'];
+            $arr['num'] = $value['totalnum'];
+            $arr['id'] = $value['id'];
+            $arr['course_id'] = $value['course_id'];
+            $return[] = $arr;
+        }
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+    /*
+     *  试卷列表
+     */
+    public function actionSetanswer()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        $answer = $request->get('answer');
+        $question = Stuquestion::find()->where(["id"=>$id])->one();
+        if(isset($answer)){
+            if($question['type_id']==1){
+                $arranswer = explode('==*,*==',$answer);
+            }else if($question['type_id']==2){
+                $arrtemp = explode('==*,*==',$answer);
+                $arranswer=array();
+                foreach($arrtemp as $val){
+                    $arranswer[] = json_decode($val);
+                }
+            }else{
+                $arranswer = explode('==*,*==',$answer);            
+            }
+            $jsonanswer = json_encode($arranswer);
+
+        }else{ 
+            $jsonanswer = '';
+        }
+        
+        if($question['type_id']<4){
+            $result = array_diff(json_decode($question['result']), $arranswer);
+            if(empty($result)&&count(json_decode($question['result']))==count($arranswer)){
+                $question->answerscore = $question->score;
+            }else{
+                $question->answerscore = 0;
+            }
+        }
+        $question->answer = $jsonanswer;
+        $question->save();
+        $return_info = json_encode(array('flag'=>'0','question_id'=>$id));
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+}

@@ -1,0 +1,14 @@
+<ion-view view-title="{{title}}" hide-tabs='true'>
+  <ion-content>
+    <ion-list >
+      <ion-item ng-repeat="item in loaded" href="#/coursenote/{{productid}}/{{item}}" 
+            class="item item-icon-right item-icon-right">
+          {{loadedcourse[item].title }}
+          <ion-option-button class="button-calm" ng-click="onItemDelete(item)">
+            删除
+          </ion-option-button>
+        <!--i class="icon ion-person-stalker"></i-->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

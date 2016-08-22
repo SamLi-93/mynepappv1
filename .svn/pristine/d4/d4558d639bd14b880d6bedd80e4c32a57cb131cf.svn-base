@@ -1,0 +1,10 @@
+<ion-modal-view style="top:35%;" ng-init="" cache-view="false" >
+    <ion-content>
+      <div class="cnote_bottom">
+          <textarea  name="note" class="cnote_input" placeholder="{{notedata.text}}" ng-model="notedata.value"></textarea>
+      </div>
+      <div class="cnote_tijiao">
+        <div class="cnote_button" ng-click="submit(notedata.index,notedata.value)">提交</div>
+      </div>
+    </ion-content>
+</ion-modal-view>

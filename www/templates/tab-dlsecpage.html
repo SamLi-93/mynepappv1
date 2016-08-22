@@ -1,0 +1,10 @@
+<ion-view view-title="{{title}}" hide-tabs='true'>
+  <ion-content>
+    <ion-list >
+      <div class="item dlsecpage_list" ng-repeat="item in loaded">
+        <a href="#/coursenote/{{productid}}/{{item}}" class="dlsecpage_left">{{loadedcourse[item].title }}</a>
+        <div class="dlsecpage_right" ng-click="onItemDelete(item)"><i class="icon icon-uniE600"></i></div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

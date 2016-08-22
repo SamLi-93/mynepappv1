@@ -1,0 +1,19 @@
+<ion-view view-title="学习进度" hide-tabs="true">
+    <ion-content>
+        <ion-list>
+        	<a class="item job_process_list"  ng-repeat="process in viewlist" href="#/detail/track_id/{{process.item_track_id}}/title/{{process.title}}">
+                	<div class="job_process_name"><span class="process_left">{{process.title}}</span><span class="process_right"></span></div>
+                    <div class="row process_view_text">
+                        <div class="col col-40">时长：{{process.total_time}}</div>
+                        <div class="col">次数：{{process.total_num}}</div>
+                        <div class="col">状态：{{process.lesson_status}}</div>
+                    </div>
+
+                    <div class="row process_view_text">
+                        <div class="col col-40">课间习题：{{process.quiz_score_max}}</div>
+                        <div class="col">课后习题：{{process.test_score_max}}</div>
+                    </div>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

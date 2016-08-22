@@ -1,0 +1,14 @@
+<ion-view view-title="学习记录">
+    <ion-content>
+        <ion-list>
+            <div class="item job_plan_list"  ng-repeat="search in searchlist">
+                <div class="row job_plan_name"><div class="col">{{search.name}}</div></div>
+                <div class="row process_view_text">
+                    <div class="col col-50">课程代码：{{search.code}}</div>
+                    <div class="col record-red">成绩：{{search.score}}</div>
+                    <div class="col record-red">学分：{{search.credit}}</div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

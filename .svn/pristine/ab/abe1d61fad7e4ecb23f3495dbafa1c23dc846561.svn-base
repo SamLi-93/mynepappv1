@@ -1,0 +1,80 @@
+<ion-view view-title="离线缓存" hide-tabs='true'>
+  <div class="download_tabs ">
+
+  	<ion-tabs class="tabs-striped tabs-top tabs-download">
+	    <ion-tab title="已完成" class="tab-download">
+	        <ion-content class="downloaded set_bg_color">
+	        	<div class="job_empty_text" ng-if="emptytext1!=''">{{emptytext1}}</div>
+			        <div class="item download_list" ng-repeat="(key,item) in loaded">
+	        			<a class="downloaded_a_tag" href="#/dlsecpage/{{key}}">
+					        <div class="download_detail">
+					        	<div class="download_img"><img src="{{course[key].img}}"></div>
+					        	<div class="download_text">
+					            	{{course[key].name}}
+					            </div>
+					            
+					            <div class="download_right"><i class="icon-uniE606"></i></div>
+					            <div class="download_num">
+					            	 已缓存{{item.length}}个视频     	
+					            </div>
+					        	<div class="job_clear"></div>
+					        </div>
+		    			</a>
+			        </div>
+    		</ion-content>
+    	</ion-tab>
+
+	    <ion-tab title="缓存中" class="downloading tab-download">
+	        <ion-content class="download_tab set_bg_color">
+	        	<!-- <div ng-repeat="item in downloadinglist" class="downloadinglist "> -->
+	        	<!--div ng-repeat="item in downloadProgress" class="downloadinglist ">
+		        	<div class="downloading_item">
+		        		<div class="download_left_box fleft">
+			        		<div class="downloadinglist_text">
+							    < {{item.name}} >aa
+						  	</div>
+						  	< <div class="download_progress">
+						  		{{item.current_size}} / {{item.total_size}}
+						  	</div> >
+					  	</div>
+					  	< <div class="download_right_box fleft">
+					  		<div class="download_icon_div"><i class="ion-ios-cloud-download-outline download_icon"></i></div>
+					  		<div class="download_speed">{{item.speed}}KB/s</div>
+					  	</div> >
+
+					  	<div class="download_process_bar" >
+	              			<div style="height: 6px; background-color: #c91520;width: {{item}}%;"></div>
+	              		</div>
+	              		<div class="process_percent">{{item}}%</div>
+				  	</div>
+				</div-->
+				<div class="job_empty_text" ng-if="emptytex2t!=''">{{emptytext2}}</div>
+				<div ng-repeat="(key,value) in loading" >
+					<div ng-repeat="x in value" class="downloadinglist ">
+			        	<div class="downloading_item">
+			        		<div class="download_left_box fleft">
+				        		<div class="downloadinglist_text">
+				        		{{item[x].title}}
+							  	</div>
+							  	<div class="download_progress">
+							  		{{item[x].size * downloadProgress[x] / 100}}&nbsp;M / {{item[x].size}}&nbsp;M
+							  		
+							  	</div> 
+						  	</div>
+						
+						  	<div class="download_process_bar" >
+		              			<div style="height: 6px; background-color: #c91520;width: {{downloadProgress[x]}}%;"></div>
+		              		</div>
+		              		<div class="download_percent">{{downloadProgress[x]}}%</div>
+		              		<div class="job_clear"></div>
+					  	</div>
+					</div>
+				</div>
+	        </ion-content>
+    	</ion-tab>
+
+	</ion-tabs>
+
+  </div>
+  
+</ion-view>

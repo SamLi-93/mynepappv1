@@ -1,0 +1,22 @@
+<ion-view view-title="课程" hide-tabs='true'>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon  ion-ios-search-strong button-clear" ng-click="tosearch()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="coursepage">
+      <tpl ng-if="emptytext">
+        <div class="job_empty_text">{{emptytext}}</div>
+      </tpl>
+      <div class="list" >
+        <a class="coursepage_list item" ng-click="toCoursedetail(course.id)" ng-repeat="course in courselist">
+          <div class="course_title">{{course.name}}</div>
+          <div class="course_img"><img src="{{course.img}}"></div>
+          <div class="course_bottom">
+              <tpl ng-if="course.free==0"><div class="coursepage_price fleft">￥{{course.price}}</div></tpl>
+              <tpl ng-if="course.orgin==0"><div class="coursepage_orgin_price fleft">￥{{course.orginprice}}</div></tpl>
+              <tpl ng-if="course.free==0"><div class="free_watch"><i class="icon-uniE605 ac-play"></i>免费试听</div></tpl>
+          </div>
+        </a>
+      </div>
+    </ion-content>
+</ion-view>

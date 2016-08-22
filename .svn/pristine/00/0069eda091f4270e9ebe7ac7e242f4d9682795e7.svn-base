@@ -1,0 +1,129 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use yii\helpers\ArrayHelper;
+use common\models\LoginForm;
+use common\models\Coursenotes;
+use common\models\Course;
+use common\helpers\Util;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+
+class MobilenoteController extends Controller
+{
+	public function behaviors()
+	{
+		return [
+			'authenticator' => [
+				'class' => QueryParamAuth::className(),
+				'only' => ['getlist',''],
+			],
+		];
+	}
+
+    /*
+     *  我的笔记列表
+     */
+    public function actionGetlist()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+//        $userid = $request->get('userid');
+		$userid = Yii::$app->user->identity->idst;
+        $template_pageid = $request->get('t_id');
+        $page_id = $request->get('pageid');
+
+		$notes = Coursenotes::find()->where(['userid'=>$userid])->orderBy('courseid')->all();
+		$ret = [];
+		$courseids = [];
+		foreach ($notes as $note) {
+			if (!isset($ret[$note->courseid])) {
+				$ret[$note->courseid] = [];
+				$courseids[] = $note->courseid;
+			}
+			$ret[$note->courseid][] = [
+				'id' => $note->id,
+				'content' => $note->note,
+				'video_time' => Util::format_time2($note->note_time),
+				'note_time' => date('Y-m-d H:i:s', $note->create_date),
+			];
+		}
+		$courses = Course::findAll($courseids);
+		$course_names = ArrayHelper::map($courses, 'id', 'name');
+		$return = [];
+		foreach ($ret as $courseid=>$val) {
+			if (!isset($course_names[$courseid])) continue;
+			$return[] = [
+				'name' => $course_names[$courseid],
+				'num' => count($val),
+				'detail' => $val,
+			];
+		}
+        /*
+        $return = array(
+                array(
+                'name'=>'java基础应用',
+                'num'=>'2',
+                'detail'=>array(
+                        array(
+                            'content'=>'又是一年毕业季，你最需要的是什么？[最右]超美摄像，你的御用摄像师？超长待机，聚会刷夜不当机？超大内存，珍贵记忆永留存？OPPO R9在手，通通满足你！[心]转发本微博，小艺将随机送出15个【OPPO原装高品质MH126耳机】[礼物]让我们红尘作伴，毕业旅行说走就走！',
+                            'video_time'=>'00:10',
+                            'note_time'=>'2016-6-15  12:11:00'
+                        ),
+                        array(
+                            'content'=>'又是一年毕业季，你最需要的是什么？[最右]超美摄像，你的御用摄像师？超长待机，聚会刷夜不当机？超大内存，珍贵记忆永留存？OPPO R9在手，通通满足你！[心]转发本微博，小艺将随机送出15个【OPPO原装高品质MH126耳机】[礼物]让我们红尘作伴，毕业旅行说走就走！',
+                            'video_time'=>'20:10',
+                            'note_time'=>'2016-6-15  12:11:00'
+                        )
+                    )
+                ),
+                array(
+                'name'=>'会计实训操作练习',
+                'num'=>'1',
+                'detail'=>array(
+                        array(
+                            'content'=>'又是一年毕业季，你最需要的是什么？[最右]超美摄像，你的御用摄像师？超长待机，聚会刷夜不当机？超大内存，珍贵记忆永留存？OPPO R9在手，通通满足你！[心]转发本微博，小艺将随机送出15个【OPPO原装高品质MH126耳机】[礼物]让我们红尘作伴，毕业旅行说走就走！',
+                            'video_time'=>'00:10',
+                            'note_time'=>'2016-6-15  12:11:00'
+                        )
+                    )
+                )
+            );
+        */
+        $return_info = json_encode(array('responseData'=>$return)); 
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+    /*
+     *  删除笔记
+     */
+    public function actionDelete()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        $flag = 0;
+		$note = Coursenotes::findOne($id);
+        if($note){
+            $note->delete();
+            $flag = 1;
+        }
+        $return = array('flag'=>$flag);
+        $return_info = json_encode(array('responseData'=>$return)); 
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+}

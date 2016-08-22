@@ -1,0 +1,37 @@
+<ion-view view-title="问答详细" hide-tabs='true'>
+  	<ion-content class="">
+  	    <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="努力加载..." pulling-text="查看最新内容..." on-refresh="doRefresh()"></ion-refresher>
+  		<div class="list">
+            <div class="item job_detail_list">
+                <div class="job_detail_title">{{author.title}}</div>
+                <div class="job_detail_center">
+                    <div class="job_detail_img" ng-if="author.pic == null ||  author.pic == ''"><img src="/img/u_02.png"></div>
+                    <div class="job_detail_img" ng-if="author.pic != null && author.pic != ''"><img src="{{author.pic}}"></div>
+                    <div class="job_detail_name"><font>{{author.name}}</font>  楼主</div>
+                    <div class="job_detail_time"><font>{{author.date}}</font></div>
+                </div>
+                <div class="job_detail_content">{{author.content}}</div>
+            </div>
+  			<div class="item job_detail_list"  ng-repeat="answer in answerlist | orderBy:'num':true">
+                <div class="job_detail_center">
+                    <div class="job_detail_img" ng-if="answer.pic == null ||  answer.pic == ''"><img src="/img/u_02.png"></div>
+                    <div class="job_detail_img" ng-if="answer.pic != null && answer.pic != ''"><img src="{{answer.pic}}"></div>
+                    <div class="job_detail_name"><font>{{answer.name}}</font>  {{answer.num}}楼</div>
+                    <div class="job_detail_time"><font>{{answer.date}}</font></div>
+                </div>
+                <div class="job_detail_content">{{answer.content}}</div>
+  			</div>
+		</div>
+
+  	</ion-content>
+    <ion-footer-bar>
+        <div class="item item-input-inset job_detail_answer">
+            <label class="item-input-wrapper">
+              <input type="text" placeholder="我也来讨论..." ng-model="discuss.con">
+            </label>
+            <button class="button button-small button-calm " ng-click="answersubmit()">
+              提交
+            </button>
+          </div>
+    </ion-footer-bar>
+</ion-view>

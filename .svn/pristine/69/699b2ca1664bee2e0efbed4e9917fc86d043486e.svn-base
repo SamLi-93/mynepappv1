@@ -1,0 +1,33 @@
+<ion-view hide-tabs="true">
+	<ion-nav-title>
+		<!--label class="job_static">
+	   	<input type="text" placeholder="搜索课程" value="{{result.value}}" ng-model="result.value">
+	  </label-->
+    <div class="bar bar-header item-input-inset bar-light">
+      <label class="item-input-wrapper white">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Search" ng-model="result.value" value="{{result.value}}">
+      </label>
+    </div>
+  </ion-nav-title>
+    <ion-nav-bar ng-controller="ResultCtrl" class="bar-calm">
+      <ion-nav-back-button class="button-clear" ng-click="goBack()">
+    </ion-nav-back-button>
+  </ion-nav-bar>
+	<ion-nav-buttons side="right"><button class="button button-clear " ng-click="doresult()" >搜索 </button></ion-nav-buttons>
+  	<ion-content>
+        <div class="list">
+            <a class="job_course_list item" href="#" ng-repeat="result in resultlist">
+                    <div class="job_course_img">
+                        <img src="{{result.img}}">
+                    </div>
+                    <div class="job_course_detail">
+                        <div class="job_course_title">{{result.name}}</div>
+                        <div class="job_course_teacher"><span>主讲：{{result.teacher_names}}({{result.class_time}}节课时)</span></div>
+                        <tpl ng-if="free==0"><div class="price">￥{{result.price}}</div></tpl>
+                    </div>
+            </a>
+            <tpl if="course_empty!=''"><div class="job_empty_text">{{course_empty}}</div></tpl>
+  		</div>
+  	</ion-content>
+</ion-view>

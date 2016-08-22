@@ -1,0 +1,11 @@
+<ion-modal-view style="top:35%;min-height: 65%;" ng-init="" cache-view="false" >
+    <ion-content>
+      <div class="cnote_bottom">
+          <textarea  name="note" class="cnote_input" placeholder="如果你有任何想想法的都可以记下来" ng-blur="ChangeHeight()" ></textarea>
+          <input  type="text" ng-blur="ChangeHeight()">
+      </div>
+      <div class="cnote_submit">
+        <div class="cnote_button" ng-click="repeat()">提交</div>
+      </div>
+    </ion-content>
+</ion-modal-view>

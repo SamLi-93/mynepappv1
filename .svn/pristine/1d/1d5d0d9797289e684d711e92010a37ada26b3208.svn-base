@@ -1,0 +1,20 @@
+<ion-view view-title="我的问答" hide-tabs='true'>
+
+	<ion-nav-buttons side="right">
+      	<button class="button button-small button-icon  ion-edit button-clear" ng-click="showanswer()">
+      	</button>
+    </ion-nav-buttons>
+  	<ion-content class="">
+  	<ion-refresher refreshing-icon="ion-loading-c" refreshing-text="努力加载..." pulling-text="查看最新内容..." on-refresh="doRefresh()"></ion-refresher>
+  		<div class="list">
+  			<a class="item job_answer_list"  ng-repeat="answer in answerlist | orderBy:'date':true" href="#/tab/answer/id/{{answer.id}}">
+  				<div class="job_answer_title">{{answer.title}}</div>
+  				<div class="job_answer_detail">
+  					<div class="job_answer_name">{{answer.name}}</div>
+  					<div class="job_answer_date">{{answer.date}}</div>
+  					<div class="job_answer_num"><font class="ion-chatbox-working"></font> {{answer.num}}</div>
+  				</div>
+  			</a>
+		</div>
+  </ion-content>
+</ion-view>

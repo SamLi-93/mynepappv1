@@ -1,0 +1,58 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use common\models\LoginForm;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+
+class MobileorderController extends Controller
+{
+    /*
+     *  订单列表
+     */
+    public function actionGetlist()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $userid = $request->get('userid');
+        $template_pageid = $request->get('t_id');
+        $page_id = $request->get('pageid');
+        $return = array(
+            array('name'=>'基金投资指南与实操攻略','price'=>'58.9','pay'=>'19.9','status'=>'0','pic'=>'img/order.jpg','id'=>'1'),
+            array('name'=>'基金投资指南与实操攻略','price'=>'48.9','pay'=>'19.9','status'=>'1','pic'=>'img/order.jpg','id'=>'2'),
+            array('name'=>'基金投资指南与实操攻略','price'=>'58.9','pay'=>'19.9','status'=>'2','pic'=>'img/order.jpg','id'=>'3'),
+            array('name'=>'基金投资指南与实操攻略','price'=>'28.9','pay'=>'19.9','status'=>'0','pic'=>'img/order.jpg','id'=>'4'),
+            );
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+    /*
+     *  取消订单
+     */
+    public function actionOrdercancel()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        $flag = 0;
+        $flag = 1;
+        $return = array('status'=>$flag);
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+}

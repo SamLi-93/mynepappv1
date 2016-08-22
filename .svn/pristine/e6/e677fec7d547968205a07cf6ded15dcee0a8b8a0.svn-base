@@ -1,0 +1,46 @@
+<ion-view view-title="购买课程" hide-tabs>
+	<!-- <ion-nav-bar class="bar-calm">
+        <ion-nav-back-button  class="button-clear" ng-click="gotoaccount()">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-bar> -->
+  	<ion-content>
+  		<div class="clist">
+            <!-- <div class="cimg">
+                <img ng-src="{{courseData.img}}">
+            </div> -->
+            <div class="job-price-area">               
+                <!-- <div class="courseteacher"><span class="cspan">主讲：{{courseData.teacher_names}}</span></div> -->
+                <div class="job-price">￥{{courseData.price}}</div>
+                <div class="coursetitle">{{courseData.name}}</div>
+            </div>
+        </div>
+        <div class="job-pay-contact">
+        <a href="#/address" class="pay_edit_address">
+            <div class="job-contact">
+                <div class="job-contact-detail">
+                    <i class="icon-uniE616"></i> 李耀光
+                    <i class="icon-uniE608"></i>13849098734
+                    <div class="job-address">宁波江南路1689号浙大软件学院学术交流中心 北楼 3F</div>
+                </div>
+                <div class="job-contact-next">
+                    <i class="icon-uniE606"></i>
+                </div>
+                <div class="job_clear"></div>
+            </div>
+        </a>
+        </div>
+        <div class="paylist">
+            <div>支付方式</div>
+        </div>
+        <ion-radio ng-model="data.payway" ng-value="'alipay'"  ng-change="selectPay()"> 
+        <div class=" icon-uniE617 job-alipay"></div><div class="alipay">支付宝</div></ion-radio>
+        <ion-radio ng-model="data.payway" ng-value="'wxpay'"  ng-change="selectPay()"> 
+        <div class=" icon-uniE613 job-wxpay"></div><div class="wxpay">微信支付</div></ion-radio> 
+  	</ion-content>
+
+  	<ion-footer-bar class="bar-calm">
+	  	<!-- <div class="bar bar-footer joinpanel"><div class="price">￥{{courseData.price}}</div> -->
+        <div class="joincourse" style="width: 100%" course="{id}">确认购买</div></div>
+	</ion-footer-bar>
+</ion-view>

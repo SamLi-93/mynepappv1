@@ -1,0 +1,1233 @@
+angular.module('mynepapp.services', [])
+
+.factory('Websites', function ($q,$http){
+  return {
+    /**
+     * [indexData 得到首页课程数据]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+      indexData: function($scope,catId) {
+        var d = $q.defer();
+        var promise = d.promise;
+        //catId = $scope.catId;
+        $http.jsonp(ENV.apiUrl + 'course/indexcourse?catId='+catId+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.homeData = data.responseData;
+                $scope.homeData[0]['address'] = 'applycourse';
+                $scope.homeData[1]['address'] = 'coursepage';
+                $scope.homeData[2]['address'] = 'applycourse';
+                console.log($scope.homeData);
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+            
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+
+    /**
+     * [getBanner 得到首页banner条数据]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getBanner: function($scope) {
+      var d = $q.defer();
+      var promise = d.promise;
+      $http.jsonp(ENV.postUrl + 'Mobilecourse/lunbo?callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.bannerData = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+
+    /**
+     * [getAllCourse 得到全部课程页面数据]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getAllCourse: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'mobilecourse/courselist?callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.allCourseData = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    
+    /**
+     * [getCourseBykey 得到全部课程页面数据]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getCourseBykey: function($scope,keywords) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'mobilecourse/getCourseByKeywords/keywords/'+keywords+'?callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.resultlist = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getCourselist 根据课程类型，获取对应所有课程]
+     * @param  {[type_id]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getCourselist: function($scope,type_id,page,limit) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'mobilecourse/GetCourseByTypeid/typeid/'+type_id+'/page/'+page+'/limit/'+limit+'?callback=JSON_CALLBACK')
+            .success(function(data) {
+                //$scope.courselist = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getUserDetail 根据课程类型，获取对应所有课程]
+     * @param  {[type_id]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getUserDetail: function($scope,userid) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'mobileadmin/userdetail?stu_id='+userid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.userdetail = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getCoursefree 根据课程是否免费，获取对应所有课程]
+     * @param  {[type_id]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getCoursefree: function($scope,free) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'mobilecourse/GetCourseByFree?free='+free+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.courselist = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * 得到新闻详细信息
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getQuestion: function($scope,newsid) {
+       var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl +'mobilepractice/getquestion?course_id=9'+'&template_pageid=6'+'&userid=3'+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    },
+    /**
+     * 得到新闻详细信息
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getNewsdetail: function($scope,newsid) {
+       var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + "mobilecourse/getNewsById?id=" + newsid + "&callback=JSON_CALLBACK")
+            .success(function(data) {
+                $scope.newsData = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    },
+    /**
+     * 提交试卷
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getResult: function($scope,newsid) {
+       var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + "mobilepractice/examsubmit?userid=12&t_id=3&pageid=34&callback=JSON_CALLBACK")
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    },
+    /**
+     * [getAnswerlist 得到全部问答数据]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getAnswerlist: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'mobileanswer/getlist?userid='+$scope.userid+'&&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.answerlist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getPlanlist 得到教学计划]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getPlanlist: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'apilearn/plan?userid='+$scope.userid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.planlist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getProcesslist 得到教学计划]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getProcesslist: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'apilearn/process?userid='+$scope.userid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.processlist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getNotelist 得到笔记]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getNotelist: function($scope,userid) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'mobilenote/getlist?userid='+userid+'&&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.notelist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [DeleteNote 删除笔记]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    DeleteNote: function($scope,id) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'mobilenote/delete?id='+id+'&&callback=JSON_CALLBACK')
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    //   Sam   错题集列表
+    getErrorlist: function($scope,userid) {
+      var d = $q.defer();
+      var promise = d.promise;
+      $http.jsonp(ENV.apiUrl + 'mobileerror/getlist?userid/'+userid+'&&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.errorlist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    //   Sam   错题集列表
+    DeleteError: function($scope,courseid,userid) {
+      var d = $q.defer();
+      var promise = d.promise;
+      $http.jsonp(ENV.apiUrl + 'mobileerror/delete?courseid='+courseid+'&&userid='+userid+'&&callback=JSON_CALLBACK')
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    //   Sam   错题集列表
+    ErrorDetail: function($scope,courseid,pageid,userid) {
+      var d = $q.defer();
+      var promise = d.promise;
+      $http.jsonp(ENV.apiUrl + 'mobileerror/detail?courseid='+courseid+'&&pageid='+pageid+'&&userid='+userid+'&&callback=JSON_CALLBACK')
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    //   Sam  个人信息
+    getUserinfo: function($scope) {
+       var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.api2 + "mobileadmin/Userinfo?stu_id=13&callback=JSON_CALLBACK")
+            .success(function(data) {
+                $scope.userdata = data.responseData;
+                window.localStorage['headimg'] =data.responseData[0]['content'];
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    },
+
+    discussData: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'course/getanswer?courseid='+$scope.courseid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.discuss = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+
+
+    /**
+     * [getMonilist 得到模拟练习]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getMonilist: function($scope,userid) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'apipractice/getmonilist?userid='+userid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.monilist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getPracticelist 得到练习试卷]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getPracticelist: function($scope,userid) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'mobilepractice/getpracticelist?userid='+userid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getSearchlist 得到成绩查询]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getSearchlist: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'apilearn/search?userid='+$scope.userid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.searchlist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getProcessview 得到成绩查询]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getProcessview: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'apilearn/view?userid='+$scope.userid+'&planid='+$scope.planid+'&courseid='+$scope.courseid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.viewlist = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getProcessDetail 得到成绩查询]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getProcessDetail: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'apilearn/detail?userid='+$scope.userid+'&item_track_id='+$scope.item_track_id+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.detail = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [getOrderlist 得到订单数据]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getOrderlist: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'mobileorder/getlist?userid='+$scope.userid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    /**
+     * [Ordercancel 取消订单]
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    Ordercancel: function($scope,id) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'mobileorder/ordercancel?userid='+$scope.userid+'&id='+id+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+    getAnswerDetail: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'apicatechism/answerdetail?answer_id='+$scope.answer_id+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.author = data.author;
+                $scope.answerlist = data.answer;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+
+    /**
+     * 课程详细页面中的目录页面
+     * @return {[type]} [description]
+     */
+    directoryData: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        //$http.jsonp(ENV.postUrl + 'mobilecourse/getIndexCourseitems?courseid='+$scope.courseid+'&callback=JSON_CALLBACK')
+        $http.jsonp(ENV.apiUrl + 'course/courseitems?courseid='+$scope.courseid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.courses = data.responseData;
+                console.log($scope.courses);
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+
+    resumeData: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'mobilecourse/getCourseinfo?courseid='+$scope.courseid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.resume = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise;
+    },
+
+    // discussData: function($scope) {
+    //     var d = $q.defer();
+    //     var promise = d.promise;
+    //     $http.jsonp(ENV.postUrl + 'mobilecourse/getCoursecomments?courseid='+$scope.courseid+'&callback=JSON_CALLBACK')
+    //         .success(function(data) {
+    //             $scope.discuss = data.responseData;
+    //             d.resolve(data);
+    //         })
+    //         .error(function(error) {
+    //             d.reject(error);
+    //         });
+
+    //     promise.success = function(fn) {
+    //         promise.then(fn);
+    //         return promise;
+    //     }
+    //     promise.error = function(fn) {
+    //         promise.then(null, fn);
+    //         return promise;
+    //     }
+
+    //     return d.promise;
+    // },
+
+    CourseData: function($scope) {
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'course/getcoursebyid?courseid='+$scope.courseid+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.courseData = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    },
+
+    /**
+     * 公共函数，提示框，1s后自动隐藏
+     * @param  {[type]} $scope        [description]
+     * @param  {[type]} $ionicLoading [description]
+     * @param  {[type]} message       [description]
+     * @return {[type]}               [description]
+     */
+    showMessage: function($ionicLoading,message) {
+        $ionicLoading.show({template: message});
+        setTimeout(function () {
+            $ionicLoading.hide();
+        },
+        1000);
+    },
+
+    /**
+     * 得到课程所有分类
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getCategory: function($scope){
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'api/Getcategory?callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.categoryData = data.responseData;
+                var categorystr = JSON.stringify(data.responseData);
+                localStorage.categorystr = categorystr; 
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    },
+
+    /**
+     * 得到课程指定分类
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getCategoryById: function($scope,catId){
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.postUrl + 'api/Getcategory?catId='+catId+'&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.categoryData = data.responseData;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    },
+
+    /**
+     * 得到课程指定分类
+     * @param  {[type]} $scope [description]
+     * @return {[type]}        [description]
+     */
+    getWxpayParams: function($scope){
+        var d = $q.defer();
+        var promise = d.promise;
+        $http.jsonp(ENV.apiUrl + 'course/wxpayparams?callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.wxparams = data;
+                d.resolve(data);
+            })
+            .error(function(error) {
+                d.reject(error);
+            });
+
+        promise.success = function(fn) {
+            promise.then(fn);
+            return promise;
+        }
+        promise.error = function(fn) {
+            promise.then(null, fn);
+            return promise;
+        }
+
+        return d.promise; 
+    }
+
+}})
+
+.service('LoginService', function($q, $http, $rootScope) {
+
+    return {
+        loginUser: function(name, pw) {
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+
+            var loginResult = new Object();
+            //ajax请求
+            $http.jsonp(ENV.postUrl + "mobileadmin/login?username=" + name + "&password=" + pw + "&callback=JSON_CALLBACK")
+                .success(function(response) {
+                    loginResult = response.responseData.userinfo;
+                    console.log(loginResult);
+                    if (loginResult.LoginStatus == 1) {
+                        localStorage.signtoken = loginResult.SignToken;
+                        localStorage.userid = loginResult.id;
+                        localStorage.username = loginResult.userid;
+                        localStorage.headimg = loginResult.headimg;
+                        localStorage.haslogin = 1;
+                        $rootScope.$broadcast('loginUser');
+
+                        //设置客户端的别名，用于定向接收消息的推送
+                        //window.plugins.jPushPlugin.setAlias("Client" + loginResult.UserId);
+
+                        var arrayObj = new Array("Tags" + loginResult.userid);
+                        //window.plugins.jPushPlugin.setTags(arrayObj);
+
+                        deferred.resolve('Welcome ' + name + '!');
+                    } else {
+                        deferred.reject('Wrong credentials.');
+                    }
+                });
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+            return promise;
+        },
+
+        getUser: function() {
+            return localStorage;
+        },
+
+        register: function(code, phone, password) {
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+            //ajax请求
+            $http.jsonp(ENV.apiUrl+"mobileadmin/register?phone=" + phone + "&code=" + code + "&password=" + password + "&callback=JSON_CALLBACK")
+                .success(function(data) {
+                    deferred.resolve(data);
+                })
+                .error(function(error) {
+                    deferred.reject(error);
+                });
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+            return promise;
+        },
+        SendCode: function(scope,phone) {
+            var d = $q.defer();
+            var promise = d.promise;
+            //ajax请求
+            $http.jsonp(ENV.apiUrl + "mobileadmin/sendcode?phone=" + name +"&callback=JSON_CALLBACK")
+                .success(function(data) {
+                    d.resolve(data);
+                })
+                .error(function(error) {
+                    d.reject(error);
+                });
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+            return promise;
+        },
+        resetpassword: function(email) {
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+            //ajax请求
+            $http.jsonp("http://api.gugujiankong.com/account/resetpassword?email=" + email + "&callback=JSON_CALLBACK")
+                .success(function(response) {
+                    if (response == 1) {
+                        deferred.resolve('reset password successfully');
+                    } else {
+                        deferred.reject('Wrong request');
+                    }
+                });
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+            return promise;
+        },
+        getsetting: function($scope) {
+            var d = $q.defer();
+            var promise = d.promise;
+            //ajax请求
+            $http.jsonp("http://api.gugujiankong.com/account/GetUserSetting?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+                .success(function(data) {
+                    $scope.apppush.checked = data.AppPush;
+                    $scope.smspush.checked = data.SmsPush;
+                    $scope.phonepush.checked = data.PhonePush;
+                    $scope.userphone = data.UserPhone;
+                    $scope.data.userphone = data.UserPhone;
+                    $scope.phonevalidated = data.PhoneValidated;
+                    d.resolve(data);
+                })
+                .error(function(error) {
+                    d.reject(error);
+                });
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+
+            return d.promise;
+        },
+
+        sendcode: function($scope, $ionicPopup) {
+            var d = $q.defer();
+            var promise = d.promise;
+            //ajax请求
+            $http.jsonp("http://api.gugujiankong.com/account/SendPhoneValidateCode?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&phone=" + $scope.data.userphone + "&callback=JSON_CALLBACK")
+                .success(function(data) {
+                    if (data.SetPushStatus != 1) {
+                        var confirmPopup = $ionicPopup.alert({
+                            title: '推送设置',
+                            template: data.SetPushStatusComment
+                        });
+                    };
+                    d.resolve(data);
+                })
+                .error(function(error) {
+                    var confirmPopup = $ionicPopup.alert({
+                        title: '推送设置',
+                        template: '验证码发送失败，请重试！'
+                    });
+                    d.reject(error);
+                });
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+
+            return d.promise;
+        },
+
+        finalbind: function($scope, $ionicPopup) {
+            var d = $q.defer();
+            var promise = d.promise;
+            //ajax请求
+            $http.jsonp("http://api.gugujiankong.com/account/FinalBind?userId=" + localStorage.userid + "&phone=" + $scope.data.userphone + "&code=" + $scope.data.code + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+                .success(function(data) {
+                    if (data.SetPushStatus != 1) {
+                        var confirmPopup = $ionicPopup.alert({
+                            title: '推送设置',
+                            template: data.SetPushStatusComment
+                        });
+                    };
+                    d.resolve(data);
+                })
+                .error(function(error) {
+                    var confirmPopup = $ionicPopup.alert({
+                        title: '推送设置',
+                        template: '手机号码绑定失败，请重试！'
+                    });
+                    d.reject(error);
+                });
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+
+            return d.promise;
+        },
+        switchnotify: function($scope, $ionicPopup, type) {
+            var d = $q.defer();
+            var promise = d.promise;
+            var value;
+            if (type == 1) {
+                value = $scope.apppush.checked;
+            }
+            if (type == 2) {
+                value = $scope.smspush.checked;
+            }
+            if (type == 3) {
+                value = $scope.phonepush.checked;
+            }
+            //ajax请求
+            $http.jsonp("http://api.gugujiankong.com/account/SetPush?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&type=" + type + "&value=" + value + "&callback=JSON_CALLBACK")
+                .success(function(data) {
+                    if (data.SetPushStatus != 1) {
+                        var confirmPopup = $ionicPopup.alert({
+                            title: '推送设置',
+                            template: data.SetPushStatusComment
+                        });
+                    };
+                    d.resolve(data);
+                })
+                .error(function(error) {
+                    var confirmPopup = $ionicPopup.alert({
+                        title: '推送设置',
+                        template: '手机号码绑定失败，请重试！'
+                    });
+                    d.reject(error);
+                });
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+
+            return d.promise;
+        }
+    }
+});
+

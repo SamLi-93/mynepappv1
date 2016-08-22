@@ -1,0 +1,95 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:46
+ */
+
+namespace backend\controllers;
+
+use yii\web\Controller;
+use yii\filters\auth\QueryParamAuth;
+use Yii;
+use backend\models\Coursecomment;
+use yii\helpers\ArrayHelper;
+
+class MobilecourseController extends Controller
+{
+
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['GetCoursecomments',],
+            ],
+        ];
+    }
+
+    public function actionGetCoursecomments() {
+        echo 'test';exit;
+        $comment = Coursecomment::find();
+        var_dump($comment);exit;
+    }
+
+    public function actionTest() {
+        echo 'test33';exit;
+    }
+    
+    public function actionGetcoursebykeywords(){
+    	$request = Yii::$app->request;
+    	$keywords = $request->get ('keywords');
+    	$c_conn = Yii::$app->get('cdb');
+    	$course_center_web_url = Yii::$app->params['course_center_web'];
+    	$conn = Yii::$app->db;
+    	$sql = "select course_id from cc_course_items where vtype=0 group by course_id ";
+    	$data_info = $c_conn->createCommand ($sql)->queryAll ();
+    	$csc_list = ArrayHelper::getColumn ( $data_info, 'course_id' );
+    	$csc_list[] = 0;
+    	$sql = "select * from lc_course where name like '%".$keywords."%' and cid in (".implode(',',$csc_list).")";
+    	$c_arr = $conn->createCommand ($sql)->queryAll ();
+    	$cid_info = array();
+    	foreach ($c_arr as $key => $val) {
+    		$cid_info[] = $val['cid'];
+    	}
+    	if(count($cid_info)>0){
+    		$sql = "select min(id) as mid,course_id from cc_course_items where course_id in (".implode(',',$cid_info).") group by course_id";
+    		$cinfo_arr = $conn->createCommand ($sql)->queryAll ();
+    		$cinfoids = array();
+    		foreach ($cinfo_arr as $key => $val) {
+    			$cinfoids[$val['course_id']] = $val['mid'];
+    		}
+    		$sql = "select id,mbimg from cc_course where id in (".implode(',',$cid_info).")";
+    		$img_arr = $c_conn->createCommand ($sql)->queryAll ();
+    		$img_list = array();
+    		foreach ($img_arr as $key => $val) {
+    			$img_list[$val['id']] = $course_center_web_url.$val['mbimg'];
+    		}
+    		foreach ($c_arr as $key => $val) {
+    			$info = array();
+    			$info['id'] = $val['id'];
+    			$info['img'] = $img_list[$val['cid']];
+    			$info['itemid'] = (empty($cinfoids[(empty($val['cid'])?0:$val['cid'])])?0:$cinfoids[$val['cid']]);
+    			$info['name'] = $val['name'];
+    			$info['teacher_names'] = $val['teacher_names'];
+    			$info['price'] = $val['rprice'] ;
+    			$info['free'] = (empty($val['rprice'])?0:1);
+    			$info['vtype'] = 1;
+    			$info['authorize_flag'] = 1;
+    			$return_arr[] = $info;
+    		}
+    	}
+    	$return_info = json_encode ( $return_arr );
+    	$callback = $request->get ( 'callback' );
+    	echo $callback . "(" . $return_info . ")";
+    	exit ();
+    }
+
+
+
+
+
+
+
+}

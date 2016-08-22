@@ -1,0 +1,122 @@
+<ion-view view-title="{{productData.name}}" class="set_bg_color"  hide-nav-bar='true' >
+	<div class="job-videoback" ng-click="gotoaccount()"></div>
+	<div class="job-back-ion" ng-click="gotoaccount()" ><div class="icon-uniE612"></div></div>
+	<div class="header_img" id="{{jpcid}}">
+		<!--<img src="./img/java.png">-->
+		<img class="cover" src="{{productData.appimg}}" />
+	</div>
+
+	<div class="coursetabs" ng-class="long" >
+
+		<ion-tabs class="tabs-striped tabs-top  tabs-background-stable tabs-color-calm">
+		    <ion-tab title="课程表" class="job_course_tabs">
+		        <ion-content class="job-download-bottom" ng-style="grid_height">
+				    <!--<div ng-repeat="(key, course) in courses" class="list job-item-list">
+		        		<div class="item item-divider job-item-divider">
+						    {{course.coursename}}
+						</div>
+				          <a class="item item-icon-left job-item note_item" ng-repeat="(key1, item) in course.items" 
+						  ng-click="setActive(item.itemid,item.vtype,course.id)">
+						  	<div class="job-line-left"></div><div class="job-line-right"></div>
+						  	<i class="icon job-icon-color" ng-class="{ 'ion-ios-circle-outline' : item.itemid!=citemid , 'icon-uniE605': item.itemid ==citemid  }" ></i>			  	
+						    <div class="job-item-title note_item">{{item.title}}</div>
+						    <div class="job-item-try" ng-if="item.try==1">试看</div>
+						    <div class="time_last fright">
+								{{item.time}}
+							</div>
+						  </a>
+				    </div>-->
+				    <div ng-repeat="(key, course) in courses" class="list job-item-list">
+		        		<div class="item item-divider job-item-divider">
+						    {{course.coursename}}
+						</div>
+						<a class="item item-icon-left lesson_list" ng-repeat="(key1, item) in course.items" 
+							ng-click="setActive(item.itemid,item.vtype,course.id)">
+							  	<!-- <i class="icon" ng-class="{ $index>0 ? 'ion-ios-circle-outline' : 'icon-uniE605' }"></i> -->
+							  	
+							<div class="job-line-left"></div><div class="job-line-right"></div>
+							  	<i class="icon job-icon-color" ng-class="{ 'ion-ios-circle-outline' : item.itemid!=citemid , 'icon-uniE605': item.itemid ==citemid  }" ></i>						  	
+							<div class="lession_detail">
+							    <div class="lesson_title">{{item.title}}</div>
+							    <div class="lesson_time">{{item.time}}</div>
+							</div>
+						</a>
+					</div>
+    			</ion-content>
+		    </ion-tab>
+
+		    <ion-tab title="答疑"  class="job_course_tabs" >
+				<ion-content ng-style="grid_height" class="cnote_bg">
+					<div class="job_empty" ng-if="emptytext1!=''">{{emptytext1}}</div>
+			        <div class="job-answer job-item-list" ng-repeat="question in questionlist">
+				      	<div>
+				      	<div class="job-answer-icon" style="background: #c81623;">问</div>
+				      	<div ng-bind-html="question.question" class="job-answer-content"></div>
+				      	<div class="job-clear"></div>
+				      	</div>
+				      	<div>
+				      	<div class="job-answer-icon" style="background: #74d290;">答</div>
+				      	<div ng-bind-html="question.answer" class="job-answer-content"></div>
+				      	<div class="job-clear"></div>
+				      	</div>
+			        </div>
+
+					<div class="cnote_submit">
+						<div class="cnote_button" ng-click="dayi()">提交问题</div>
+					</div>
+					<div class="cnote_footer"></div>
+			    </ion-content>
+		    </ion-tab>
+
+		    <ion-tab title="笔记" class="job_course_tabs">
+		      <ion-content class="cnote_bg" ng-style="grid_height">
+		      		<div class="job_empty" ng-if="emptytext2!=''">{{emptytext2}}</div>
+			      	<div ng-repeat="note in notelist" class="cnotelist ">
+					  	<div class="cnote_text">{{note.text}}</div>
+					  	<div class="cnote_block">
+					  		<div class="cnote_time">
+					  			<span class="cnote_tleft">{{note.video_time}}</span>
+					  			<span class="note_trights"><i></i></span>
+					  		</div>
+					  		<div class="cnote_delete" ng-click="deletenote(note.id)"><i class="icon-uniE600"></i></div>
+					  		<div class="job_clear"></div>
+					  	</div>
+
+					</div>
+
+					<!--div class="cnote_bottom">
+						<textarea  name="note" class="cnote_input" placeholder="如果你有任何疑问都可以在此咨询2" ng-blur="ChangeHeight()" ></textarea>
+						<input  type="text" ng-blur="ChangeHeight()">
+					</div-->
+
+					<div class="cnote_submit">
+						<div class="cnote_button" ng-click="answer()">记录笔记</div>
+					</div>
+					<div class="cnote_footer"></div>
+			  </ion-content>
+		    </ion-tab>
+		</ion-tabs>
+	</div>
+
+    <ion-footer-bar class="job-footer">
+<!--     	<a href="#">
+	  		<i class="icon-uniE612 note_back_button"></i>	
+	  	</a> -->
+	    <a class="tab-item" ng-click="toDownlaod()">
+	    	<i class="icon icon-uniE607"></i>
+	    下载
+	  	</a>
+		<a class="tab-item" ng-click="favorites!=favorites;toFavorites(productData.id)">
+	    	<i class="icon icon-uniE60C job-selected" 
+	    	ng-class="{'job-favoritesed':favorites == 1 && haslogin == 1,'job-unfavoritesed':favorites == 0 || haslogin != 1}"></i>
+	    收藏
+	    </a>
+	    <a class="tab-item" ng-click="toShare()">
+	    	<i class="job-icon-share icon icon-uniE604"></i>
+	    分享
+	  	</a>
+
+
+    </ion-footer-bar>
+
+</ion-view>

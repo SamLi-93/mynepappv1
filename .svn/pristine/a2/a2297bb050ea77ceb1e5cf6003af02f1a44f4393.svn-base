@@ -1,0 +1,28 @@
+<ion-view view-title="收货地址" hide-tabs='true'>
+  <ion-content class="address_page set_bg_color">
+      <div class="list" >
+        <div class="address_list item" ng-repeat="address in addresslist">
+
+          <div class="choose_mark fleft">
+              <div class="choose_mark_icon" ng-if="address.id==addressid" id="choose_icon_{{address.id}}">  </div>
+              <i class="icon-uniE61D choose_mark_img"></i>
+          </div>
+
+          <div class="address_right fleft" ng-click="getMark(address.id)">
+            <div class="address_name fleft"> {{address.name}}</div>
+            <div class="address_phonenum ">{{address.phonenum}}</div>
+            <div class="address_text">{{address.text}}</div>
+          </div>
+          <a href="#/tab/editaddress/addressid/{{address.id}}" class="edit_address">
+            <div class="edit_mark fleft">
+                <i class="icon-uniE61C"> </i>
+            </div>
+          </a>
+        </div>
+
+      </div>
+  </ion-content>
+  <a href="#/tab/createaddress" class="new_address">
+    <div > <i class="icon-uniE622"></i> 新建地址 </div>
+  </a>
+</ion-view>

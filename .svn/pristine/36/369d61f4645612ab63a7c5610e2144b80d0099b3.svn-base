@@ -1,0 +1,131 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2016/7/4
+ * Time: 15:31
+ */
+
+namespace backend\controllers;
+
+use Yii;
+use yii\web\Controller;
+use yii\filters\auth\QueryParamAuth;
+use backend\models\Address;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+
+class MobileaddressController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['getaddress', 'addaddress','editaddress','deleteaddress'],
+            ],
+
+        ];
+    }
+
+    //得到个人地址接口
+    public function actionGetaddress()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+        $address = Address::find()->where(['user_id' => $idst, 'is_delete' => '0'])->all();
+
+        foreach ($address as $key => $row) {
+            $user_adderss_info[] = array(
+                'user_name' => $row['name'],
+                'user_address' => $row['address'],
+                'user_phone' => $row['phone'],
+                'user_province' => $row['province'],
+                'user_city' => $row['city'],
+                'user_check' => $row['check'],
+            );
+        }
+        echo json_encode(array('responseData' => $user_adderss_info));
+        exit;
+    }
+
+    //添加个人地址信息页面
+    public function actionAddaddress()
+    {
+        $request = Yii::$app->request;
+        $userid = Yii::$app->user->identity->idst;
+
+        $username = $request->get('username');
+        $phone_num = $request->get('phonenum');
+        $province = $request->get('province');
+        $city = $request->get('city');
+        $address_text = $request->get('address');
+
+        $address = new Address();
+        $address->user_id = $userid;
+        $address->is_delete = 0;
+        $address->check = 0;
+        $address->name = $username;
+        $address->phone = $phone_num;
+        $address->province = $province;
+        $address->city = $city;
+        $address->address = $address_text;
+        if ($address->save() > 0) {
+            $callback = $request->get('callback');
+            echo $callback."('save success')";
+            exit;
+        } else {
+            echo "error adding";exit;
+        }
+    }
+
+    //修改个人地址接口
+    public function actionEditaddress()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+        $id = $request->get('id');
+        $address = Address::find()->where(['user_id' => $idst, 'is_delete' => '0','id'=>$id])->one();
+        $userid = $idst;
+        if ($username = $request->get('username')) $address->name = $username;
+        if ($phone_num = $request->get('phonenum')) $address->phone = $phone_num;
+        if ($province = $request->get('province')) $address->province = $province;
+        if ($city = $request->get('city')) $address->city = $city;
+        if ($address_text = $request->get('address')) $address->address = $address_text;
+        $address->user_id = $userid;
+        $address->check = 0;
+        if ($address->save() > 0) {
+            $address = Address::find()->where(['user_id' => $userid, 'id'=>$id,'is_delete' => '0'])->one();
+            $user_adderss_info[] = array(
+                'user_name' => $address['name'],
+                'user_address' => $address['address'],
+                'user_phone' => $address['phone'],
+                'user_province' => $address['province'],
+                'user_city' => $address['city'],
+                'user_check' => $address['check'],
+            );
+            echo json_encode(array('responseData' => $user_adderss_info));
+            exit;
+        } else {
+            echo "error editing";exit;
+        }
+    }
+
+    public function actionDeleteaddress()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+        $id = $request->get('id');
+        $address = Address::find()->where(['user_id' => $idst, 'is_delete' => '0','id'=>$id])->one();
+        $address->is_delete = 1;
+        if ($address->save() > 0) {
+            $callback = $request->get('callback');
+            echo $callback."('save success')";
+            exit;
+        } else {
+            echo "error delete";
+            exit;
+        }
+    }
+
+}

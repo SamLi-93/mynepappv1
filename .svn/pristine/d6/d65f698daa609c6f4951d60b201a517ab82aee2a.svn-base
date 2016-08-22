@@ -1,0 +1,125 @@
+<ion-view view-title="课程笔记" class="set_bg_color" hide-tabs="true">
+
+	<div class="header_img">
+		<img src="./img/java.png">
+	</div>
+
+	<div class="coursetabs" ng-class="long">
+
+		<ion-tabs class="tabs-striped tabs-top  tabs-background-stable tabs-color-calm">
+		    <ion-tab title="课程表" class="job_course_tabs">
+		        <ion-content class="job-download-bottom">
+				    <div ng-repeat="(key, course) in courses" class="list job-item-list">
+		        		<div class="item item-divider job-item-divider">
+						    {{course.coursename}}
+						</div>
+				          <a class="item item-icon-left job-item note_item" ng-repeat="(key1, item) in course.items" 
+						  ng-click="setActive(item.itemid,item.try)">
+						  	<div class="job-line-left"></div><div class="job-line-right"></div>
+						  	<i class="icon job-icon-color" ng-class="{ 'ion-ios-circle-outline' : item.try==0 , 'icon-uniE605': item.try ==1  }" ></i>			  	
+						    <div class="job-item-title note_item">{{item.title}}</div>
+						    <div class="job-item-try" ng-if="item.try==1">试看</div>
+						    <div class="time_last fright">
+								{{timelast}}
+							</div>
+						  </a>
+				    </div>
+    			</ion-content>
+		    </ion-tab>
+
+		    <ion-tab title="答疑"  class="job_course_tabs" >
+		        <ion-content class="job-download-bottom">
+				    <div ng-repeat="question in questionlist" class="qalist ">
+			            <div class="qa_box">
+			        		<div class="qa_title">
+							    {{question.title}}
+						  	</div>
+						  	<div class="qa_answer fleft">
+						  		{{question.question}}
+						  	</div>
+					  	</div>
+					</div>
+					<div class="notelist_bottom_dayi">
+						<textarea  name="note" class="notelist_input_text_dayi" placeholder="如果你有任何疑问都可以在此咨询"></textarea>
+					</div>
+					<div class="submit_button">
+						<input type="button" value="提交" />
+					</div>
+			    </ion-content>
+		    </ion-tab>
+		    
+		    <ion-tab title="笔记" class="job_course_tabs">
+		      <ion-content class="job-download-bottom">
+		      	<div ng-repeat="note in notelist" class="notelist ">
+	        		<div class="notelist_text">
+					    {{note.text}}
+				  	</div>
+				  	<div class="note_little_box fleft">
+				  		00:00
+				  	</div>
+				  	<div class="delete_icon">
+				  		<i class="icon-uniE600"></i>
+				  	</div>
+				</div>
+
+				<div class="notelist_bottom">
+					<textarea  name="note" class="notelist_input_text" placeholder="如果你有任何疑问都可以在此咨询"></textarea>
+					<div class="below_textarea">
+						<div class="fleft note_camera_div">
+							<i class="icon-uniE619 note_camera_icon"></i>
+						</div>
+						<div class=" fleft note_input_div">
+							<input type="radio" checked="true" class="public_radio" name="public" value="公开"> <span class="public_text">公开</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="submit_button">
+					<input type="button" value="提交" />
+				</div>
+
+			  </ion-content>
+		    </ion-tab>
+		</ion-tabs>
+	</div>
+
+	<!-- <div class="tabs tabs-icon-top job-tabs">
+	  <a href="#">
+	  	<i class="icon-uniE612 note_back_button"></i>	
+	  </a>
+
+	  <a class="tab-item" ng-click="toDownlaod()">
+	    <i class="icon icon-uniE607"></i>
+	    下载
+	  </a>
+	  <a class="tab-item" ng-click="favorites!=favorites;toFavorites()">
+	    <i class="icon icon-uniE60C job-selected" ng-class="{'job-favoritesed':courseData.favorites == 1}"></i>
+	    收藏
+	  </a>
+	  <a class="tab-item" ng-click="toShare()">
+	    <i class="job-icon-share icon icon-uniE604"></i>
+	    分享
+	  </a>
+	</div> -->
+
+    <ion-footer-bar class="job-footer">
+    	<a href="#">
+	  		<i class="icon-uniE612 note_back_button"></i>	
+	  	</a>
+	    <a class="tab-item" ng-click="toDownlaod()">
+	    	<i class="icon icon-uniE607"></i>
+	    下载
+	  	</a>
+		<a class="tab-item" ng-click="favorites!=favorites;toFavorites()">
+	    	<i class="icon icon-uniE60C job-selected" ng-class="{'job-favoritesed':courseData.favorites == 1}"></i>
+	    收藏
+	    </a>
+	    <a class="tab-item" ng-click="toShare()">
+	    	<i class="job-icon-share icon icon-uniE604"></i>
+	    分享
+	  	</a>
+
+
+    </ion-footer-bar>
+
+</ion-view>

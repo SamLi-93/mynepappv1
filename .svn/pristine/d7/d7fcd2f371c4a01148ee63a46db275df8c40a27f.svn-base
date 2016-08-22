@@ -1,0 +1,322 @@
+var pageAction = {
+    readRightClass: ['center', 'left'],
+    readId: ['right', 'center', 'left'],
+    readLeftClass: ['center', 'right'],
+    fontArr: [[24, 14], [27, 16], [30, 18], [33, 20], [37, 22]],
+    curPage: 0,
+    showAction: 1,
+    showFont: 1,
+    defaultFont: [30, 18],
+    backContent: function(num) {
+        if (num == 0) {
+            this.innerHtml();
+            return;
+        }
+        for (i = 0; i < num; i++) {
+            this.right();
+            this.setRightId();
+        }
+        document.getElementById('box' + readId[2]).className = 'page ' + readRightClass[1];
+        document.getElementById('box' + readId[1]).className = 'page ' + readRightClass[0];
+        document.getElementById('box' + readId[0]).className = 'page right';
+        this.backHtml();
+    },
+    zYFont: function() {
+        if (this.showFont == 1) {
+            this.showFont = 2;
+            document.getElementById('list').style.display = 'block';
+        } else {
+            this.showFont = 1;
+            showChapter = 1;
+            document.getElementById('list').style.display = 'none';
+        }
+        document.getElementById('jump').style.display = 'none';
+    },
+    setFont: function(size) {
+        for (var i = 0; i < this.fontArr.length; i++) {
+            if (this.defaultFont.toString() == this.fontArr[i]) {
+                break;
+            }
+        }
+        if (size == 1) {
+            (i != 4 && i < this.fontArr.length - 1) ? i++ : i
+        } else {
+            (i != 0 && i >= 0) ? i-- : i;
+        }
+        setLocalData("FONT", this.fontArr[i]);
+        this.defaultFont = this.fontArr[i];
+        content = this.fontSize(document.querySelector('.read_page_con').innerHTML, this.fontArr[i][0], this.fontArr[i][1]);
+        
+        var oBox = document.querySelector('.read_page');
+        var oCon = oBox.querySelector('.read_page_con');
+        var columnWidth = JobReader.getDeviceWidth();
+        oBox.style.WebkitColumnWidth = columnWidth + 'px';
+        var clientHeight = document.documentElement.clientHeight;
+        var pages = Math.ceil(oCon.offsetHeight / (clientHeight - 60));//此处准确性待定
+        //bug--部分机型浏览器（Chrome），column父级无宽渲染错误
+        oBox.style.width = pages * columnWidth + 'px';
+    },
+    hide: function() {
+        //document.getElementById('header').style.display = 'none';
+        document.getElementById('action').style.display = 'none';
+        //document.getElementById('list').style.display = 'none';
+        this.showFont = 1;
+        this.showAction = 1;
+        showChapter = 0;
+        //showList();
+    },
+    screenSize: function() {
+        lineHeightSize = Math.floor(this.bodyHeight / this.defaultFont[0]);
+        lineWidthSize = Math.floor(this.bodyWidth / this.defaultFont[1]);
+    },
+    fontSize: function(con) {
+        this.screenSize();
+        var chapterInfo = '';
+        contentSize = con.split('<br/>');
+        if (contentSize[contentSize.length - 1] == '') {
+            contentSize.pop();
+        }
+        for (var i = 0; i < contentSize.length; i++) {
+            if (contentSize[i].length > lineWidthSize) {
+                var contentTest = '';
+                num = Math.ceil(contentSize[i].length / lineWidthSize);
+                for (var j = 0; j < Math.ceil(contentSize[i].length / lineWidthSize); j++) {
+                    contentTest += contentSize[i].substr(j * lineWidthSize, lineWidthSize) + '<br/>';
+                }
+                contentSize[i] = contentTest;
+            } else {
+                contentSize[i] += '<br/>';
+            }
+            chapterInfo += contentSize[i];
+        }
+        return chapterInfo;
+    },
+    pageCount: function() {
+        chapterInfo = content.split('<br/>');
+        if (chapterInfo[chapterInfo.length - 1] == '') {
+            chapterInfo.pop();
+        }
+        this.screenSize()
+        var pageCount = Math.ceil(chapterInfo.length / lineHeightSize);
+        if (this.curPage >= pageCount) {
+            this.curPage = pageCount - 1;
+        }
+        return pageCount;
+    },
+    sitePage: function(site, page) {
+        if (site == 'left') {
+            end = page;
+            start = page - 1;
+        }
+        if (site == 'right') {
+            end = page + 2;
+            start = page + 1;
+        }
+        if (site == 'center') {
+            end = page + 1;
+            start = page;
+        }
+    },
+    addContent: function(site) {
+        var count = this.pageCount();
+        this.sitePage(site, this.curPage);
+        var str = '';
+        if (start >= 0) {
+            for (var i = start * lineHeightSize; i < end * lineHeightSize; i++) {
+                if (i >= chapterInfo.length) {
+                    break;
+                }
+                str += '<div style="height:' + this.defaultFont[0] + 'px;">' + chapterInfo[i] + '</div>';
+            }
+        }
+        return str;
+    },
+    setLeft: function() {
+        var content = '';
+        this.left();
+        this.setLeftId();
+        this.animateClass(readId[0], readId[1], readLeftClass[1], readLeftClass[0]);
+        document.getElementById('box' + readId[2]).className = 'page left';
+        var pageContent = this.addContent('left');
+        document.getElementById(readId[2]).innerHTML = pageContent;
+    },
+    setRight: function() {
+        var content = '';
+        this.right();
+        this.setRightId();
+        this.animateClass(readId[2], readId[1], readRightClass[1], readRightClass[0]);
+        document.getElementById('box' + readId[0]).className = 'page right';
+        var pageContent = this.addContent('right');
+        document.getElementById(readId[0]).innerHTML = pageContent;
+    },
+    userTouch: function(bid, cid) {
+        pageCount = this.pageCount();
+        if (Math.floor(window.innerWidth * (1 / 3)) >= touchStart) {
+            if (this.curPage > 0) {
+                this.setLeft();
+                this.hide();
+                setLocalData(bid + '_' + cid, this.curPage);
+            } else {
+                if (cid == 1) {
+                    location.href = 'index.php?key=17W' + bid + '&' + argument;
+                } else {
+                    location.href = 'book.php?key=1B' + bid + 'C' + (cid - 1) + '&' + argument;
+                }
+            }
+        } else if (Math.floor(window.innerWidth * (2 / 3)) >= touchStart) {
+            if (Math.floor(window.innerHeight * (1 / 3)) >= touchY) {
+                if (this.curPage > 0) {
+                    this.setLeft();
+                    this.hide();
+                    setLocalData(bid + '_' + cid, this.curPage);
+                } else {
+                    if (cid == 1) {
+                        location.href = 'index.php?key=17W' + bid + '&' + argument;
+                    } else {
+                        location.href = 'book.php?key=1B' + bid + 'C' + (cid - 1) + '&' + argument;
+                    }
+                }
+            } else if (Math.floor(window.innerHeight * (2 / 3)) >= touchY) {
+                if (this.showAction == 1) {
+                    document.getElementById('header').style.display = 'block';
+                    document.getElementById('action').style.display = 'block';
+                    this.showAction = 2;
+                } else {
+                    this.hide();
+                }
+            } else {
+                if (this.curPage < pageCount - 1) {
+                    this.setRight();
+                    this.hide();
+                    setLocalData(bid + '_' + cid, this.curPage);
+                } else {
+                    if (cid == chapterNum) {
+                        location.href = 'index.php?key=130W' + bid + '&bn=' + bookName + '&' + argument;
+                    } else {
+                        location.href = 'book.php?key=1B' + bid + 'C' + (cid + 1) + '&' + argument;
+                    }
+                }
+            }
+        } else if (window.innerWidth >= touchStart) {
+            if (this.curPage < pageCount - 1) {
+                this.setRight();
+                this.hide();
+                setLocalData(bid + '_' + cid, this.curPage);
+            } else {
+                if (cid == chapterNum) {
+                    location.href = 'index.php?key=130W' + bid + '&bn=' + bookName + '&' + argument;
+                } else {
+                    location.href = 'book.php?key=1B' + bid + 'C' + (cid + 1) + '&' + argument;
+                }
+            }
+        }
+    },
+    touchStart: function(e) {
+        touchStart = e.touches[0].pageX;
+        touchY = e.touches[0].pageY;
+    },
+    touchEnd: function(bid, cid) {
+        this.userTouch(bid, cid);
+    },
+    left: function() {
+        readLeftClass = this.readLeftClass;
+        this.curPage--;
+    },
+    right: function() {
+        readRightClass = this.readRightClass;
+        this.curPage++;
+    },
+    innerHtml: function() {
+        for (var i = 2; i >= 0; i--) {
+            this.setRightId();
+            document.getElementById(this.readId[i]).innerHTML = this.addContent(this.readId[i]);
+        }
+        document.getElementById('read-con').style.fontSize = this.defaultFont[1];
+    },
+    backHtml: function() {
+        document.getElementById(readId[2]).innerHTML = this.addContent('left');
+        document.getElementById(readId[1]).innerHTML = this.addContent('center');
+        document.getElementById(readId[0]).innerHTML = this.addContent('right');
+        document.getElementById('read-con').style.fontSize = this.defaultFont[1];
+    },
+    setLeftId: function() {
+        readId = this.readId;
+        readId[2] = readId.shift();
+    },
+    setRightId: function() {
+        readId = this.readId;
+        readId[2] = readId.shift();
+        readId[2] = readId.shift();
+    },
+    animateClass: function(classFirst, classEnd, idFirst, idEnd) {
+        document.getElementById('box' + classFirst).className = 'page animate ' + idFirst;
+        document.getElementById('box' + classEnd).className = 'page animate ' + idEnd;
+    }
+}
+function setScreenPoint() {
+    document.getElementById('screen').style.display = 'none';
+    document.getElementById('point').style.display = 'none';
+}
+function getLocalData(key) {
+    if (typeof localStorage != 'undefined') {
+        return localStorage.getItem(key);
+    }
+    return null ;
+}
+function setLocalData(key, value) {
+    if (typeof localStorage != 'undefined') {
+        localStorage.setItem(key, value);
+    }
+}
+function delLocalData(key) {
+    if (typeof localStorage != 'undefined') {
+        localStorage.removeItem(key)
+    }
+}
+function changeColorMode() {
+    var textId = document.getElementById("background");
+    if (scene == 0) {
+        document.body.className = "";
+        //textId.innerHTML = "<span>夜间</span>";
+        setLocalData('SCENE', 0);
+        scene = 1;
+    } else {
+        document.body.className = "bg-000";
+        textId.innerHTML = "<span>白天</span>";
+        setLocalData('SCENE', 1);
+        scene = 0;
+    }
+    document.getElementById('jump').style.display = 'none';
+    document.getElementById('list').style.display = 'none';
+}
+function showList() {
+    var show = document.getElementById('jump');
+    if (pageAction.showFont == 2) {
+        pageAction.zYFont();
+    }
+    if (showChapter == 1) {
+        show.style.display = 'block';
+        showChapter = 0;
+    } else {
+        show.style.display = 'none';
+        showChapter = 1;
+    }
+}
+function jumpChapter(bid) {
+    var chapter = document.getElementById('chapterInput').value;
+    if (parseInt(chapter) > chapterNum || parseInt(chapter) <= 0 || isNaN(parseInt(chapter))) {
+        return false;
+    }
+    document.activeElement.blur();
+    setTimeout(function() {
+        //window.location.href = 'book.php?key=1B' + bid + 'C' + parseInt(chapter) + '&' + argument;
+    	window.location.href = 'index.php?r=ebookdemo/index&bookid=' + bid + '&chapterid=' + parseInt(chapter);
+    }, 400)
+}
+function showFont() {
+    if (getLocalData('FONT') == null ) {
+        setLocalData('FONT', pageAction.defaultFont);
+    } else {
+        pageAction.defaultFont = getLocalData('FONT').split(',');
+    }
+}

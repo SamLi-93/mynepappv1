@@ -1,0 +1,72 @@
+<ion-view view-title="{{book.title}}" hide-tabs='true' hide-nav-bar="true">
+  	<ion-content class="reader" overflow-scroll="true">
+     
+      <!--中间阅读部分-->
+      <!--div class="page_tit">完美世界</div-->
+      <div class="read_page_wrap">
+        <div class="read_page" id="read_page">
+          <div class="read_page_con" id="read_page_con" ng-bind-html="book.content" on-finish-render-filters='Complete'>
+          </div>
+        </div>
+      </div>
+      <div class="page"><span>1/1</span></div>
+      <div class="reader-function">
+        <!--div id="list" style="display:none">
+          <div class="reader-list"> <span class="reader-big"><a href="javascript:pageAction.setFont(1)">加大</a></span> <span class="reader-little"><a href="javascript:pageAction.setFont(2)">减小</a></span></div>
+        </div-->
+        <!--div class="jump" style="display:none" id="jump">
+          <div class="box">
+                  <div class="jump-l" onclick="javascript:location.href='index.php?r=ebookdemo/index&bookid=113&chapterid=1'"><em></em></div>
+                  <div class="jump-page flex yellow">第2章</div>
+                  <div class="jump-r" onclick="javascript:location.href='index.php?r=ebookdemo/index&bookid=113&chapterid=2'"><em></em></div>
+                </div>
+          <div class="box mt10">
+            <input type="text" class="text" value="1" size="6" id="chapterInput">
+             / 15章 
+            <input type="button" value="跳转" class="button flex" onclick="jumpChapter(113)">
+          </div>
+        </div-->
+        <div id="action" style="display: none;">
+          <ul>
+            <li class="reader-tell" ng-click="readback()"><span class="icon-uniE612 read_back_icon"></span></li>
+            <li class="reader-tell" ng-click="showmenu()"><span class="icon-uniE601 read_icon"></span><span class="read_icon_font">目录</span></li>
+            <!--li class="reader-font" id="font" onclick="pageAction.zYFont();"><span>字号</span></li-->
+            <li class="reader-big" onclick="javascript:pageAction.setFont(1)">
+              <span class="icon-uniE622 read_icon"></span><span class="read_icon_font">放大</span>
+            </li>
+            <li class="reader-little" onclick="javascript:pageAction.setFont(2)">
+              <span class="icon-uniE60B read_icon"></span><span class="read_icon_font">缩小</span>
+            </li>
+            <!--li class="reader-day" id="background" onclick="changeColorMode()"><span>夜间</span></li>
+            <li class="reader-jump"><span>跳章</span></li-->
+          </ul>
+        </div>
+      </div>
+      <div class="big-wrap" id="screen" style="display: none;"></div>
+      <!--div id="point" style="display: none;">
+        <div class="big-wrap-content">
+          <div class="top">
+            <div class="top-l"><span class="content-page fr">点击进入<br>
+              <span class="bigFont">上一页</span></span></div>
+            <div class="top-c"><span class="content-page"></span></div>
+            <div class="top-r">
+              <div class="border"><span class="content-page"></span></div>
+            </div>
+          </div>
+          <div class="center">
+            <div class="center-l"><span class="content-page"></span></div>
+            <div class="center-c"><span class="content-page">点击呼出<br>
+              功能菜单</span></div>
+            <div class="center-r"><span class="content-page"></span></div>
+          </div>
+          <div class="bottom">
+            <div class="bottom-l"><span class="content-page"></span></div>
+            <div class="bottom-c"><span class="content-page"></span></div>
+            <div class="bottom-r"><span class="content-page">点击进入<br>
+              <span class="bigFont">下一页</span></span></div>
+          </div>
+        </div>
+      </div-->
+       
+  	</ion-content>
+</ion-view>

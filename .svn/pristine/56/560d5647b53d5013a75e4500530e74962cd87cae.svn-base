@@ -1,0 +1,30 @@
+<ion-view view-title="报班" hide-tabs="true">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon  ion-ios-search-strong button-clear" ng-click="tosearch()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+      <div class="list " >
+        <div class="apply_course_list item"  ng-repeat="course in applycourse">
+          <a ng-click="toCoursedetail(course.id)">
+            <div class="apply_course_body">
+              <div class="history_img">
+                  <img src="{{course.img}}">
+              </div>
+              <div class="history_detail">
+                  <div class="history_title">{{course.name}}</div>
+                  <div class="history_chapter">{{course.content}}</div>
+                  <div class="collect_bottom">
+                  <tpl ng-if="course.free==0"><div class="apply_course_price">￥{{course.price}}</div></tpl>
+              <tpl ng-if="course.orgin==0"><div class="apply_orgincourse_price">￥{{course.orginprice}}</div></tpl>
+              <tpl ng-if="course.free==0"><div class="free_watch"><i class="icon-uniE605 ac-play"></i>免费试听</div></tpl>
+                  <div class="job_clear"></div>
+                </div>
+              </div>
+              <div class="job_clear"></div>
+            </div>
+          </a>
+        </div>
+      </div>            
+    </ion-content>
+</ion-view>

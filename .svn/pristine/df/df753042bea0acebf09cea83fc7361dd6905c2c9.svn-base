@@ -1,0 +1,68 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:46
+ */
+
+namespace backend\controllers;
+
+use yii\web\Controller;
+use yii\filters\auth\QueryParamAuth;
+use Yii;
+use backend\models\Coursecomment;
+use yii\helpers\ArrayHelper;
+
+class MobilecourseController extends Controller
+{
+
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['GetCoursecomments',],
+            ],
+        ];
+    }
+
+    public function actionGetCoursecomments() {
+        echo 'test';exit;
+        $comment = Coursecomment::find();
+        var_dump($comment);exit;
+    }
+
+    public function actionTest() {
+        echo 'test33';exit;
+    }
+    /**
+     * 根据关键字获取产品
+     */
+    public function actionGetcoursebykeywords(){
+    	header("access-control-allow-origin: *");
+    	$request = Yii::$app->request;
+    	$web_imgurl = Yii::$app->params['web_imgurl'];
+    	$keywords = $request->get ('keywords');
+    	$conn = Yii::$app->db;
+    	$sql = "select * from lc_product where name like '%".$keywords."%' and onsale=1";
+    	$c_arr = $conn->createCommand ($sql)->queryAll ();
+    	foreach ($c_arr as $key => $val) {
+    		$info = array();
+    		$info['id'] = $val['id'];
+    		$info['img'] = $web_imgurl.$val['mbpic'];
+    		$info['itemid'] = '0';
+    		$info['name'] = $val['name'];
+    		$info['teacher_names'] = '-';
+    		$info['price'] = $val['price'] ;
+    		$info['free'] = (empty($val['price'])?0:1);
+    		$info['vtype'] = '0';
+    		$info['authorize_flag'] = '0';
+    		$return_arr[] = $info;
+    	}
+    	$return_info = json_encode(array('responseData'=>$return_arr)); 
+    	$callback = $request->get ( 'callback' );
+    	echo $callback . "(" . $return_info . ")";
+    	exit ();
+    }
+}

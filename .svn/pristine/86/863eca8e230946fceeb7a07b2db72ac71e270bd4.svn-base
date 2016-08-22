@@ -1,0 +1,144 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use common\models\LoginForm;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+use common\models\User;
+
+class MobileadminController extends Controller
+{
+    /*
+     *  注册接口
+     */
+    public function actionSignup()
+    {
+        $request = Yii::$app->request;
+        $data['SignupForm']['userid'] = $request->get('userid');
+        $data['SignupForm']['pass'] = $request->get('pass');
+
+        $model = new SignupForm();
+        if ($model->load($data)) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    $access_token = Yii::$app->user->identity->access_token;
+
+                    $itemArray = array(
+                        'access_token' => $access_token,
+                        'userid'=>Yii::$app->user->identity->userid,
+                        'username'=>Yii::$app->user->identity->userid,
+                        'headimg'=>Yii::$app->user->identity->pic,
+    //                        'email'=>Yii::$app->user->identity->email,
+                    );
+                    $return_info = json_encode(['success'=>'1', 'userinfo'=>$itemArray]);
+                    $callback = $request->get('callback');
+                    echo $callback."(".$return_info.")";
+                    exit;
+                }
+            }
+        }
+        echo 'error';exit;
+    }
+
+    /*
+     *  登录接口
+     */
+    public function actionLogin()
+    {
+        $request = Yii::$app->request;
+        $data['LoginForm']['userid'] = $request->get('userid');
+        $data['LoginForm']['pass'] = $request->get('pass');
+        $errormessage = '账号或密码不能为空';
+
+        $model = new LoginForm();
+
+        if ($model->load($data) && $model->login()) {
+            if(Yii::$app->user->identity->finish==1){
+                echo $errormessage = "对不起，该学生已经结业！"; exit;
+            }else if(Yii::$app->user->identity->finish==4){
+                echo $errormessage = "对不起，该学生已经休学！"; exit;
+            }else if(Yii::$app->user->identity->valid!=1){
+                echo $errormessage = "对不起，该学生未被确认开通！"; exit;
+            } else {
+                $logined = 1;
+                $errormessage = '成功登陆';
+            }
+
+            $userid = Yii::$app->user->identity->userid;
+//            $pass = Yii::$app->user->identity->pass;
+//            $email = Yii::$app->user->identity->email;
+            if (Yii::$app->user->identity->access_token) {
+                $access_token = Yii::$app->user->identity->access_token;
+            } else {
+                $user =  User::find()->where(['userid' => $userid])->one();
+                $access_token = Yii::$app->security->generateRandomString();
+                $user->access_token = $access_token;
+                $user->save();
+            }
+
+            $userinfo = array(
+                'id'=>Yii::$app->user->identity->userid,
+                'userid'=>Yii::$app->user->identity->userid,
+                'username'=>Yii::$app->user->identity->userid,
+                'headimg'=>Yii::$app->user->identity->pic,
+                'school'=>null,
+                'email'=>Yii::$app->user->identity->email,
+                'mobile'=>Yii::$app->user->identity->mobile,
+                'postcode'=>Yii::$app->user->identity->postcode,
+                'access_token' => $access_token,
+                'loginTime'=>time(),
+                "LoginStatus"=>1
+            );
+
+            $itemArray = array(
+                'message' => $errormessage,
+                'logined' => $logined,
+                'userinfo' => $userinfo
+            );
+            $return_info = json_encode(array('responseData'=>$itemArray));
+            $callback = $request->get('callback');
+            echo $callback."(".$return_info.")";
+            exit;
+
+        } else {
+            $errormessage = '对不起，该学生没有通过用户中心验证，请检查登录信息';
+            $itemArray = array(
+                'message' => $errormessage,
+                'logined' => 0,
+                'userinfo' => []
+            );
+
+            $return_info = json_encode(array('responseData'=>$itemArray));
+            $callback = $request->get('callback');
+            echo $callback."(".$return_info.")";
+            exit;
+        }
+        exit;
+    }
+
+    public function actionTest() {
+        echo 'test';exit;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,215 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2016/7/5
+ * Time: 14:43
+ */
+
+namespace backend\controllers;
+
+use yii\web\Controller;
+use Yii;
+use yii\filters\auth\QueryParamAuth;
+use yii\helpers\ArrayHelper;
+
+class MobileclassController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['getusercourse', 'applycourse', 'coursepage'],
+            ],
+        ];
+    }
+
+	/**
+	 * 已经购买的课程
+	 */
+    public function actionGetusercourse() {
+    	header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        //$userid = Yii::$app->user->identity->idst;
+        $userid = 19540;
+        $conn = Yii::$app->db;
+        $sql = "select * from lc_productuser where userid=:userid";
+        $pu_arr = $conn->createCommand($sql,array('userid'=>$userid))->queryAll();
+        $pids = ArrayHelper::getColumn($pu_arr, 'productid');
+        $pids[] = 0;
+        $sql = "select * from lc_product_detail where id in (".implode(',', $pids).")";
+        $pd_arr = $conn->createCommand($sql)->queryAll();
+        $pd_list = ArrayHelper::mapObjArr($pd_arr,'pid');
+
+        $sql = "select * from lc_product where id in (".implode(',', $pids).")";
+        $p_arr = $conn->createCommand($sql)->queryAll();
+        $p_list = ArrayHelper::mapObj($p_arr,'id');
+        $return_info = array();
+        foreach ($pu_arr as $key => $puinfo){
+        	$info = [];
+        	$pinfo = $p_list[$puinfo['productid']];
+        	$pd_arr = $pd_list[$puinfo['productid']];
+        	$info['id'] = $puinfo['id'];
+        	$info['name'] = $pinfo['name'];
+        	$info['img'] = $pinfo['id'];
+        	$info['videocount'] = '0';
+        	$info['ebook'] = '0';
+        	$info['practice'] = '0';
+        	$info['vid'] = '0';
+        	$info['bid'] = '0';
+        	$info['pid'] = '0';
+        	foreach ($pd_arr as $k => $dinfo){
+        		
+        		$type = $dinfo['type'];
+        		switch ($type){
+        			case 1://课程（视频）
+        				$data = $this->getinfoByType($type, $dinfo['rid']);
+        				$info['videocount'] = $data;
+        				$info['vid'] = $dinfo['rid'];
+        				break;
+        			case 2://练习
+        				$data = $this->getinfoByType($type, $dinfo['rid']);
+        				$info['practice'] = $data;
+        				$info['pid'] = $dinfo['rid'];
+        				break;
+        			case 3://电子书
+        				$data = $this->getinfoByType($type, $dinfo['rid']);
+        				$info['ebook'] = $data;
+        				$info['bid'] = $dinfo['rid'];
+        				break;
+        		}
+        	}
+        	$return_info[] = $info;
+        }
+        /*
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "基金投资指南与实际操作",
+            "img": "./img/baoban.png",
+            "process": "79"
+        		
+        	"videocount": "21",
+            "ebook": "11",
+            "practice": "13",
+        		
+        	"pid":"1";
+        	"bid":
+        	"vid":
+          },{
+            "id": "2",
+            "name": "基金投资指南与实际操作",
+            "videocount": "22",
+            "ebook": "72",
+            "practice": "11",
+            "img": "./img/baoban.png",
+            "process": "14"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);*/
+        $return_info = json_encode($return_info);
+        $callback = $request->get('callback');
+        echo $callback . "(" . $return_info . ")";
+        exit;
+    }
+
+    //首页跳转报班接口
+    public function actionApplycourse()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "基金投资指南与实际操作1",
+            "price": "21",
+            "orginprice": "300",
+            "orgin": "0",
+            "free": "0",
+            "img": "./img/baoban.png",
+            "content": "我是演讲咖：3周成为演讲沟通高手（创业职场必备）"
+          },{
+            "id": "2",
+            "name": "基金投资指南与实际操作2",
+            "price": "22",
+            "orginprice": "740",
+            "orgin": "0",
+            "free": "0",
+            "img": "./img/baoban.png",
+            "content": "这是测试历史测测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);
+        $return_info = json_encode($return_arr);
+        $callback = $request->get('callback');
+        echo $callback . "(" . $return_info . ")";
+        exit;
+    }
+
+    //首页跳转课程接口
+    public function actionCoursepage()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "实现财物自由的家庭理财规划1",
+            "price": "21.9",
+            "orginprice": "300",
+            "orgin": "0",
+            "free": "0",
+            "img": "./img/kecheng.png",
+            "content": "我是演讲咖：3周成为演讲沟通高手（创业职场必备）courpage"
+          },{
+            "id": "2",
+            "name": "实现财物自由的家庭理财规划2",
+            "price": "52",
+            "orginprice": "261",
+            "orgin": "0",
+            "free": "0",
+            "img": "./img/kecheng.png",
+            "content": "这是测试历史测测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);
+        $return_info = json_encode($return_arr);
+        $callback = $request->get('callback');
+        echo $callback . "(" . $return_info . ")";
+        exit;
+    }
+
+
+    /**
+     * 根据类型 以及ID获取需要的信息
+     * @param unknown $type
+     * @param unknown $infoid
+     */
+    public function getinfoByType($type,$infoid){
+    	header("access-control-allow-origin: *");
+    	$return_data = 0;
+    	if($type == 1){//获取视频的数量
+    		$c_conn = Yii::$app->get('cdb');
+    		$sql = "select count(id) as num from cc_course_items where course_id=:course_id".$infoid;
+    		$return_data = $c_conn->createCommand($sql,array('course_id'=>$infoid))->queryOne();
+    	}else if($type == 2){//练习 根据课程id获取练习数量
+    		$conn = Yii::$app->db;
+    		$sql = "select count(id) as num from exam_template_page where course_id=:course_id";
+    		$return_data = $conn->createCommand($sql,array('course_id'=>$infoid))->queryOne();
+    	}else if($type == 3){
+    		$conn = Yii::$app->db;
+    		$sql = "select count(id) as num from sms_ebook where course_id=:course_id and is_delete=0";
+    		$return_data = $conn->createCommand($sql,array('course_id'=>$infoid))->queryOne();
+    	}
+    	return $return_data;
+    }
+}

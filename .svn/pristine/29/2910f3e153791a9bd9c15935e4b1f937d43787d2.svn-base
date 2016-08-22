@@ -1,0 +1,27 @@
+<ion-view view-title="手机注册" hide-tabs='true'>
+    <ion-nav-bar class="bar-light">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="register_bg">
+        <div class="list">
+            <div class="item register_item">
+                <input type="text" placeholder="手机号" ng-model="data.phone">
+            </div>
+            <div class="item register_item">
+                <input type="text" placeholder="验证码" ng-model="data.code">
+                <button class="button button_code" ng-click="sendcode()" ng-disabled="timeable">{{timetext}}</button>
+            </div>
+            <div class="item register_item">
+                <input type="password" placeholder="请输入密码" ng-model="data.password">
+            </div>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-calm" ng-click="register()">注册</button>
+        </div>
+        <div class="register_agree">
+            注册即视为同意<font ng-click="openagree()">用户服务条款</font>
+        </div>
+            
+    </ion-content>
+</ion-view>

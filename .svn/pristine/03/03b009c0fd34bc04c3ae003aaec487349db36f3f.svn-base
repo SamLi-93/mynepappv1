@@ -1,0 +1,62 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2016/7/5
+ * Time: 14:43
+ */
+
+namespace backend\controllers;
+
+use yii\web\Controller;
+use Yii;
+use yii\filters\auth\QueryParamAuth;
+
+class MobileclassController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['getusercourse'],
+            ],
+
+        ];
+    }
+
+    //我的课程接口  process是课程进度百分比值
+    public function actionGetusercourse() {
+
+        $request = Yii::$app->request;
+        //  $idst = Yii::$app->user->identity->idst;  token 登陆后会 个人信息会自动全部进入identity
+
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "基金投资指南与实际操作",
+            "videocount": "21",
+            "ebook": "11",
+            "practice": "13",
+            "img": "./img/baoban.png",
+            "process": "79"
+          },{
+            "id": "2",
+            "name": "基金投资指南与实际操作",
+            "videocount": "22",
+            "ebook": "72",
+            "practice": "11",
+            "img": "./img/baoban.png",
+            "process": "24"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);
+        $return_info = json_encode($return_arr);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+
+    }
+}

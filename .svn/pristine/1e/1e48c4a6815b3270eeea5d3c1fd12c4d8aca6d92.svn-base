@@ -1,0 +1,23 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-calm">
+        <h1 class="title">发表主题</h1>
+    <!--div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div-->
+        <button class="button ion button-ion ion-chevron-left" ng-click="closecreate()" slide="left">
+        </button>
+        <button class="button " ng-click="create()" slide="right">
+        发帖
+        </button>
+    </ion-header-bar>
+    <ion-content>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="标题" value="" ng-model="answercreate.title">
+                </label>
+                <label class="item item-input answer_create_input">
+                    <textarea placeholder="内容"  ng-model="answercreate.content"></textarea>
+                </label>
+            </div>
+    </ion-content>
+</ion-modal-view>

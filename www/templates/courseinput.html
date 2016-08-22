@@ -1,0 +1,16 @@
+<ion-modal-view style="top:30%;min-height: 70%;" ng-init="" cache-view="false" >
+    <ion-content>
+      <div class="job-question-title">
+          <div class="title" style="width: 90%">添加笔记</div>
+          <div class="icon ion-android-close" ng-click="answerclose()"></div>
+      </div>
+	  <div class="job-clear"></div>
+      <div class="cnote_bottom">
+          <textarea  name="note" class="cnote_input" placeholder="如果你有任何想想法的都可以记下来" ng-model="notecreate.content" autofocus ></textarea>
+          <!-- <input type="text" id="firstName" placeholder="First Name" ng-model="registerData.firstName" focus-me focus-me-disable={{disableFlag}} autofocus> -->
+      </div>
+      <div class="quiz_submit">
+        <div class="cnote_button" ng-click="addNote()">提交</div>
+      </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,80 @@
+<ion-view cache-view="false" title="{{pagetitle}}" hide-tabs="true">
+<!--ion-nav-buttons side="right">
+  <button class="button ion button-ion icon-paper job_question_card" ng-click="showcard()" ></button>
+</ion-nav-buttons-->
+    
+    <ion-content class="q_list_bg" id="job_scroll">
+    <ion-header>
+    <div class="bar bar-header-bar bar-light q_list_bg">
+        <div class="job_question_top">
+            <div class="job_question_tip" style="left:{{rate}}%"></div>
+        </div>
+        <div class="job_qustion_index">{{qindex}}/{{total}}</div>
+    </div>
+    </ion-header>
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" active-slide="PhaseSlide" show-pager="false" style="padding-top:60px;" >
+            <ion-slide ng-repeat="(key,question) in questions" class="e_slide" >
+                <!--div class="qtype">【{{question.type_name}}】 {{$index+1}} / {{total}}</div-->
+                <div ng-bind-html="question.question" class="qtitle"></div>
+                    <ul>
+                        <li  ng-if="question.type_id == '1'" ng-repeat="(k,item) in question.options" class="qoptions"  >
+                            <input  type="radio" 
+                                    name="radio-{{question.id}}"  
+                                    id="radio-{{question.id}}-{{$index}}" 
+                                    class="q_input" 
+                                    value="{{item}}"
+                                    ng-checked="{{item == question.answer|json}}"
+                                    ng-click='setanswer(question.id,item,key,question.type_name)' /> 
+                            <label for="radio-{{question.id}}-{{$index}}" >
+                                <span class="label_radio q_label">{{choice[k]}}</span>
+                                <span class="label_text">{{item}}</span>
+                                <span class="job_clear"></span>
+                            </label> 
+                        </li>
+                        <li  ng-if="question.type_id == '2' " ng-repeat="(k,item) in question.options" class="qoptions">
+                            <input  type="checkbox" 
+                                    name="radio-{{question.id}}"  
+                                    id="radio-{{question.id}}-{{$index}}" 
+                                    class="q_input" 
+                                    value="{{item}}"
+                                    ng-checked="{{item == question.answer|json}}"
+                                    ng-click='setanswer(question.id,item,key,question.type_name)' /> 
+                            <label for="radio-{{question.id}}-{{$index}}" >
+                                <span class="q_label">{{choice[k]}}</span>
+                                <span class="label_text">{{item}}</span>
+                                <span class="job_clear"></span>
+                            </label> 
+                        </li>
+                        <li  ng-if="question.type_id == '3'" ng-repeat="(k,item) in question.options" class="qoptions">
+                            <input  type="radio" 
+                                    name="radio-{{question.id}}"  
+                                    id="radio-{{question.id}}-{{$index}}" 
+                                    class="q_input" 
+                                    value="{{item}}"
+                                    ng-checked="{{item == question.answer|json}}"
+                                    ng-click='setanswer(question.id,1-k,key,question.type_name)' /> 
+                            <label for="radio-{{question.id}}-{{$index}}" >
+                                <span class="label_radio q_label">{{item}}</span>
+                                <span class="job_clear"></span>
+                            </label> 
+                        </li>
+                    </ul>
+                <div class="comment-content item-input" id="comment-inform" ng-if="question.type_id != '1' && question.type_id != '2' && question.type_id != '3'">
+                    <textarea name="comment" id="comment-textarea" ng-model="question.answer"  
+                              ng-blur="setanswertext(question.id,question.answer,key,question.type_name)">
+                        {{question.answer}}
+                    </textarea>
+                </div>
+
+            </ion-slide>
+        </ion-slide-box>
+
+    </ion-content>
+    <ion-footer-bar  class="q_footer q_list_bg">
+        <div class="q_up" ng-class="{true: 'q_can', false: 'q_disable'}[isUpActive]" ng-click="previous()"><i class="ion-android-arrow-back"></i></div>
+        <div class="q_card" ng-click="showcard()">题卡</div>
+        <div class="q_submit" ng-click="doSubmitPhase(params.t_id,params.pageid)">交卷</div>
+        <div class="q_down" ng-class="{true: 'q_can', false: 'q_disable'}[isDownActive]"ng-click="next()"><i class="ion-android-arrow-forward"></i></div>
+        <!--button class="button button-full button-assertive" ng-click="doSubmitPhase(params.t_id,params.pageid)" style="margin-top: 0px;">交卷</button-->
+    </ion-footer-bar>
+</ion-view>

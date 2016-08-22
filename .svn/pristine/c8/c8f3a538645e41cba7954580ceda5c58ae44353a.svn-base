@@ -1,0 +1,22 @@
+<ion-view view-title="全部课程">
+<ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+  </ion-nav-buttons>  
+	<ion-nav-buttons side="right">
+        <button class="button button-icon  ion-ios-search-strong button-clear" ng-click="tosearch()">
+        </button>
+    </ion-nav-buttons>
+  	<ion-content>
+  		<div class="categorydiv" ng-repeat="category in allCourseData" >
+			<a class="title" id="category{{category.id}}" href="#/tab/courselist/id/{{category.id}}/name/{{category.firstclassname}}">
+			<div class="bigfont left">{{category.firstclassname}}</div>
+			</a>
+			<tpl for="subcategorys">
+				<a class="categoryinfo" id="courseinfo{{category.id}}" href="#/tab/courselist/id/{{subcate.id}}/name/{{subcate.secondclassname}}"ng-repeat="subcate in category.subcategorys">
+					<div class="smallfont"><span class="">•</span>{{subcate.secondclassname}}</div>							
+				</a>
+			</tpl>
+		</div>
+		
+  	</ion-content>
+</ion-view>

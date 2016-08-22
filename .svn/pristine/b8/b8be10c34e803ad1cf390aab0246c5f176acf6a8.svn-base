@@ -1,0 +1,13 @@
+<ion-view view-title="练习" hide-tabs='true'>
+  <ion-content class="q_list_bg">
+      <div class="list">
+        <a class="job_p_list" href="#/tab/question" ng-repeat='practice in plist'>
+        	<div class="job_p_block">
+        		<span class="job_p_title">{{practice.title}}</span>
+        		<span class="job_p_start">{{practice.status}}</span>
+        		<span class="job_p_num">本卷共{{practice.num}}题</span>
+        	</div>
+        </a>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,652 @@
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+angular.module('mynepapp', ['ionic', 'mynepapp.controllers', 'mynepapp.services', 'mynepapp.directives', 'ngCordova','mynepapp.coursecontrollers','mynepapp.provincecontrollers'])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
+
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+
+    //判断网络状态
+    document.addEventListener("deviceready", function() {
+
+        // listen for Online event
+        $rootScope.$on('$cordovaNetwork:online', function(event, networkState) {
+            var onlineState = networkState;
+            console.log("device online...");
+        })
+
+        // listen for Offline event
+        $rootScope.$on('$cordovaNetwork:offline', function(event, networkState) {
+            var offlineState = networkState;
+            //提醒用户的网络异常
+            $ionicLoading.show({
+                template: '网络异常，不能连接到服务器！'
+            });
+        })
+
+    }, false);
+    
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  //if(!ionic.Platform.isIOS())$ionicConfigProvider.scrolling.jsScrolling(false);
+  $ionicConfigProvider.views.transition('ios') 
+  $ionicConfigProvider.platform.android.tabs.position('bottom');
+  $ionicConfigProvider.backButton.previousTitleText(false);
+  $ionicConfigProvider.platform.android.navBar.alignTitle('center');
+  //class默认添加tabs-
+  $ionicConfigProvider.platform.android.tabs.style('android-calm'); 
+  $ionicConfigProvider.platform.ios.tabs.style('color-active-calm'); 
+  //$ionicConfigProvider.views.maxCache(0);
+  
+  //var jsScrolling = (ionic.Platform.isAndroid() ) ? false : true;
+  //$ionicConfigProvider.scrolling.jsScrolling(jsScrolling);
+  
+
+  $stateProvider
+
+  // setup an abstract state for the tabs directive
+  .state('tab', {
+    url: '/tab',
+    abstract: true,
+    templateUrl: 'templates/tabs.html'
+  })
+  // Each tab has its own nav history stack:
+  //学习记录公用页
+  .state('record', {
+    url: '/record',
+    abstract: true,
+    templateUrl: 'templates/record.html'
+  })
+  //学习记录
+  .state('learn', {
+      url: '/learn',
+      templateUrl: 'templates/tab-learn.html',
+      controller: 'RecordCtrl',
+      //params: {'courseid':null},
+      cache: true
+  })
+  //我的练习公用页
+  .state('tab.practice', {
+    url: '/practice',
+    cache:true,
+    views: {
+      'tab-allcourse': {
+          templateUrl: 'templates/tab-practice.html',
+          controller: 'PracticeCtrl'
+      }
+    }    
+  })
+  //教学计划
+  .state('record.plan', {
+    url: '/plan',
+    views: {
+      'record-plan': {
+        templateUrl: 'templates/record-plan.html',
+        controller: 'PlanCtrl'
+      }
+    }
+  })
+  //成绩查询
+  .state('record.search', {
+    url: '/search',
+    views: {
+      'record-search': {
+        templateUrl: 'templates/record-search.html',
+        controller: 'SearchCtrl'
+      }
+    }
+  })
+  //学习进度
+  .state('record.process', {
+    url: '/process',
+    views: {
+      'record-process': {
+        templateUrl: 'templates/record-process.html',
+        controller: 'ProcessCtrl'
+      }
+    }
+  })
+  //模拟练习
+  .state('practice.moni', {
+    url: '/moni',
+    views: {
+      'practice-moni': {
+        templateUrl: 'templates/practice-moni.html',
+        controller: 'MoniCtrl'
+      }
+    }
+  })
+
+  //Sam   ------   错题集列表页面
+  .state('tab.errorlist', {
+    url: '/errorlist',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/practice-errorlist.html',
+        controller: 'ErrorlistCtrl'
+      }
+    }
+  })
+  
+  //Sam   ------错题集详细页面
+  .state('tab.errordetail',{
+    url: '/errordetail/courseid/9',
+    cache:false,
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/practice-errordetail.html',
+        controller: 'ErrordetailCtrl'
+      }
+    }
+        //templateUrl: 'templates/practice-errordetail.html',
+        //controller: 'ErrordetailCtrl'
+  })
+
+
+  //模拟练习答题
+  .state('tab.question', {
+    //url: '/question/t_id/:t_id/courseid/:course_id',
+    url: '/question',
+    cache:false,
+    views: {
+      'tab-allcourse': {
+        templateUrl: 'templates/moni-question.html',
+        controller: 'QuestionCtrl'
+      }
+    }
+  })
+  //学习进度第二页面
+  .state('view', {
+    url: '/view/planid/:planid/courseid/:courseid',
+    cache:true,
+    
+        templateUrl: 'templates/process-view.html',
+        controller: 'ViewCtrl'
+    
+  })
+  //学习进度第三页面
+  .state('detail', {
+    url: '/detail/track_id/:item_track_id/title/:title',
+    cache:true,
+    
+        templateUrl: 'templates/process-detail.html',
+        controller: 'DetailCtrl'
+  })
+  //用户注册
+  .state('tab.register', {
+        url: '/register',
+        cache: true,
+        views: {
+          'tab-account': {
+            templateUrl: 'templates/user-register.html',
+            controller: 'RegisterCtrl'
+          }
+        }
+        //templateUrl: 'templates/user-register.html',
+        //controller: 'RegisterCtrl'
+    })
+  //我的订单
+  .state('tab.order', {
+    url: '/order',
+    cache:true,
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/user-order.html',
+        controller: 'OrderCtrl'
+     }
+    } 
+  })
+  //我的问答
+  .state('tab.answerlist', {
+    url: '/answerlist',
+    cache:true,
+    views: {
+      'tab-account': {
+          templateUrl: 'templates/user-answerlist.html',
+          controller: 'AnswerlistCtrl'
+      }
+    }    
+  })
+  //我的笔记
+  .state('tab.note', {
+    url: '/note',
+    cache:true,
+    views: {
+      'tab-account': {
+          templateUrl: 'templates/user-note.html',
+          controller: 'NoteCtrl'
+      }
+    }    
+  })
+  //我的电子书
+  .state('tab.booklist', {
+    url: '/booklist',
+    cache:true,
+    views: {
+      'tab-allcourse': {
+          templateUrl: 'templates/user-booklist.html',
+          controller: 'BooklistCtrl'
+      }
+    }    
+  })
+  //我的电子书
+  .state('tab.bookread', {
+    url: '/bookread',
+    cache:false,
+    views: {
+      'tab-account': {
+          templateUrl: 'templates/book-read.html',
+          controller: 'BookReadCtrl'
+      }
+    }    
+  })
+  //帖子内容
+  .state('tab.answer', {
+    url: '/answer/id/:id',
+    cache:false,
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/user-answer.html',
+        controller: 'AnswerCtrl'
+      }
+    } 
+  })
+  //首页
+  .state('tab.home', {
+    url: '/home/:catId',
+    params: {'catId': null},
+    cache:false,
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/tab-index.html',
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+
+  .state('tab.allcourse',{
+    url: '/allcourse',
+    views: {
+      'tab-allcourse': {
+        templateUrl: 'templates/tab-allcourse.html',
+        controller: 'AllCourseCtrl'
+      }
+    }
+  })
+
+  .state('tab.chats', {
+      url: '/chats',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/tab-chats.html',
+          controller: 'ChatsCtrl'
+        }
+      }
+    })
+  
+    .state('tab.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.usercenter', {
+        url: '/usercenter',
+        cache: true,
+        views: {
+            'tab-account': {
+                templateUrl: 'templates/tab-usercenter.html',
+                controller: 'UsercenterCtrl'
+            }
+        }
+    })
+
+  .state('tab.account', {
+    url: '/account',
+    cache:false,
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-account.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  })
+
+  // Sam  我的课程公用页
+  .state('tab.mycourse', {
+    url: '/mycourse',
+    cache:false,
+    views: {
+      'tab-allcourse': {
+          templateUrl: 'templates/tab-mycourse.html',
+          controller: 'MycourseCtrl'
+      }
+    }    
+  })
+
+  // Sam  报班页面
+  .state('tab.applycourse', {
+    url: '/applycourse',
+    views: {
+      'tab-home': {
+          templateUrl: 'templates/tab-applycourse.html',
+          controller: 'ApplycourseCtrl'
+      }
+    }    
+  })
+
+  // Sam  课程页面
+  .state('tab.coursepage', {
+    url: '/coursepage',
+    views: {
+      'tab-home': {
+          templateUrl: 'templates/tab-coursepage.html',
+          controller: 'CoursepageCtrl'
+      }
+    }    
+  })
+
+  // Sam  地址页面
+  .state('address', {
+    url: '/address',
+    templateUrl: 'templates/tab-address.html',
+    controller: 'AddressCtrl'
+
+  })
+
+  // Sam  新建地址页面
+  // .state('tab.createaddress', {
+  //   url: '/createaddress',
+  //   templateUrl: 'templates/tab-createaddress.html',
+  //   controller: 'CreateaddressCtrl' 
+  // })
+
+  // Sam  我的收藏
+  .state('tab.createaddress', {
+    url: '/createaddress',
+    views: {
+      'tab-account': {
+          templateUrl: 'templates/tab-createaddress.html',
+          controller: 'CreateaddressCtrl'
+      }
+    }    
+  })
+
+  // Sam  我的收藏
+  .state('tab.mycollection', {
+    url: '/mycollection',
+    views: {
+      'tab-account': {
+          templateUrl: 'templates/tab-mycollection.html',
+          controller: 'MycollectionCtrl'
+      }
+    }    
+  })
+
+  // Sam  个人账号中的历史记录页面
+  .state('tab.myhistory', {
+    url: '/myhistory',
+    views: {
+      'tab-account': {
+          templateUrl: 'templates/tab-myhistory.html',
+          controller: 'MyhistoryCtrl'
+      }
+    }    
+  })
+
+  // Sam  离线换存 下载页面
+  .state('download', {
+      url: '/download',
+      templateUrl: 'templates/tab-download.html',
+      controller: 'DownloadCtrl',
+      cache: true
+  })
+
+  // Sam  离线换存 二级页面
+  .state('tab.dlsecpage', {
+    url: '/dlsecpage',
+    views: {
+      'tab-account': {
+          templateUrl: 'templates/tab-dlsecpage.html',
+          controller: 'DlsecpageCtrl'
+      }
+    }    
+  })
+
+  // Sam  课程答疑、笔记页面
+  .state('coursenote', {
+      url: '/coursenote',
+      templateUrl: 'templates/tab-coursenote.html',
+      controller: 'CoursenoteCtrl',
+      //params: {'courseid':null},
+      cache: true
+  })
+
+  .state('tab.news',{
+      url: '/news/:newsid',
+      cache:false,
+      views: {
+          'tab-home': {
+              templateUrl: 'templates/tab-newsdetail.html',
+              controller: 'NewsCtrl'
+          }
+      }
+  })
+  .state('tab.search',{
+      url: '/search',
+      cache:false,
+      views: {
+          //'tab-allcourse': {
+          'tab-home': {
+              templateUrl: 'templates/course-search.html',
+              controller: 'CourseSearchCtrl'  
+          }
+      }
+  })
+  .state('tab.result',{
+      params: {'content': null},
+      url: '/result/:content',
+      cache:false,
+      views: {
+          //'tab-allcourse': {
+          'tab-home': {
+              templateUrl: 'templates/course-result.html',
+              controller: 'ResultCtrl'  
+          }
+      }
+  })
+  .state('tab.courselist',{
+      url: '/courselist/id/:id/name/:name',
+      cache:true,
+      views: {
+          'tab-allcourse': {
+              templateUrl: 'templates/course-list.html',
+              controller: 'CourselistCtrl'  
+          }
+      }
+  })
+  .state('tab.coursefree',{
+      url: '/courselist/free/:free',
+      cache:true,
+      views: {
+          'tab-home': {
+              templateUrl: 'templates/course-list.html',
+              controller: 'CoursefreeCtrl'  
+          }
+      }
+  })
+
+  //Sam  ------   个人信息详细页面
+  .state('tab.userinfo', {
+      url: '/userinfo',
+      cache:'false', 
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-userinfo.html',
+          controller: 'UserinfoCtrl'
+        }
+      }
+    })
+
+  //Sam  ------- 账号信息更改页面
+    .state('tab.infosetting', {
+      url: '/infosetting/infotype/:infotype/text/:text',
+      cache:'false', 
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-infosetting.html',
+          controller: 'InfosettingCtrl'
+        }
+      }
+    })  
+
+
+
+  /*.state('tab.course',{
+      url: '/course',
+      cache:false,
+      views: {
+          'tab-home': {
+              templateUrl: 'templates/tab-newsdetail.html',
+              controller: 'NewsCtrl'  
+          }
+      }
+  })*/
+  /*.state('tab.course',{
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'    
+  })*/
+
+  
+
+  /*.state('course', {
+      url: '/course',
+      templateUrl: 'templates/tab-coursedetail.html',
+      controller: 'CouresCtrl',
+      params: {'courseid':null},
+      cache: false,
+      abstract: true
+  })
+
+  .state('course.detail', {
+      url: '/detail/:courseid',
+      cache: false,
+      views: {
+          'course-tabs': {
+              templateUrl: 'templates/course-tabs.html',
+              controller: 'CouresCtrldirectory'
+          }
+      }
+  })*/
+
+  /*.state('course.detail.directory', {
+      url: '/directory/:courseid',
+      cache: false,
+      views: {
+          'course-directory': {
+              templateUrl: 'templates/course-directory.html',
+              controller: 'CouresCtrldirectory'
+          },
+          'course-resume': {
+              templateUrl: 'templates/course-resume.html',
+              controller: 'CouresCtrlresume'
+          },
+          'course-discuss': {
+              templateUrl: 'templates/course-discuss.html',
+              controller: 'CouresCtrldiscuss'
+          }
+      }
+  })*/
+
+  /*.state('course.detail.resume', {
+      url: '/resume/:courseid',
+      cache: true,
+      //templateUrl: 'templates/tab-course-directory.html',
+      //controller: 'CouresCtrl'
+      views: {
+          'course-resume': {
+              templateUrl: 'templates/course-resume.html',
+              controller: 'CouresCtrlresume'
+          }
+      }
+  })
+
+  .state('course.detail.discuss', {
+      url: '/discuss/:courseid',
+      cache: false,
+      //templateUrl: 'templates/tab-course-directory.html',
+      //controller: 'CouresCtrl'
+      views: {
+          'course-discuss': {
+              templateUrl: 'templates/course-discuss.html',
+              controller: 'CouresCtrldiscuss'
+          }
+      }
+  })*/
+
+  .state('coursedetail', {
+      url: '/coursedetail/:courseid',
+      templateUrl: 'templates/tab-coursedetail.html',
+      controller: 'CouresCtrl',
+      //params: {'courseid':null},
+      cache: true
+  })
+
+  /*.state('coursemenu', {
+      url: '/',
+      templateUrl: 'templates/menu.html',
+      controller: 'leftmenuCtrl',
+      //params: {'courseid':null},
+      cache: false
+  })*/
+
+  .state('coursepay', {
+      url: '/coursepay/:courseid',
+      templateUrl: 'templates/course-pay.html',
+      controller: 'CouresCtrl',
+      params: {'courseid':null},
+      cache: false
+  });
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/tab/home/');
+
+})
+
+
+.config(function($ionicConfigProvider) {
+    //设置返回文字为空
+    $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-back');
+});
+
+/*.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  var jsScrolling = (ionic.Platform.isAndroid() ) ? false : true;
+  $ionicConfigProvider.scrolling.jsScrolling(jsScrolling);
+});*/

@@ -1,0 +1,146 @@
+<ion-view view-title="{{courseData.name}}">
+	<ion-nav-bar class="bar-calm">
+        <ion-nav-back-button  class="button-clear" ng-click="gotoaccount()">
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+	    <div class="job-videoback"><div class="icon-uniE612"></div></div>
+		<div class="coursevideo" id="jp_container_{{courseData.id}}"  data-tap-disabled="true">
+
+		</div>
+		<!-- <video src="http://cc1.mynep.com.cn:8081/uploads3/course/201510/cjfgykjzydd/1/vd_mb.mp4" controls="controls">
+		your browser does not support the video tag
+		</video> -->
+		<!-- <ion-nav-view name="course-video"></ion-nav-view> -->
+	<div class="coursetabs" ng-class="long">
+		<!-- <ion-nav-view name="course-tabs"></ion-nav-view> -->
+		<!-- <div ui-view="course-tabs"></div> -->
+		<ion-tabs class="tabs-striped tabs-top  tabs-background-stable tabs-color-calm">
+		    <ion-tab title="课程介绍" class="job_course_tabs">
+		        <ion-content>
+		            <div ng-bind-html="resume.desc_long" class="cl_hand"></div>
+		        </ion-content>
+		    </ion-tab>
+
+		    <ion-tab title="课程表"  class="job_course_tabs" >
+		        <ion-content >
+		        	<div ng-repeat="(key, course) in courses" class="list job-item-list">
+		        		<div class="item item-divider job-item-divider">
+						    {{course.coursename}}
+						  </div>
+						  <a class="item item-icon-left job-item" ng-repeat="(key1, item) in course.items" 
+						  ng-click="setActive(item.itemid,item.try)">
+						  	<!-- <i class="icon" ng-class="{ $index>0 ? 'ion-ios-circle-outline' : 'icon-uniE605' }"></i> -->
+						  	
+						  	<div class="job-line-left"></div><div class="job-line-right"></div>
+						  	<i class="icon job-icon-color" ng-class="{ 'ion-ios-circle-outline' : item.try==0 , 'icon-uniE605': item.try ==1  }" ></i>						  	
+						    <div class="job-item-title">{{item.title}}</div>
+						    <div class="job-item-try" ng-if="item.try==1">试看</div>
+						  </a>
+					</div>
+
+		            <!-- <div ng-repeat="item in items"  class="item item-icon-left item-icon-right" ng-class="{notfree : courseData.free === 0 && $index > 0}" data-tap-disabled="false">      
+		              <div ng-click="setActive(item.itemid)" ng-class="{active : activeMenu === item.itemid}" >
+		                  <i class="icon ion-ios-play-outline"></i><div class="job_item p_title">{{item.title}}</div>
+		              </div>
+		              <i class="icon ion-ios-cloud-download-outline job_right" 
+		              ng-click="downloadVideo(item.itemid,item.vpath);liked=!liked" 
+		              ng-class="{'job_active': liked, 'job_inactive': !liked}" 
+		              ng-if="true"></i>
+
+		              <i class="icon ion-ios-trash job_right" 
+		              ng-show="trashShow[item.itemid]" ></i>
+
+		              <progress value="{{downloadProgress[item.itemid]}}" max="100" class="icon progress" 
+		              ng-if="activedownload[item.itemid]"
+		              ng-show="progressShow[item.itemid]" ></progress>
+		            </div> -->
+
+		        </ion-content>
+		    </ion-tab>
+		    
+		    <ion-tab title="常见问题" class="job_course_tabs">
+		      <ion-content>
+
+		      <div class="job-answer job-item-list" ng-repeat="(key, value) in discuss">
+		      	<div>
+		      	<div class="job-answer-icon" style="background: #c81623;">问</div>
+		      	<div ng-bind-html="value.question" class="job-answer-content"></div>
+		      	<div class="job-clear"></div>
+		      	</div>
+		      	<div>
+		      	<div class="job-answer-icon" style="background: #74d290;">答</div>
+		      	<div ng-bind-html="value.answer" class="job-answer-content"></div>
+		      	<div class="job-clear"></div>
+		      	</div>
+		      </div>
+
+		      <!--div class="list">
+
+				  <div class="item item-input-inset">
+				    <label class="item-input-wrapper">
+				      <input type="text" placeholder="" ng-model="input.value">
+				    </label>
+				    <button class="button button-small button-calm" ng-click="sendComm()">
+				     &nbsp;&nbsp;发送&nbsp;&nbsp;
+				    </button>
+				  </div>
+
+				</div-->
+			    <!--div class="discuss-content">
+			      <div class="div-discuss fleft">
+			        <input type="text" class="comm_input" name="comm_input" ng-model="input.value">
+			      </div>
+			      <div class="comm_btnn fleft" ng-click="sendComm()">发送</div>
+			    </div-->
+			    
+			    <!--div class="discuss-text">讨论</div-->
+
+			    <!-- <div class="list" data-tap-disabled="true" >
+			    	<div class="item item-input-inset">
+				    <label class="item-input-wrapper">
+				      <input type="text" placeholder="发表评论" ng-model="input.value">
+				    </label>
+				    <button class="button button-small button-calm" ng-click="sendComm()">
+				     &nbsp;&nbsp;发送&nbsp;&nbsp;
+				    </button>
+				  	</div>
+			      <div class="item" ng-repeat="comm in discuss">
+			      <div class="photo"><img src="./img/u_02.png" class="round_41 pad2 comm_margin"></div>
+			      <div class="comm_content">
+			        <div class="comm_uname">{{comm.uname}}</div>
+			        <div class="comm_text">{{comm.content}}</div>
+			        <div class="comm_date">{{comm.cdate}}</div>
+			      </div>
+			      </div>
+			    </div> -->
+
+			  </ion-content>
+		    </ion-tab>
+		</ion-tabs>
+	</div>	
+
+	
+	<div class="tabs tabs-icon-top job-tabs">
+	  <a class="tab-item" ng-click="toDownlaod()">
+	    <i class="icon icon-uniE607"></i>
+	    下载
+	  </a>
+	  <a class="tab-item" ng-click="favorites!=favorites;toFavorites()">
+	    <i class="icon icon-uniE60C job-selected" ng-class="{'job-favoritesed':courseData.favorites == 1}"></i>
+	    收藏
+	  </a>
+	  <a class="tab-item" ng-click="toShare()">
+	    <i class="job-icon-share icon icon-uniE604"></i>
+	    分享
+	  </a>
+	  	<div class="joincourse" id="joincourse-2-0" course="2" ng-click="toJoinCourse()">
+			<div>￥{{courseData.price}}</div>
+			<div>立即购买</div>
+		</div>
+	</div>
+
+		
+	<!-- <button class="button button-clear pull-right">Right</button> -->
+	
+</ion-view>

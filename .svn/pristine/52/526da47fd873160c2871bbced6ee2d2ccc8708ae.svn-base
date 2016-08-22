@@ -1,0 +1,158 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2016/7/4
+ * Time: 15:31
+ */
+
+namespace backend\controllers;
+
+use Yii;
+use yii\web\Controller;
+use yii\filters\auth\QueryParamAuth;
+
+
+/**
+ *
+ */
+class MobileusercenterController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['mycollection','myhistory','getdownloaded','getdownloading'],
+            ],
+        ];
+    }
+
+    //我的收藏 接口
+    public function actionMycollection()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "基金投资指南与实际操作1",
+            "price": "21",
+            "orginprice": "300",
+            "orgin": "0",
+            "free": "0",
+            "img": "./img/baoban.png",
+            "content": "我是演讲咖：3周成为演讲沟通高手（创业职场必备）"
+          },{
+            "id": "2",
+            "name": "基金投资指南与实际操作2",
+            "price": "22",
+            "orginprice": "30",
+            "orgin": "0",
+            "free": "0",
+            "img": "./img/baoban.png",
+            "content": "这是测试历史测测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);
+        $return_info = json_encode($return_arr);
+        $callback = $request->get('callback');
+        echo $callback . "(" . $return_info . ")";
+        exit;
+    }
+
+    //我的收藏接口
+    public function actionMyhistory()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "基金投资指南与实际操作1",
+            "img": "./img/baoban.png",
+            "content": "我是演讲咖：3周成为演讲沟通高手（创业职场必备）",
+            "time": "23秒"
+          },{
+            "id": "2",
+            "name": "基金投资指南与实际操作2",
+            "img": "./img/baoban.png",
+            "content": "这是测试历史测测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+            "time": "53秒"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);
+        $return_info = json_encode($return_arr);
+        $callback = $request->get('callback');
+        echo $callback . "(" . $return_info . ")";
+        exit;
+    }
+
+    //离线缓存 已完成接口
+    public function actionGetdownloaded()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "基金投资指南与实际操作1",
+            "img": "./img/baoban.png",
+            "cache_num": "2"
+          },{
+            "id": "2",
+            "name": "基金投资指南与实际操作2",
+            "img": "./img/baoban.png",
+            "cache_num": "15"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);
+        $return_info = json_encode($return_arr);
+        $callback = $request->get('callback');
+        echo $callback . "(" . $return_info . ")";
+        exit;
+    }
+
+    //离线缓存 缓存ing接口
+    public function actionGetdownloading()
+    {
+        $request = Yii::$app->request;
+        $idst = Yii::$app->user->identity->idst;
+
+        $return_info = '{
+        "responseData": [
+          {
+            "id": "1",
+            "name": "1-8制作证件照",
+            "current_size": "6.36m",
+            "total_size":"15.6m",
+            "speed":"536",
+            "process":"27"
+          },{
+            "id": "2",
+            "name": "1-98制作证件照",
+            "current_size": "8.36m",
+            "total_size":"15.6m",
+            "speed":"200",
+            "process":"37"
+          }
+        ]
+      }';
+        $return_arr = json_decode($return_info);
+        $return_info = json_encode($return_arr);
+        $callback = $request->get('callback');
+        echo $callback . "(" . $return_info . ")";
+        exit;
+    }
+
+
+}

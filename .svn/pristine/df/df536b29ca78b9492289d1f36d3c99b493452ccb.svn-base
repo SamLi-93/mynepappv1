@@ -1,0 +1,41 @@
+<ion-view view-title="{{category.name}}" hide-nav-bar='false' cache-view="true">
+  <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+      <!-- <div class="tabs-icon-top">
+      <a class="tab-item" ng-click="openMenu()">
+        <i class="icon ion-navicon"></i>分类
+      </a>
+      </div> -->
+  </ion-nav-buttons>  
+  <ion-content>
+  <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="数据获取中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+  
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" class="slidebox"  active-slide="ActiveSlide" auto-play="true" show-pager="true">
+      <ion-slide ng-repeat="banner in bannerData">
+          <a ng-if="banner.type == 'news'" ng-href="#tab/{{banner.type}}/{{banner.infoid}}"><div ng-bind-html="banner.html" class="box"></div></a>
+          <a ng-if="banner.type == 'course'" ng-href="#coursedetail/{{banner.infoid}}"><div ng-bind-html="banner.html" class="box"></div></a>
+      </ion-slide>
+    </ion-slide-box>
+
+    <div>
+      <div class="coursediv" ng-repeat="coursetype in homeData">
+        <div class="title" id="title{{coursetype.id}}">
+          <div class="bigfont left"><span class="m_block"></span>{{coursetype.title}}</div>
+          <!-- <a ng-if="" ng-href="#/tab/applycourse" class="more"><i class="icon-uniE606"></i></a> -->
+          <a ng-if="1==1" ng-href="#/tab/{{coursetype.address}}" class="more"><i class="icon-uniE606"></i></a>
+        </div>
+          <div class="courseinfo" id="courseinfo{{coursetype.id}}" ng-repeat="course in coursetype.courselists">
+            <a nav-direction="forward" ng-href="#/coursedetail/{{course.id}}">
+              <div>
+              <img src="{{course.img}}">
+              <div class="smallfont titlecourse">
+              <div class="job-course-title">{{course.name}}</div>
+              <div class="job_course_price job_right">￥102</div>
+              </div>
+              </div>
+            </a>           
+          </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

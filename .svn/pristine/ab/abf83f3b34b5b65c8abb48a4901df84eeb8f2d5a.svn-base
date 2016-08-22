@@ -1,0 +1,48 @@
+<ion-view view-title="{{title}}" hide-tabs='true'>
+  <ion-content ng-show="userkey != 'avatar'">
+    <div style="height: 20px;"> </div>
+    <div class="div-content" >
+      <div class="div-box">
+        <div class="div-input">
+        <input class="input-content" type="text" id="" name="usercontent" ng-model="content.value" value="{{key}}" >
+        </div>
+        <div class="close-icon" ng-click="cleartext()"></div>
+      </div>
+    </div>
+
+    <!--div class="div-logout" ng-click="save()" >
+      <div class="logout" id="usersave" >保存</div>
+    </div-->
+    <div class="content padding">
+      <div class="button-bar bar-calm" ng-click="save()">
+          <a class="button">保存</a>
+      </div>
+    </div>
+  </ion-content>
+
+
+  <ion-content  ng-show="userkey == 'avatar'">
+    <div class="container">
+      <div class="uheader sethead" id="ext-element-378">
+        <div class="userheader setuh">
+          <img ng-src="{{headimg}}" id="userheadimg">
+        </div>
+      </div>
+      <div class="ubody setbody">
+        <div class="myclass" id="div11" ng-click="toimagepicker()" style="border-bottom: 1px solid #eeeff4;border-top: 1px solid #eeeff4;">
+          <div class="uicon" id="div11_1" style="width:160px">
+            <span class="icons ion-image"></span>从相册选一张
+          </div>
+          <span class="ion-chevron-right center_link_arrow1"></span>
+        </div>
+        <div class="myclass" id="div12"  ng-click="tocamera()" style="border-bottom: 1px solid #eeeff4;">
+          <div class="uicon" id="div12_1" style="width:160px">
+            <span class="icons ion-camera" ></span>拍一张照片
+          </div>
+          <span class="ion-chevron-right center_link_arrow1"></span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view view-title="学习记录">
+    <!--ion-nav-buttons side="right">
+        <button class="button button-icon  ion-edit button-clear" ng-click="back()">
+        </button>
+    </ion-nav-buttons-->
+      <ion-nav-back-button class="button-clear"
+        ng-click="goBack()">
+      </ion-nav-back-button>
+    <ion-content>
+        <ion-list>
+            <div class="item job_plan_list"  ng-repeat="plan in planlist">
+                <div class="job_plan_name row">
+                    <div class="col">{{plan.name}}</div>
+                </div>
+                <div class="job_plan_text row">
+                    <div class="col">课程代码：{{plan.code}}</div>
+                    <div class="col">课程类型：{{plan.ctype}}</div>
+                </div>
+                <div class="job_plan_text row">
+                    <div class="col">考试形式：{{plan.exam_type}}</div>
+                    <div class="col">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分：{{plan.credit}}</div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

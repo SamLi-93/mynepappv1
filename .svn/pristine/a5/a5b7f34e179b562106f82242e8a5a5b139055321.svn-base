@@ -1,0 +1,39 @@
+<ion-view view-title="我的课程" >
+  <ion-content class="mycourse">
+      <div class="list" >
+        <div class="mycourse_list item" href="#" ng-repeat="course in courselist">
+        <div class="mycourse_top">
+          <div class="mycourse_img">
+              <img src="{{course.img}}">
+          </div>
+          <div class="mycourse_detail">
+              <div class="mycourse_title">{{course.name}}</div>
+
+              <div class="mycourse_content">
+              	<div class="fleft mc_video"><i class="icon-uniE60E"></i>{{course.videocount}}视频</div>
+              	<div class="fleft mc_ebook"><i class="icon-uniE621"></i> {{course.ebook}}电子书</div>
+              	<div class="mc_practice"><i class="icon-uniE61C"></i> {{course.practice}}练习</div>
+              </div>
+
+              <div class="process_bar" >
+              	<div style="height: 6px; background-color: #c91520;width: {{course.process}}%;"></div>
+              	
+              </div>
+              <div class="process_percent">{{course.process}}%</div>
+          </div>
+      </div>
+          <div class="mycourse_choicebox">
+            <a href="#/coursenote" class="listen_course fleft three_box">
+            	<div >去听课</div>
+            </a>
+            <a href="#/tab/booklist" class="see_ebook fleft three_box">
+            	<div >电子书</div>
+            </a>
+            <a href="#/tab/practice" class="go_practice fleft three_box">
+            	<div >做练习</div>
+            </a>
+          </div>
+        </div>
+      </div>            
+  </ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-modal-view style="top:35%;min-height: 65%;" ng-init="" cache-view="false" >
+    <ion-content>
+      <div class="job-question-title">
+          <div class="title" style="width: 90%">添加问题</div>
+          <div class="icon ion-android-close" ng-click="dayiclose()"></div>
+      </div>
+	  <div class="job-clear"></div>
+      <div class="cnote_bottom">
+          <textarea  name="note" class="cnote_input" placeholder="如果你有任何想问题的都可以记下来" ng-blur="ChangeHeight()" ng-model="quizcreate.content" ></textarea>
+      </div>
+      <div class="cnote_submit">
+        <div class="cnote_button" ng-click="addQuiz()">提交</div>
+      </div>
+    </ion-content>
+</ion-modal-view>

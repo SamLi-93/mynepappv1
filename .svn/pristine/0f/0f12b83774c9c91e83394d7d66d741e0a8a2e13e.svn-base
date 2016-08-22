@@ -1,0 +1,11 @@
+<ion-view view-title="电子讲义" hide-tabs='true'>
+  <ion-content >
+  	<div class="job_empty_text" ng-if="emptytext!=''">{{emptytext}}</div>
+    <div class="list job_book_list">
+        <a class="" href="#/tab/bookread/{{book.id}}" ng-repeat="book in booklist">
+          <span>{{book.name}}</span>
+        </a>
+        
+    </div>
+  </ion-content>
+</ion-view>

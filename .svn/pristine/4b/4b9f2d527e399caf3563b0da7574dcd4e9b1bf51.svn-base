@@ -1,0 +1,245 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use yii\helpers\ArrayHelper;
+use common\models\LoginForm;
+use common\models\Product;
+use backend\models\Productdetail;
+use backend\models\Templatepage;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+
+class MobilepracticeController extends Controller
+{
+    /*
+     *  试卷
+     */
+    public function actionGetquestion()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $course_id = $request->get('course_id');
+        $template_pageid = $request->get('template_pageid');
+        $userid = $request->get('userid');
+        $return =array(
+            "question"=>array(
+                array(
+                    "key"=>"1k0",
+                    "disabled"=>"",
+                    "id"=>"608",
+                    "page_id"=>48,
+                    "question"=>"固定资产采用历史成本计量并按期计提折旧，是假定企业（ ）。",
+                    "options"=>array(
+                        "是一个会计主体",
+                        "进行货币计量",
+                        "持续经营",
+                        "进行会计分期"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"进行货币计量",
+                    "answer"=>"是一个会计主体"
+                ),
+                array(
+                    "key"=>"1k1",
+                    "disabled"=>"",
+                    "id"=>"609",
+                    "page_id"=>48,
+                    "question"=>"我国企业会计准则规定，企业的会计核算应当以（ ）为基础。",
+                    "options"=>array(
+                        "权责发生制",
+                        "实地盘存制",
+                        "永续盘存制",
+                        "收付实现制"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"权责发生制",
+                    "answer"=>"权责发生制"
+                ),
+                array(
+                    "key"=>"1k2",
+                    "disabled"=>"",
+                    "id"=>"610",
+                    "page_id"=>48,
+                    "question"=>"目前，我国的行政单位会计主要采用（ ）。",
+                    "options"=>array(
+                        "权责发生制",
+                        "实地盘存制",
+                        "永续盘存制",
+                        "收付实现制"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"权责发生制",
+                    "answer"=>"收付实现制"
+                ),
+                array(
+                    "key"=>"1k3",
+                    "disabled"=>"",
+                    "id"=>"612",
+                    "page_id"=>48,
+                    "question"=>"下列选项中对课文理解不当的一项是 （）",
+                    "options"=>array(
+                        "《在山的那边》一文中所说的“用信念凝成的海”，这里的“海”指的是理想的境界。",
+                        "《童趣》一文的主旨是写作者儿时的“物外之趣”。作者通过自己的联想和想象，将眼前的事物放大了千万倍，从而享受到一种独有的乐趣。",
+                        "《紫藤萝瀑布》为了告诉我们花和人一样总是要遭受不幸，你无法改变。",
+                        "《走一步，再走一步》告诉人一个哲理：大困难是由小困难组成的，只要一步步战胜。"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>1,
+                    "result"=>"权责发生制",
+                    "answer"=>"收付实现制"
+                ),
+                array(
+                    "key"=>"1k3",
+                    "disabled"=>"",
+                    "id"=>"614",
+                    "page_id"=>48,
+                    "question"=>"下列选项中对课文理解不当的一项是 （）",
+                    "options"=>array(
+                        "《在山的那边》一文中所说的“用信念凝成的海”，这里的“海”指的是理想的境界。",
+                        "《童趣》一文的主旨是写作者儿时的“物外之趣”。作者通过自己的联想和想象，将眼前的事物放大了千万倍，从而享受到一种独有的乐趣。",
+                        "《紫藤萝瀑布》为了告诉我们花和人一样总是要遭受不幸，你无法改变。",
+                        "《走一步，再走一步》告诉人一个哲理：大困难是由小困难组成的，只要一步步战胜。"),
+                    "type_name"=>"单项选择题",
+                    "type_id"=>2,
+                    "result"=>"权责发生制",
+                    "answer"=>"收付实现制"
+                )
+            ),
+            "card"=>array(
+                "单项选择题"=>array(
+                        "1"=>array("do"=>"done","qnum"=>1),
+                        "2"=>array("do"=>"done","qnum"=>2),
+                        "3"=>array("do"=>"done","qnum"=>3),
+                        "4"=>array("do"=>"none","qnum"=>4),
+                        "5"=>array("do"=>"done","qnum"=>5),
+                        "6"=>array("do"=>"none","qnum"=>6),
+                        "7"=>array("do"=>"done","qnum"=>7),
+                        "8"=>array("do"=>"done","qnum"=>8),
+                        "9"=>array("do"=>"none","qnum"=>9),
+                        "10"=>array("do"=>"none","qnum"=>10),
+                ),
+                "多项选择题"=>array(
+                        "11"=>array("do"=>"none","qnum"=>11),
+                        "12"=>array("do"=>"none","qnum"=>12),
+                        "13"=>array("do"=>"none","qnum"=>13),
+                        "14"=>array("do"=>"none","qnum"=>14),
+                        "15"=>array("do"=>"none","qnum"=>15),
+                        "16"=>array("do"=>"none","qnum"=>16),
+                        "17"=>array("do"=>"done","qnum"=>17),
+                        "18"=>array("do"=>"none","qnum"=>18),
+                        "19"=>array("do"=>"none","qnum"=>19),
+                        "20"=>array("do"=>"none","qnum"=>20)
+                ),
+            ),
+            "pagetitle"=>"会计基础3",
+            "total"=>5,
+            "params"=>array("t_id"=>"6","pageid"=>"48")
+        );
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+    /*
+     *  试卷提交
+     */
+    public function actionExamsubmit()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $userid = $request->get('userid');
+        $template_pageid = $request->get('t_id');
+        $page_id = $request->get('pageid');
+        $return = array('score'=>'95','right'=>'2','wrong'=>'2','unfinish'=>'3');
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+    /*
+     *  试卷列表
+     */
+    public function actionGetpracticelist()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $product_id = $request->get('product_id');
+        $conn = Yii::$app->db;
+        $product = Product::find()->where(['id'=>$product_id])->all();
+        $sql_where = "";
+        //$course_ids = Productdetail::find('pid=? and type=2', $product_id)->getAll()->values('rid');
+        $course = Productdetail::find()->where(['pid'=>$product_id,'type'=>'2'])->all();
+        $course_ids = ArrayHelper::getColumn($course, 'rid');
+        if ($course_ids){
+            $sql_where .= " and exam_template_page.course_id in (".implode(',', $course_ids).")";
+            $sql = "select id,name,type from lc_course where id in (".implode(',', $course_ids).")";
+            //$c_arr = $db->getAll($sql);
+            $c_arr = $conn->createCommand($sql)->queryAll();
+            $cinfo = array(0);
+            $kjlinfo = array(0);
+            foreach ($c_arr as $key => $val) {
+                if($val['type']!=99){
+                    $cinfo[$val['id']] = $val['name'];  
+                }else{
+                    $kjlinfo[] = $val['id'];    
+                }
+            }
+        }else{
+            $sql_where .= " and 1<>1";
+        }
+
+        //获取会计乐课程
+        //$sql = "select * from lc_course where id in (".implode(',',$kjlinfo).")";
+        //$kjl_list = $db->getAll($sql);
+        //$this->_view['kjl_list'] = $kjl_list;
+
+        $list = Templatepage::find()->where('exam_template_page.isdelete=0'.$sql_where)->joinWith('page')->orderBy('exam_template_page.course_id desc,exam_template_page.knowledge_id asc,exam_stu_page.exam_date desc')->all();
+        $return = array();
+        foreach ($list as $key => $value) {
+            $arr['status'] = '开始';
+            if(count($value['page'])>0){
+                $status = $value['page'][0]['status'];
+                if($status==1){
+                    $arr['status'] = '继续';
+                }
+            }
+            $arr['cname'] = $cinfo[$value['course_id']];
+            $arr['pname'] = $value['name'];
+            $arr['num'] = $value['totalnum'];
+            $arr['id'] = $value['id'];
+            $arr['course_id'] = $value['course_id'];
+            $return[] = $arr;
+        }
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+    /*
+     *  试卷列表
+     */
+    public function actionSetanswer()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        $answer = $request->get('answer');
+        $page_id = $request->get('pageid');
+        $return_info = json_encode(array('flag'=>'0','question_id'=>$id));
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+
+}

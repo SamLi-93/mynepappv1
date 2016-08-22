@@ -1,0 +1,32 @@
+<ion-view  cache-view='false'>	
+	<ion-content>
+  <div>讨论</div>
+  <ul class="list">
+    <li class="item">
+      aaaaa
+    </li>
+    <li class="item">
+      b
+    </li><li class="item">
+      c
+    </li>
+    <li class="item">
+      aaaaa
+    </li>
+    <li class="item">
+      b
+    </li><li class="item">
+      c
+    </li>
+    <li class="item">
+      aaaaa
+    </li>
+    <li class="item">
+      b
+    </li><li class="item">
+      c
+    </li>
+</ul>
+  
+  </ion-content>
+</ion-view>

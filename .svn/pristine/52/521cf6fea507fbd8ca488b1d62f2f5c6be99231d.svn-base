@@ -1,0 +1,7 @@
+<?php
+return [
+    'adminEmail' => 'admin@example.com',
+	'course_center_web'=>'http://cc1.mynep.com.cn:8081',
+	'catId' => '829',
+	'web_imgurl' => 'http://10.82.97.204/sims'
+];

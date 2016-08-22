@@ -1,0 +1,25 @@
+<ion-view view-title="模拟练习">
+    <ion-content>
+        <ion-list>
+            <div class="item job_moni_list"  ng-repeat="moni in monilist">
+                <div ng-if="moni.name!= null" class="job_moni_name">{{moni.name}}</div>
+                <tpl ng-if="moni.t_name!= null">
+                    <tpl ng-if="moni.num == 0">
+                        <div class="job_moni_detail">
+                            <div class="job_moni_tname">{{moni.t_name}}</div>
+                            <div class="job_moni_totalnum">共{{moni.totalnum}}道题</div>
+                        </div>
+                        <a class="job_moni_begin" href="#/practice/question/t_id/2">开始做题</a>
+                    </tpl>
+                    <tpl ng-if="moni.num != 0">
+                        <div class="job_moni_detail">
+                            <div class="job_moni_tname">{{moni.t_name}}</div>
+                            <div class="job_moni_totalnum">练习{{moni.num}}次&nbsp;&nbsp;最高得分：{{moni.maxscore}}分</div>
+                        </div>
+                        <a class="job_moni_begin" href="#/question/t_id/2">再做一次</a>
+                    </tpl>
+                </tpl>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

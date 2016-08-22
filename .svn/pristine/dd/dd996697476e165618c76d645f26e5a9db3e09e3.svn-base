@@ -1,0 +1,5 @@
+<ion-view  cache-view='false'>		
+	<ion-content>
+		<div ng-bind-html="resume.desc_long" class="cl_hand"></div>
+	</ion-content>
+</ion-view>

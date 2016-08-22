@@ -1,0 +1,91 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/7/12
+ * Time: 14:41
+ */
+
+namespace backend\controllers;
+
+use yii\web\Controller;
+use yii\filters\auth\QueryParamAuth;
+use Yii;
+use backend\models\Coursecomment;
+use yii\helpers\ArrayHelper;
+
+class MobilebookController extends Controller
+{
+    public function behaviors()
+    {
+        return [
+            'authenticator' => [
+                'class' => QueryParamAuth::className(),
+                'only' => ['getlist',''],
+            ],
+        ];
+    }
+    /**
+     * 根据课程获取对应的电子讲义列表
+     */
+    public function actionGetlist(){
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $courseid = $request->get('courseid');
+        $return_arr = [
+                        ["id" => "1","name"=>"EXCEL在财务工资管理中的应用" ],
+                        ["id" => "2","name"=>"企业工商税务注册变更那些事" ],
+                        ["id" => "3","name"=>"职工工资及个税核算" ],
+                        ["id" => "4","name"=>"总经理必备的财务知识和标准" ],
+                        ["id" => "5","name"=>"EXCEL在财务工资管理中的应用" ]
+                    ];
+        $return_info = json_encode(array('responseData'=>$return_arr)); 
+        $callback = $request->get ( 'callback' );
+        echo $callback . "(" . $return_info . ")";
+        exit ();
+    }
+    /**
+     * 根据讲义获取讲义内容
+     */
+    public function actionGetcontent(){
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $bookid = $request->get('bookid');
+        $chapter = $request->get('chapter');
+        $return_arr = [
+                        'title'=>'第一章 世界大陆',
+                        'content'=>'"<p>“这些事情狱医会解决，你就不用操心了，请回吧。”小光态度委婉。</p><p>“你就告诉我嘛，小哥，我是他的好朋友，关心一下好朋友也是分内之事不是？”</p><p>这时，中年男似乎认出了杨涛，便掐断了烟，来到小光的柜台。</p><p>“这些事情狱医会解决，你就不用操心了，请回吧。”小光态度委婉。</p><p>“你就告诉我嘛，小哥，我是他的好朋友，关心一下好朋友也是分内之事不是？”</p><p>这时，中年男似乎认出了杨涛，便掐断了烟，来到小光的柜台。</p><p>“这些事情狱医会解决，你就不用操心了，请回吧。”小光态度委婉。</p><p>“你就告诉我嘛，小哥，我是他的好朋友，关心一下好朋友也是分内之事不是？”</p><p>这时，中年男似乎认出了杨涛，便掐断了烟，来到小光的柜台。</p><p>“怎么又是你？都告诉你，韩刚已经生病了，不适合探视，能探视肯定会给你们看，猴急个啥？”中年男似乎有些怀疑杨涛别有用心。</p><p>“我们就看一下下，可以吗？大哥。”杨涛寻着一个空档，将一叠钱递给了中年男。</p><p>中年男干咳了几下，说道：“兄弟啊，不是哥我不帮你，只是这韩刚的确有病，不能探监，上头的命令，不好意思了。</p><p>中年男子从那叠钱里抽出了几张，递给了小光，剩下的便占为己有，然后离开了柜台。</p><p>“喂，哥，哥！不够我还有啊！哥！”杨涛大喊道。</p><p>然而那中年男占到便宜以后，故意走进了里间，试图摆脱杨涛。</p><p>“这个混蛋，等会我就会让你知道，欺负我是什么下场！”杨涛埋怨道。</p><p>这时，韩菲儿从外面走了进来。</p><p>杨涛看到监狱里面的电还没有断掉，就知道肯定出事了，便拉着韩菲儿来到了一旁。</p><p>“怎么还不动手，我这边已经尽量再给你争取机会了，如果现在还不动手，我们就没有机会了。”杨涛说道。</p><p>韩菲儿着急地要哭了</p><p>“对不起，我忘记路线了。”韩菲儿眼看眼泪就要落下来了。</p><p>如果换作其他人，杨涛绝对大为光火，但毕竟韩菲儿还是第一次做这种事情，他就安慰了一下。</p><p>“算了，还是我去吧，你试试能不能搞定那年轻人或者中年秃顶男，他们不让我去探视你哥，说是生病了，不过……多半是幌子，你就试试看，不行我再另想办法。”</p>"',
+                        'chapter'=>[
+                            [
+                                'title'=>'第一章 世界大陆',
+                                'id'=>'1'
+                            ],
+                            [
+                                'title'=>'第二章 家神童',
+                                'id'=>'2'
+                            ]
+                        ]
+                    ];
+        $return_info = json_encode(array('responseData'=>$return_arr)); 
+        $callback = $request->get ( 'callback' );
+        echo $callback . "(" . $return_info . ")";
+        exit ();
+    }
+    /**
+     * 根据讲义章节获取内容
+     */
+    public function actionGetmenucontent(){
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $bookid = $request->get('bookid');
+        $chapter = $request->get('chapter');
+        $return_arr = [
+                        'title'=>'第二章 世界大陆',
+                        'content'=>'序章大荒<br><br>&nbsp;&nbsp;&nbsp;&nbsp;夜已深，漆黑一片，景物不可见。但山中并不宁静，猛兽咆哮，震动山河，万木摇颤，乱叶簌簌坠落。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;群山万壑间，洪荒猛兽横行，太古遗种出没，各种可怕的声音在黑暗中此起彼伏，直欲裂开这天地。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;山脉中，远远望去有一团柔和的光隐现，在这黑暗无尽的夜幕下与万山间犹如一点烛火在摇曳，随时会熄灭。<br>在我开发这个项目的时候，Angular2 的官方文档中还没有任何教程说明组件之间沟通该如何进行（现在 有了 ），所以我果断选择了最 Redux 的那种。结果发现，后来更新的官方文档里明确说明了不提倡使用这样的方式。我只能说很心累……奇葩的路由设定，用 /... 定义一个非最终页面路由，以及没有一个全局的路由结构，让 Angular2 里面的路由变得非常难推导。如果你不一层一层跟踪下去，根本就无法了解整个 Angular2 应用的路由结构。'
+                    ];
+        $return_info = json_encode(array('responseData'=>$return_arr)); 
+        $callback = $request->get ( 'callback' );
+        echo $callback . "(" . $return_info . ")";
+        exit ();
+    }
+}

@@ -1,0 +1,26 @@
+<ion-view view-title="我的笔记" hide-tabs='true'>
+  <ion-content class="note_bg">
+    <div class="list">
+      <div class="item note_list" ng-repeat="(key,note) in notelist">
+        <div class="note_top"></div>
+        <div class="note_center" ng-click="selected=!selected;setscroll();">
+          <span class="note_name">{{note.name}}</span>
+          <span class="note_ion icon-uniE606 " ng-class="{'open':!selected}"></span>
+          <span class="note_down ion-ios-arrow-down icon" ng-class="{'open':selected}"></span>
+          <span class="note_num">共有&nbsp;{{note.num}}&nbsp;个笔记</span>
+          <span class="job_clear"></span>
+        </div>
+        <div class="note_detail" ng-repeat="(k,v) in note.detail" ng-class="{'note_dashed':(k!=0),'open':selected}">
+          <div class="note_content">{{v.content}}</div>
+          <div>
+            <div class="note_time">{{v.note_time}}</div>
+            <div class="note_delete" ng-click="deletenote(key,k,v.id)"><span class="icon-uniE600"></span></div>
+            <div class="note_video"><span class="note_tleft">{{v.video_time}}</span><span class="note_trights"><i></i></span></div>
+            <div class="job_clear"></div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  </ion-content>
+</ion-view>

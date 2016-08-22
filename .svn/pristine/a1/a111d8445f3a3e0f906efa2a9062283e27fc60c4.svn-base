@@ -1,0 +1,22 @@
+<ion-view title="{{course_title}}" hide-tabs="true">
+  	<ion-content>
+        <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="努力加载..." pulling-text="查看最新内容..." on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list" data-tap-disabled="false">
+            <a class="job_course_list item" href="#/coursedetail/{{course.id}}" ng-repeat="course in courselist">
+                    <div class="job_course_img">
+                        <img src="{{course.img}}">
+                    </div>
+                    <div class="job_course_detail">
+                        <div class="job_course_title">{{course.name}}</div>
+                        <div class="job_course_teacher"><span>主讲：{{course.teacher_names}}({{course.class_time}}节课时)</span></div>
+                        <tpl ng-if="course.free==0"><div class="job_course_price">￥{{course.price}}</div></tpl>
+                    </div>
+            </a>
+            <tpl if="course_empty!=''"><div class="job_empty_text">{{course_empty}}</div></tpl>
+  		</div>
+        <ion-infinite-scroll ng-if="moreDataCanBeLoaded"
+                on-infinite="loadMore()"
+                distance="1%">
+              </ion-infinite-scroll>
+  	</ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<ion-view cache-view='false'>
+	<ion-content>
+    <div ng-repeat="item in items"  class="item item-icon-left item-icon-right">      
+      <div ng-click="setActive(item.itemid)" ng-class="{active : activeMenu === item.itemid}" >
+          <i class="icon ion-ios-play-outline"></i><div class="job_item p_title">{{item.title}}</div>
+      </div>      
+      <i class="icon ion-ios-cloud-download-outline" ng-click="downloadVideo(item.itemid);liked=!liked" ng-class="{'active': liked, 'inactive': !liked}"></i>
+    </div>
+  	</ion-content>
+</ion-view>

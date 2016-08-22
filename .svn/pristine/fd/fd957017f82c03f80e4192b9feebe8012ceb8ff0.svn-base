@@ -1,0 +1,29 @@
+
+<ion-modal-view>
+
+	<ion-header-bar class="bar-calm">
+		<button class="button ion button-ion ion-chevron-left" ng-click="resultback()" slide="left">
+        </button>
+        <h1 class="title">答题报告</h1>
+    </ion-header-bar>
+	 <ion-content>
+	 	<div class="pageresult">
+	 		<div class="result_detail">用时&nbsp;&nbsp;36:05</div>
+		 	<div class="result_a">
+				<div class="result_d"><span>{{result.score}}</span><span class="result_text">分</span></div>
+				<div class="result_b" style="height:{{100-result.score}}%"></div>
+				<div class="result_c"></div>
+			</div>
+		    <!--div class="pdiv" style="width: 100%">试卷得分 <span class="pagescore">{{result.score}}</span></div>
+		    <div class="pdiv">答对题数 <span class="pagenum">{{result.right_num}}</span></div>
+		    <div class="pdiv">答错题数 <span class="pagenum">{{result.wrong_num}}</span></div>
+		    <div class="pdiv">未答题数 <span class="pagenum">{{result.unfinish_num}}</span></div-->
+		    <div class="result_bottom">
+			    <div class="result_button" ng-click="repeat()">重新做题</div>
+		    </div>
+		    <!--button class="button button-assertive" style="width: 100%;margin-top: 20px;" ng-click="gourl(examurl)">
+			  返回列表
+			</button-->
+		</div>
+	 </ion-content>
+</ion-modal-view>

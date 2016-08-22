@@ -1,0 +1,11 @@
+<ion-view view-title="资讯信息" hide-tabs='true'>
+	<!-- <ion-nav-bar class="bar-calm">
+        <ion-nav-back-button  class="button-clear" ng-click="gotoaccount()">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-bar> -->
+  	<ion-content>
+  		<div class="showmsg_title">{{newsData.title}}</div>
+  		<div class="showmsg_content" ng-bind-html="newsData.content"></div>
+  	</ion-content>
+</ion-view>

@@ -1,0 +1,123 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use common\models\LoginForm;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+
+class MobileadminController extends Controller
+{
+    /*
+     *  注册接口
+     */
+    public function actionSignup()
+    {
+        $request = Yii::$app->request;
+        $data['SignupForm']['username'] = $request->get('username');
+        $data['SignupForm']['email'] = $request->get('email');
+        $data['SignupForm']['password'] = $request->get('password');
+
+        $model = new SignupForm();
+        if ($model->load($data)) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    $created_at = Yii::$app->user->identity->created_at;
+                    $updated_at = Yii::$app->user->identity->updated_at;
+                    $authKey = Yii::$app->user->identity->authKey;
+                    $access_token = Yii::$app->user->identity->access_token;
+
+                    $itemArray = array(
+                        'created_at' => $created_at,
+                        'updated_at' => $updated_at,
+                        'authKey' => $authKey,
+                        'access_token' => $access_token,
+                    );
+                    echo $return_info = json_encode($itemArray);exit;
+                }
+            }
+        }
+        echo 'error';exit;
+    }
+
+    /*
+     *  登录接口
+     */
+    public function actionLogin()
+    {
+        $request = Yii::$app->request;
+        $data['LoginForm']['username'] = $request->get('username');
+        $data['LoginForm']['password'] = $request->get('password');
+
+        $model = new LoginForm();
+
+        if ($model->load($data) && $model->login()) {
+            $username = Yii::$app->user->identity->username;
+            $password = Yii::$app->user->identity->password;
+            $email = Yii::$app->user->identity->email;
+            $created_at = Yii::$app->user->identity->created_at;
+            $updated_at = Yii::$app->user->identity->updated_at;
+            $authKey = Yii::$app->user->identity->authKey;
+            $access_token = Yii::$app->user->identity->access_token;
+
+            $itemArray = array(
+                'username' => $username,
+                'password' => $password,
+                'email' => $email,
+                'created_at' => $created_at,
+                'updated_at' => $updated_at,
+                'authKey' => $authKey,
+                'access_token' => $access_token,
+            );
+            echo $return_info = json_encode($itemArray);exit;
+
+        } else {
+            echo 'error login';exit;
+        }
+    }
+
+    public function actionTest() {
+        echo 'test';exit;
+    }
+    public function actionSendcode() {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $phone = $request->get('phone');
+        $return = array('right'=>'2');
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+    public function actionRegister() {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $phone = $request->get('phone');
+        $code = $request->get('code');
+        $password = $request->get('password');
+        $return = array('success'=>'1');
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+    public function actionUserdetail() {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $stu_id = $request->get('stu_id');
+        $return = array('name'=>'漫威');
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+}

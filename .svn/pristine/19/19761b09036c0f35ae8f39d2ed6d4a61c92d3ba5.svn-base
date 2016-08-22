@@ -1,0 +1,34 @@
+<ion-view view-title="{{test}}" hide-tabs='true'>
+  <ion-nav-buttons side="right">
+    <div class="download_edit">
+      编辑
+    </div>
+  </ion-nav-buttons>
+
+  <ion-content>
+      <div class="add_cache">
+        <i class="ion-ios-plus-outline add_cache_icon fleft"> </i> 
+        <div class="add_cache_text fleft">
+          <span class="">添加缓存</span>
+        </div>
+      </div>
+
+      <div ng-repeat="(key, course) in courses" class="list job-item-list">
+        <div class="item item-divider job-item-divider">
+                {{course.coursename}}
+        </div>
+        <a class="item item-icon-left job-item note_item" ng-repeat="(key1, item) in course.items" 
+        ng-click="setActive(item.itemid,item.try)">
+          <div class="job-line-left"></div><div class="job-line-right"></div>
+          <i class="icon job-icon-color" ng-class="{ 'ion-ios-circle-outline' : item.try==0 , 'icon-uniE605': item.try ==1  }" ></i>          
+          <div class="job-item-title note_item">{{item.title}}</div>
+          <div class="job-item-try" ng-if="item.try==1">试看</div>
+          <div class="time_last fright">
+          {{timelast}}
+          </div>
+        </a>
+      </div>
+
+
+  </ion-content>
+</ion-view>

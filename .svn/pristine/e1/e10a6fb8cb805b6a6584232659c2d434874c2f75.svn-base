@@ -1,0 +1,145 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: admin
+ * Date: 2016/6/13
+ * Time: 16:26
+ */
+
+namespace backend\controllers;
+
+
+use Yii;
+use yii\web\Controller;
+use common\models\LoginForm;
+use frontend\models\SignupForm;
+use yii\filters\auth\QueryParamAuth;
+
+class MobileerrorController extends Controller
+{
+    /*
+     *  错题集
+     */
+    public function actionGetlist()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $userid = $request->get('userid');
+        $return = array(
+            array(
+                'name'=>'学前心理学',
+                'detail'=>array(
+                    array('type_id'=>'0','num'=>'2'),
+                    array('type_id'=>'1','num'=>'4'),
+                    array('type_id'=>'2','num'=>'2'),
+                    array('type_id'=>'3','num'=>'1')
+                )
+            ),
+            array(
+                'name'=>'学前教育',
+                'detail'=>array(
+                    array('type_id'=>'0','num'=>'5')
+                )
+            ),
+            array(
+                'name'=>'学前教育',
+                'detail'=>array(
+                    array('type_id'=>'0','num'=>'5'),
+                    array('type_id'=>'1','num'=>'3'),
+                    array('type_id'=>'2','num'=>'5')
+                )
+            ),
+            array(
+                'name'=>'学前教育',
+                'detail'=>array(
+                    array('type_id'=>'0','num'=>'5'),
+                    array('type_id'=>'1','num'=>'3')
+                )
+            )
+        );
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+    /*
+     *  删除错题
+     */
+    public function actionDelete()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $userid = $request->get('userid');
+        $return = array('success');
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+    /*
+     *  错题页面
+     */
+    public function actionDetail()
+    {
+        header("access-control-allow-origin: *");
+        $request = Yii::$app->request;
+        $userid = $request->get('userid');
+        $return = array(
+            'total'=>'4',
+            'question'=>array(
+                array(
+                    'type_id'=>'1',
+                    'question'=>'当某种行为出现后，给予某种带有强制性、威胁性的不利后果，以期减少这种行为出现的可能性或消除该行为，这种强化方式是(   )',
+                    'type_name'=>'单选题',
+                    'options'=>array('惩罚','正强化','自然消退','消极强化'),
+                    'id'=>'1',
+                    'result'=>'A',
+                    'remark'=>''
+                ),
+                array(
+                    'type_id'=>'2',
+                    'question'=>'人际关系的功能有(      )',
+                    'type_name'=>'多项选择题 ',
+                    'options'=>array('产生合力','形成互补','激励功能','联络感情'),
+                    'id'=>'2',
+                    'result'=>'ABCD',
+                    'remark'=>''
+                ),
+                array(
+                    'type_id'=>'2',
+                    '概括起来，我国优秀的领导者的素质应当包括(      )',
+                    'type_name'=>'多项选择题 ',
+                    'options'=>array('政治素质','知识素质','协调素质','能力素质','身心素质'),
+                    'id'=>'3',
+                    'result'=>'AB',
+                    'remark'=>''
+                ),
+                array(
+                    'type_id'=>'3',
+                    '领导有效性的评价主要包括领导的工作绩效评价与领导功能的组织评价。(      )',
+                    'type_name'=>'判断题',
+                    'options'=>array('对','错'),
+                    'id'=>'4',
+                    'result'=>'对',
+                    'remark'=>''
+                )
+            ),
+            "card"=>array(
+                "单项选择题"=>array(
+                        "1"=>array("qnum"=>1),
+                ),
+                "多项选择题"=>array(
+                        "2"=>array("qnum"=>2),
+                        "3"=>array("qnum"=>3)
+                ),
+                "判断题"=>array(
+                        "4"=>array("qnum"=>4),
+                )
+            ),
+        );
+        $return_info = json_encode($return);
+        $callback = $request->get('callback');
+        echo $callback."(".$return_info.")";
+        exit;
+    }
+}
